@@ -1,0 +1,13 @@
+uploads/
+vendor/
+themes/
+wordpress.sql
+node_modules/
+
+.env
+plugins/*
+build/
+
+# It's currently not possible to install polylang through composer
+!plugins/polylang-pro
+!plugins/sb-blocks

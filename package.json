@@ -1,0 +1,24 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "## 1. Setup",
+  "main": "index.js",
+  "scripts": {
+    "lint:php": "prettier --write **/*.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seebruecke-org/cms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seebruecke-org/cms/issues"
+  },
+  "homepage": "https://github.com/seebruecke-org/cms#readme",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.16.1",
+    "prettier": "^2.2.1"
+  }
+}
