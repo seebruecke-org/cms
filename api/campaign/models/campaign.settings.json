@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaigns",
+  "info": {
+    "name": "campaign"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.contact",
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.stage-medium",
+        "shared-blocks.material",
+        "shared-blocks.accordion",
+        "shared-blocks.richtext",
+        "shared-blocks.stage-large"
+      ]
+    }
+  }
+}

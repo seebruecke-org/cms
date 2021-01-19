@@ -1,24 +1,38 @@
 {
-  "name": "cms",
-  "version": "1.0.0",
-  "description": "## 1. Setup",
-  "main": "index.js",
+  "name": "strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "lint:php": "prettier --write **/*.php"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/seebruecke-org/cms.git"
+  "devDependencies": {},
+  "dependencies": {
+    "knex": "<0.20.0",
+    "sqlite3": "latest",
+    "strapi": "3.4.3",
+    "strapi-admin": "3.4.3",
+    "strapi-connector-bookshelf": "3.4.3",
+    "strapi-plugin-content-manager": "3.4.3",
+    "strapi-plugin-content-type-builder": "3.4.3",
+    "strapi-plugin-email": "3.4.3",
+    "strapi-plugin-graphql": "3.4.3",
+    "strapi-plugin-upload": "3.4.3",
+    "strapi-plugin-users-permissions": "3.4.3",
+    "strapi-utils": "3.4.3"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/seebruecke-org/cms/issues"
+  "author": {
+    "name": "A Strapi developer"
   },
-  "homepage": "https://github.com/seebruecke-org/cms#readme",
-  "devDependencies": {
-    "@prettier/plugin-php": "^0.16.1",
-    "prettier": "^2.2.1"
-  }
+  "strapi": {
+    "uuid": "26ad6863-1bc1-4ebd-84ae-35c677c448c4"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_helper_blocks_images",
+  "info": {
+    "name": "Image",
+    "icon": "camera-retro"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "caption": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}

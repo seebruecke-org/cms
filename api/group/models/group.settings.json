@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "name": "Group",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "city": {
+      "model": "city",
+      "via": "group"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.richtext",
+        "shared-blocks.contact",
+        "shared-blocks.accordion",
+        "shared-blocks.material"
+      ]
+    },
+    "federal_country": {
+      "via": "group",
+      "model": "federal-country"
+    },
+    "featured_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.image"
+    },
+    "actions": {
+      "via": "groups",
+      "collection": "action"
+    }
+  }
+}

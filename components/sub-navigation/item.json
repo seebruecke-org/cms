@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sub_navigation_items",
+  "info": {
+    "name": "item",
+    "icon": "minus"
+  },
+  "options": {},
+  "attributes": {
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "private": false,
+      "required": true
+    }
+  }
+}

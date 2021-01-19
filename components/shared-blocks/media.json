@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_blocks_media",
+  "info": {
+    "name": "Media",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

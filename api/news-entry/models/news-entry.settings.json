@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_entries",
+  "info": {
+    "name": "News",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.image",
+      "required": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.contact",
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.material",
+        "shared-blocks.richtext",
+        "shared-blocks.accordion"
+      ],
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "news",
+        "pressrelease"
+      ],
+      "default": "news"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cities",
+  "info": {
+    "name": "City",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "private": false,
+      "required": true,
+      "targetField": "name"
+    },
+    "federal_country": {
+      "via": "city",
+      "model": "federal-country"
+    },
+    "safe_harbour": {
+      "via": "city",
+      "model": "safe-harbour"
+    },
+    "group": {
+      "via": "city",
+      "model": "group"
+    }
+  }
+}

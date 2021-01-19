@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_menu_items",
+  "info": {
+    "name": "Item",
+    "icon": "caret-right"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

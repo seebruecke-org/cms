@@ -1,0 +1,1926 @@
+input FileInfoInput {
+  name: String
+  alternativeText: String
+  caption: String
+}
+
+type UsersPermissionsMe {
+  id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+input UsersPermissionsRegisterInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input UsersPermissionsLoginInput {
+  identifier: String!
+  password: String!
+  provider: String = "local"
+}
+
+type UsersPermissionsLoginPayload {
+  jwt: String
+  user: UsersPermissionsMe!
+}
+
+type UserPermissionsPasswordPayload {
+  ok: Boolean!
+}
+
+union ActionContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium
+
+"""Input type for dynamic zone content of Action"""
+scalar ActionContentDynamicZoneInput
+
+type Action {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String!
+  content: [ActionContentDynamicZone]!
+  when: DateTime!
+  where: String!
+  published_at: DateTime
+  groups(sort: String, limit: Int, start: Int, where: JSON): [Group]
+}
+
+type ActionConnection {
+  values: [Action]
+  groupBy: ActionGroupBy
+  aggregate: ActionAggregator
+}
+
+type ActionAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type ActionGroupBy {
+  id: [ActionConnectionId]
+  created_at: [ActionConnectionCreated_at]
+  updated_at: [ActionConnectionUpdated_at]
+  title: [ActionConnectionTitle]
+  when: [ActionConnectionWhen]
+  where: [ActionConnectionWhere]
+  published_at: [ActionConnectionPublished_at]
+}
+
+type ActionConnectionId {
+  key: ID
+  connection: ActionConnection
+}
+
+type ActionConnectionCreated_at {
+  key: DateTime
+  connection: ActionConnection
+}
+
+type ActionConnectionUpdated_at {
+  key: DateTime
+  connection: ActionConnection
+}
+
+type ActionConnectionTitle {
+  key: String
+  connection: ActionConnection
+}
+
+type ActionConnectionWhen {
+  key: DateTime
+  connection: ActionConnection
+}
+
+type ActionConnectionWhere {
+  key: String
+  connection: ActionConnection
+}
+
+type ActionConnectionPublished_at {
+  key: DateTime
+  connection: ActionConnection
+}
+
+input ActionInput {
+  title: String!
+  content: [ActionContentDynamicZoneInput!]!
+  when: DateTime!
+  where: String!
+  groups: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editActionInput {
+  title: String
+  content: [ActionContentDynamicZoneInput!]!
+  when: DateTime
+  where: String
+  groups: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createActionInput {
+  data: ActionInput
+}
+
+type createActionPayload {
+  action: Action
+}
+
+input updateActionInput {
+  where: InputID
+  data: editActionInput
+}
+
+type updateActionPayload {
+  action: Action
+}
+
+input deleteActionInput {
+  where: InputID
+}
+
+type deleteActionPayload {
+  action: Action
+}
+
+union CampaignContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge
+
+"""Input type for dynamic zone content of Campaign"""
+scalar CampaignContentDynamicZoneInput
+
+type Campaign {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String!
+  content: [CampaignContentDynamicZone]
+  published_at: DateTime
+}
+
+type CampaignConnection {
+  values: [Campaign]
+  groupBy: CampaignGroupBy
+  aggregate: CampaignAggregator
+}
+
+type CampaignAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CampaignGroupBy {
+  id: [CampaignConnectionId]
+  created_at: [CampaignConnectionCreated_at]
+  updated_at: [CampaignConnectionUpdated_at]
+  title: [CampaignConnectionTitle]
+  published_at: [CampaignConnectionPublished_at]
+}
+
+type CampaignConnectionId {
+  key: ID
+  connection: CampaignConnection
+}
+
+type CampaignConnectionCreated_at {
+  key: DateTime
+  connection: CampaignConnection
+}
+
+type CampaignConnectionUpdated_at {
+  key: DateTime
+  connection: CampaignConnection
+}
+
+type CampaignConnectionTitle {
+  key: String
+  connection: CampaignConnection
+}
+
+type CampaignConnectionPublished_at {
+  key: DateTime
+  connection: CampaignConnection
+}
+
+input CampaignInput {
+  title: String!
+  content: [CampaignContentDynamicZoneInput!]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCampaignInput {
+  title: String
+  content: [CampaignContentDynamicZoneInput!]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createCampaignInput {
+  data: CampaignInput
+}
+
+type createCampaignPayload {
+  campaign: Campaign
+}
+
+input updateCampaignInput {
+  where: InputID
+  data: editCampaignInput
+}
+
+type updateCampaignPayload {
+  campaign: Campaign
+}
+
+input deleteCampaignInput {
+  where: InputID
+}
+
+type deleteCampaignPayload {
+  campaign: Campaign
+}
+
+type City {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String!
+  federal_country: FederalCountry
+  safe_harbour: SafeHarbour
+  group: Group
+  published_at: DateTime
+}
+
+type CityConnection {
+  values: [City]
+  groupBy: CityGroupBy
+  aggregate: CityAggregator
+}
+
+type CityAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CityGroupBy {
+  id: [CityConnectionId]
+  created_at: [CityConnectionCreated_at]
+  updated_at: [CityConnectionUpdated_at]
+  name: [CityConnectionName]
+  slug: [CityConnectionSlug]
+  federal_country: [CityConnectionFederal_country]
+  safe_harbour: [CityConnectionSafe_harbour]
+  group: [CityConnectionGroup]
+  published_at: [CityConnectionPublished_at]
+}
+
+type CityConnectionId {
+  key: ID
+  connection: CityConnection
+}
+
+type CityConnectionCreated_at {
+  key: DateTime
+  connection: CityConnection
+}
+
+type CityConnectionUpdated_at {
+  key: DateTime
+  connection: CityConnection
+}
+
+type CityConnectionName {
+  key: String
+  connection: CityConnection
+}
+
+type CityConnectionSlug {
+  key: String
+  connection: CityConnection
+}
+
+type CityConnectionFederal_country {
+  key: ID
+  connection: CityConnection
+}
+
+type CityConnectionSafe_harbour {
+  key: ID
+  connection: CityConnection
+}
+
+type CityConnectionGroup {
+  key: ID
+  connection: CityConnection
+}
+
+type CityConnectionPublished_at {
+  key: DateTime
+  connection: CityConnection
+}
+
+input CityInput {
+  name: String!
+  slug: String!
+  federal_country: ID
+  safe_harbour: ID
+  group: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCityInput {
+  name: String
+  slug: String
+  federal_country: ID
+  safe_harbour: ID
+  group: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createCityInput {
+  data: CityInput
+}
+
+type createCityPayload {
+  city: City
+}
+
+input updateCityInput {
+  where: InputID
+  data: editCityInput
+}
+
+type updateCityPayload {
+  city: City
+}
+
+input deleteCityInput {
+  where: InputID
+}
+
+type deleteCityPayload {
+  city: City
+}
+
+union FederalCountryContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge
+
+"""Input type for dynamic zone content of FederalCountry"""
+scalar FederalCountryContentDynamicZoneInput
+
+type FederalCountry {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  slug: String
+  city: City
+  group: Group
+  content: [FederalCountryContentDynamicZone]
+  published_at: DateTime
+}
+
+type FederalCountryConnection {
+  values: [FederalCountry]
+  groupBy: FederalCountryGroupBy
+  aggregate: FederalCountryAggregator
+}
+
+type FederalCountryAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type FederalCountryGroupBy {
+  id: [FederalCountryConnectionId]
+  created_at: [FederalCountryConnectionCreated_at]
+  updated_at: [FederalCountryConnectionUpdated_at]
+  name: [FederalCountryConnectionName]
+  slug: [FederalCountryConnectionSlug]
+  city: [FederalCountryConnectionCity]
+  group: [FederalCountryConnectionGroup]
+  published_at: [FederalCountryConnectionPublished_at]
+}
+
+type FederalCountryConnectionId {
+  key: ID
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionCreated_at {
+  key: DateTime
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionUpdated_at {
+  key: DateTime
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionName {
+  key: String
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionSlug {
+  key: String
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionCity {
+  key: ID
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionGroup {
+  key: ID
+  connection: FederalCountryConnection
+}
+
+type FederalCountryConnectionPublished_at {
+  key: DateTime
+  connection: FederalCountryConnection
+}
+
+input FederalCountryInput {
+  name: String!
+  slug: String
+  city: ID
+  group: ID
+  content: [FederalCountryContentDynamicZoneInput!]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editFederalCountryInput {
+  name: String
+  slug: String
+  city: ID
+  group: ID
+  content: [FederalCountryContentDynamicZoneInput!]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createFederalCountryInput {
+  data: FederalCountryInput
+}
+
+type createFederalCountryPayload {
+  federalCountry: FederalCountry
+}
+
+input updateFederalCountryInput {
+  where: InputID
+  data: editFederalCountryInput
+}
+
+type updateFederalCountryPayload {
+  federalCountry: FederalCountry
+}
+
+input deleteFederalCountryInput {
+  where: InputID
+}
+
+type deleteFederalCountryPayload {
+  federalCountry: FederalCountry
+}
+
+union GroupContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksContact | ComponentSharedBlocksAccordion | ComponentSharedBlocksMaterial
+
+"""Input type for dynamic zone content of Group"""
+scalar GroupContentDynamicZoneInput
+
+type Group {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  city: City
+  content: [GroupContentDynamicZone]
+  federal_country: FederalCountry
+  featured_image: ComponentHelperBlocksImage
+  published_at: DateTime
+  actions(sort: String, limit: Int, start: Int, where: JSON): [Action]
+}
+
+type GroupConnection {
+  values: [Group]
+  groupBy: GroupGroupBy
+  aggregate: GroupAggregator
+}
+
+type GroupAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type GroupGroupBy {
+  id: [GroupConnectionId]
+  created_at: [GroupConnectionCreated_at]
+  updated_at: [GroupConnectionUpdated_at]
+  city: [GroupConnectionCity]
+  federal_country: [GroupConnectionFederal_country]
+  featured_image: [GroupConnectionFeatured_image]
+  published_at: [GroupConnectionPublished_at]
+}
+
+type GroupConnectionId {
+  key: ID
+  connection: GroupConnection
+}
+
+type GroupConnectionCreated_at {
+  key: DateTime
+  connection: GroupConnection
+}
+
+type GroupConnectionUpdated_at {
+  key: DateTime
+  connection: GroupConnection
+}
+
+type GroupConnectionCity {
+  key: ID
+  connection: GroupConnection
+}
+
+type GroupConnectionFederal_country {
+  key: ID
+  connection: GroupConnection
+}
+
+type GroupConnectionFeatured_image {
+  key: ID
+  connection: GroupConnection
+}
+
+type GroupConnectionPublished_at {
+  key: DateTime
+  connection: GroupConnection
+}
+
+input GroupInput {
+  city: ID
+  content: [GroupContentDynamicZoneInput!]
+  federal_country: ID
+  featured_image: ComponentHelperBlocksImageInput
+  actions: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editGroupInput {
+  city: ID
+  content: [GroupContentDynamicZoneInput!]
+  federal_country: ID
+  featured_image: editComponentHelperBlocksImageInput
+  actions: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createGroupInput {
+  data: GroupInput
+}
+
+type createGroupPayload {
+  group: Group
+}
+
+input updateGroupInput {
+  where: InputID
+  data: editGroupInput
+}
+
+type updateGroupPayload {
+  group: Group
+}
+
+input deleteGroupInput {
+  where: InputID
+}
+
+type deleteGroupPayload {
+  group: Group
+}
+
+type Menu {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  menu: [ComponentMenuMenu]
+}
+
+input MenuInput {
+  menu: [ComponentMenuMenuInput]
+  created_by: ID
+  updated_by: ID
+}
+
+input editMenuInput {
+  menu: [editComponentMenuMenuInput]
+  created_by: ID
+  updated_by: ID
+}
+
+input updateMenuInput {
+  data: editMenuInput
+}
+
+type updateMenuPayload {
+  menu: Menu
+}
+
+type deleteMenuPayload {
+  menu: Menu
+}
+
+enum ENUM_NEWSENTRY_TYPE {
+  news
+  pressrelease
+}
+
+union NewsEntryContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksMaterial | ComponentSharedBlocksRichtext | ComponentSharedBlocksAccordion
+
+"""Input type for dynamic zone content of NewsEntry"""
+scalar NewsEntryContentDynamicZoneInput
+
+type NewsEntry {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String!
+  image: ComponentHelperBlocksImage
+  content: [NewsEntryContentDynamicZone]!
+  type: ENUM_NEWSENTRY_TYPE
+  slug: String
+  published_at: DateTime
+}
+
+type NewsEntryConnection {
+  values: [NewsEntry]
+  groupBy: NewsEntryGroupBy
+  aggregate: NewsEntryAggregator
+}
+
+type NewsEntryAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type NewsEntryGroupBy {
+  id: [NewsEntryConnectionId]
+  created_at: [NewsEntryConnectionCreated_at]
+  updated_at: [NewsEntryConnectionUpdated_at]
+  title: [NewsEntryConnectionTitle]
+  image: [NewsEntryConnectionImage]
+  type: [NewsEntryConnectionType]
+  slug: [NewsEntryConnectionSlug]
+  published_at: [NewsEntryConnectionPublished_at]
+}
+
+type NewsEntryConnectionId {
+  key: ID
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionCreated_at {
+  key: DateTime
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionUpdated_at {
+  key: DateTime
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionTitle {
+  key: String
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionImage {
+  key: ID
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionType {
+  key: String
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionSlug {
+  key: String
+  connection: NewsEntryConnection
+}
+
+type NewsEntryConnectionPublished_at {
+  key: DateTime
+  connection: NewsEntryConnection
+}
+
+input NewsEntryInput {
+  title: String!
+  image: ComponentHelperBlocksImageInput!
+  content: [NewsEntryContentDynamicZoneInput!]!
+  type: ENUM_NEWSENTRY_TYPE
+  slug: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editNewsEntryInput {
+  title: String
+  image: editComponentHelperBlocksImageInput
+  content: [NewsEntryContentDynamicZoneInput!]!
+  type: ENUM_NEWSENTRY_TYPE
+  slug: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createNewsEntryInput {
+  data: NewsEntryInput
+}
+
+type createNewsEntryPayload {
+  newsEntry: NewsEntry
+}
+
+input updateNewsEntryInput {
+  where: InputID
+  data: editNewsEntryInput
+}
+
+type updateNewsEntryPayload {
+  newsEntry: NewsEntry
+}
+
+input deleteNewsEntryInput {
+  where: InputID
+}
+
+type deleteNewsEntryPayload {
+  newsEntry: NewsEntry
+}
+
+union PageContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksAccordion | ComponentSharedBlocksContact | ComponentSharedBlocksMaterial | ComponentSharedBlocksSubNavigation
+
+"""Input type for dynamic zone content of Page"""
+scalar PageContentDynamicZoneInput
+
+type Page {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  title: String!
+  slug: String
+  content: [PageContentDynamicZone]
+  parent: Page
+  published_at: DateTime
+}
+
+type PageConnection {
+  values: [Page]
+  groupBy: PageGroupBy
+  aggregate: PageAggregator
+}
+
+type PageAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type PageGroupBy {
+  id: [PageConnectionId]
+  created_at: [PageConnectionCreated_at]
+  updated_at: [PageConnectionUpdated_at]
+  title: [PageConnectionTitle]
+  slug: [PageConnectionSlug]
+  parent: [PageConnectionParent]
+  published_at: [PageConnectionPublished_at]
+}
+
+type PageConnectionId {
+  key: ID
+  connection: PageConnection
+}
+
+type PageConnectionCreated_at {
+  key: DateTime
+  connection: PageConnection
+}
+
+type PageConnectionUpdated_at {
+  key: DateTime
+  connection: PageConnection
+}
+
+type PageConnectionTitle {
+  key: String
+  connection: PageConnection
+}
+
+type PageConnectionSlug {
+  key: String
+  connection: PageConnection
+}
+
+type PageConnectionParent {
+  key: ID
+  connection: PageConnection
+}
+
+type PageConnectionPublished_at {
+  key: DateTime
+  connection: PageConnection
+}
+
+input PageInput {
+  title: String!
+  slug: String
+  content: [PageContentDynamicZoneInput!]
+  parent: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPageInput {
+  title: String
+  slug: String
+  content: [PageContentDynamicZoneInput!]
+  parent: ID
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createPageInput {
+  data: PageInput
+}
+
+type createPagePayload {
+  page: Page
+}
+
+input updatePageInput {
+  where: InputID
+  data: editPageInput
+}
+
+type updatePagePayload {
+  page: Page
+}
+
+input deletePageInput {
+  where: InputID
+}
+
+type deletePagePayload {
+  page: Page
+}
+
+union SafeHarbourContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksContact | ComponentSharedBlocksAccordion | ComponentSharedBlocksMaterial
+
+"""Input type for dynamic zone content of SafeHarbour"""
+scalar SafeHarbourContentDynamicZoneInput
+
+type SafeHarbour {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  city: City
+  content: [SafeHarbourContentDynamicZone]
+  featured_image: ComponentHelperBlocksImage
+  published_at: DateTime
+}
+
+type SafeHarbourConnection {
+  values: [SafeHarbour]
+  groupBy: SafeHarbourGroupBy
+  aggregate: SafeHarbourAggregator
+}
+
+type SafeHarbourAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type SafeHarbourGroupBy {
+  id: [SafeHarbourConnectionId]
+  created_at: [SafeHarbourConnectionCreated_at]
+  updated_at: [SafeHarbourConnectionUpdated_at]
+  city: [SafeHarbourConnectionCity]
+  featured_image: [SafeHarbourConnectionFeatured_image]
+  published_at: [SafeHarbourConnectionPublished_at]
+}
+
+type SafeHarbourConnectionId {
+  key: ID
+  connection: SafeHarbourConnection
+}
+
+type SafeHarbourConnectionCreated_at {
+  key: DateTime
+  connection: SafeHarbourConnection
+}
+
+type SafeHarbourConnectionUpdated_at {
+  key: DateTime
+  connection: SafeHarbourConnection
+}
+
+type SafeHarbourConnectionCity {
+  key: ID
+  connection: SafeHarbourConnection
+}
+
+type SafeHarbourConnectionFeatured_image {
+  key: ID
+  connection: SafeHarbourConnection
+}
+
+type SafeHarbourConnectionPublished_at {
+  key: DateTime
+  connection: SafeHarbourConnection
+}
+
+input SafeHarbourInput {
+  city: ID
+  content: [SafeHarbourContentDynamicZoneInput!]
+  featured_image: ComponentHelperBlocksImageInput
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editSafeHarbourInput {
+  city: ID
+  content: [SafeHarbourContentDynamicZoneInput!]
+  featured_image: editComponentHelperBlocksImageInput
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input createSafeHarbourInput {
+  data: SafeHarbourInput
+}
+
+type createSafeHarbourPayload {
+  safeHarbour: SafeHarbour
+}
+
+input updateSafeHarbourInput {
+  where: InputID
+  data: editSafeHarbourInput
+}
+
+type updateSafeHarbourPayload {
+  safeHarbour: SafeHarbour
+}
+
+input deleteSafeHarbourInput {
+  where: InputID
+}
+
+type deleteSafeHarbourPayload {
+  safeHarbour: SafeHarbour
+}
+
+type Settings {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  homepage: Page
+}
+
+input SettingInput {
+  homepage: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editSettingInput {
+  homepage: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input updateSettingInput {
+  data: editSettingInput
+}
+
+type updateSettingPayload {
+  setting: Settings
+}
+
+type deleteSettingPayload {
+  setting: Settings
+}
+
+type UploadFile {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+  sum: UploadFileAggregatorSum
+  avg: UploadFileAggregatorAvg
+  min: UploadFileAggregatorMin
+  max: UploadFileAggregatorMax
+}
+
+type UploadFileAggregatorSum {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorAvg {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMin {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileAggregatorMax {
+  width: Float
+  height: Float
+  size: Float
+}
+
+type UploadFileGroupBy {
+  id: [UploadFileConnectionId]
+  created_at: [UploadFileConnectionCreated_at]
+  updated_at: [UploadFileConnectionUpdated_at]
+  name: [UploadFileConnectionName]
+  alternativeText: [UploadFileConnectionAlternativeText]
+  caption: [UploadFileConnectionCaption]
+  width: [UploadFileConnectionWidth]
+  height: [UploadFileConnectionHeight]
+  formats: [UploadFileConnectionFormats]
+  hash: [UploadFileConnectionHash]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  previewUrl: [UploadFileConnectionPreviewUrl]
+  provider: [UploadFileConnectionProvider]
+  provider_metadata: [UploadFileConnectionProvider_metadata]
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdated_at {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionAlternativeText {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCaption {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionWidth {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHeight {
+  key: Int
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionFormats {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: Float
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPreviewUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider_metadata {
+  key: JSON
+  connection: UploadFileConnection
+}
+
+input FileInput {
+  name: String!
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String!
+  ext: String
+  mime: String!
+  size: Float!
+  url: String!
+  previewUrl: String
+  provider: String!
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editFileInput {
+  name: String
+  alternativeText: String
+  caption: String
+  width: Int
+  height: Int
+  formats: JSON
+  hash: String
+  ext: String
+  mime: String
+  size: Float
+  url: String
+  previewUrl: String
+  provider: String
+  provider_metadata: JSON
+  related: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input deleteFileInput {
+  where: InputID
+}
+
+type deleteFilePayload {
+  file: UploadFile
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleGroupBy {
+  id: [UsersPermissionsRoleConnectionId]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+  created_by: ID
+  updated_by: ID
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserGroupBy {
+  id: [UsersPermissionsUserConnectionId]
+  created_at: [UsersPermissionsUserConnectionCreated_at]
+  updated_at: [UsersPermissionsUserConnectionUpdated_at]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+  key: DateTime
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmationToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmationToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  created_by: ID
+  updated_by: ID
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+type ComponentAccordionItem {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+input ComponentAccordionItemInput {
+  title: String!
+  content: String!
+}
+
+input editComponentAccordionItemInput {
+  id: ID
+  title: String
+  content: String
+}
+
+type ComponentHelperBlocksImage {
+  id: ID!
+  image: UploadFile
+  caption: String
+}
+
+input ComponentHelperBlocksImageInput {
+  image: ID
+  caption: String
+}
+
+input editComponentHelperBlocksImageInput {
+  id: ID
+  image: ID
+  caption: String
+}
+
+type ComponentMaterialItem {
+  id: ID!
+  file: UploadFile
+  description: String
+  external_link: String
+}
+
+input ComponentMaterialItemInput {
+  file: ID
+  description: String
+  external_link: String
+}
+
+input editComponentMaterialItemInput {
+  id: ID
+  file: ID
+  description: String
+  external_link: String
+}
+
+type ComponentMenuItem {
+  id: ID!
+  label: String!
+  path: String!
+}
+
+input ComponentMenuItemInput {
+  label: String!
+  path: String!
+}
+
+input editComponentMenuItemInput {
+  id: ID
+  label: String
+  path: String
+}
+
+enum ENUM_COMPONENTMENUMENU_LOCATION {
+  header_meta
+  header_main
+  footer_take_part
+  footer_about
+  footer_meta
+}
+
+type ComponentMenuMenu {
+  id: ID!
+  item: [ComponentMenuItem]
+  location: ENUM_COMPONENTMENUMENU_LOCATION
+  title: String
+}
+
+input ComponentMenuMenuInput {
+  item: [ComponentMenuItemInput]
+  location: ENUM_COMPONENTMENUMENU_LOCATION
+  title: String
+}
+
+input editComponentMenuMenuInput {
+  id: ID
+  item: [editComponentMenuItemInput]
+  location: ENUM_COMPONENTMENUMENU_LOCATION
+  title: String
+}
+
+type ComponentSharedBlocksAccordion {
+  id: ID!
+  item: [ComponentAccordionItem]
+}
+
+input ComponentSharedBlocksAccordionInput {
+  item: [ComponentAccordionItemInput]
+}
+
+input editComponentSharedBlocksAccordionInput {
+  id: ID
+  item: [editComponentAccordionItemInput]
+}
+
+type ComponentSharedBlocksContact {
+  id: ID!
+  facebook: String
+  twitter: String
+  instagram: String
+  email: String
+  telephone: String
+}
+
+input ComponentSharedBlocksContactInput {
+  facebook: String
+  twitter: String
+  instagram: String
+  email: String
+  telephone: String
+}
+
+input editComponentSharedBlocksContactInput {
+  id: ID
+  facebook: String
+  twitter: String
+  instagram: String
+  email: String
+  telephone: String
+}
+
+enum ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL {
+  h1
+  h2
+  h3
+  h4
+}
+
+type ComponentSharedBlocksHeading {
+  id: ID!
+  kicker: String
+  text: String!
+  level: ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL!
+}
+
+input ComponentSharedBlocksHeadingInput {
+  kicker: String
+  text: String!
+  level: ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL
+}
+
+input editComponentSharedBlocksHeadingInput {
+  id: ID
+  kicker: String
+  text: String
+  level: ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL
+}
+
+type ComponentSharedBlocksMaterial {
+  id: ID!
+  item: [ComponentMaterialItem]
+}
+
+input ComponentSharedBlocksMaterialInput {
+  item: [ComponentMaterialItemInput!]
+}
+
+input editComponentSharedBlocksMaterialInput {
+  id: ID
+  item: [editComponentMaterialItemInput]
+}
+
+type ComponentSharedBlocksMedia {
+  id: ID!
+  description: String
+  media(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+}
+
+input ComponentSharedBlocksMediaInput {
+  media: [ID]
+  description: String
+}
+
+input editComponentSharedBlocksMediaInput {
+  id: ID
+  media: [ID]
+  description: String
+}
+
+type ComponentSharedBlocksRichtext {
+  id: ID!
+  richtext: String!
+}
+
+input ComponentSharedBlocksRichtextInput {
+  richtext: String!
+}
+
+input editComponentSharedBlocksRichtextInput {
+  id: ID
+  richtext: String
+}
+
+type ComponentSharedBlocksStageLarge {
+  id: ID!
+  image: ComponentHelperBlocksImage
+  title: String!
+}
+
+input ComponentSharedBlocksStageLargeInput {
+  image: ComponentHelperBlocksImageInput!
+  title: String!
+}
+
+input editComponentSharedBlocksStageLargeInput {
+  id: ID
+  image: editComponentHelperBlocksImageInput
+  title: String
+}
+
+type ComponentSharedBlocksStageMedium {
+  id: ID!
+  intro: String
+  image: ComponentHelperBlocksImage
+  title: String!
+  kicker: String
+}
+
+input ComponentSharedBlocksStageMediumInput {
+  intro: String
+  image: ComponentHelperBlocksImageInput
+  title: String!
+  kicker: String
+}
+
+input editComponentSharedBlocksStageMediumInput {
+  id: ID
+  intro: String
+  image: editComponentHelperBlocksImageInput
+  title: String
+  kicker: String
+}
+
+type ComponentSharedBlocksSubNavigation {
+  id: ID!
+  item: [ComponentSubNavigationItem]
+}
+
+input ComponentSharedBlocksSubNavigationInput {
+  item: [ComponentSubNavigationItemInput!]
+}
+
+input editComponentSharedBlocksSubNavigationInput {
+  id: ID
+  item: [editComponentSubNavigationItemInput]
+}
+
+type ComponentSubNavigationItem {
+  id: ID!
+  path: String!
+  label: String!
+}
+
+input ComponentSubNavigationItemInput {
+  path: String!
+  label: String!
+}
+
+input editComponentSubNavigationItemInput {
+  id: ID
+  path: String
+  label: String
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionWhen | ActionConnectionWhere | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCity | FederalCountryConnectionGroup | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionFederal_country | GroupConnectionFeatured_image | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionImage | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionFeatured_image | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentHelperBlocksImage | ComponentMaterialItem | ComponentMenuItem | ComponentMenuMenu | ComponentSharedBlocksAccordion | ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSubNavigationItem
+
+input InputID {
+  id: ID!
+}
+
+enum PublicationState {
+  LIVE
+  PREVIEW
+}
+
+type AdminUser {
+  id: ID!
+  username: String
+  firstname: String!
+  lastname: String!
+}
+
+type Query {
+  action(id: ID!, publicationState: PublicationState): Action
+  actions(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Action]
+  actionsConnection(sort: String, limit: Int, start: Int, where: JSON): ActionConnection
+  campaign(id: ID!, publicationState: PublicationState): Campaign
+  campaigns(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Campaign]
+  campaignsConnection(sort: String, limit: Int, start: Int, where: JSON): CampaignConnection
+  city(id: ID!, publicationState: PublicationState): City
+  cities(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [City]
+  citiesConnection(sort: String, limit: Int, start: Int, where: JSON): CityConnection
+  federalCountry(id: ID!, publicationState: PublicationState): FederalCountry
+  federalCountries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [FederalCountry]
+  federalCountriesConnection(sort: String, limit: Int, start: Int, where: JSON): FederalCountryConnection
+  group(id: ID!, publicationState: PublicationState): Group
+  groups(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Group]
+  groupsConnection(sort: String, limit: Int, start: Int, where: JSON): GroupConnection
+  menu(publicationState: PublicationState): Menu
+  newsEntry(id: ID!, publicationState: PublicationState): NewsEntry
+  newsEntries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [NewsEntry]
+  newsEntriesConnection(sort: String, limit: Int, start: Int, where: JSON): NewsEntryConnection
+  page(id: ID!, publicationState: PublicationState): Page
+  pages(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Page]
+  pagesConnection(sort: String, limit: Int, start: Int, where: JSON): PageConnection
+  safeHarbour(id: ID!, publicationState: PublicationState): SafeHarbour
+  safeHarbours(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [SafeHarbour]
+  safeHarboursConnection(sort: String, limit: Int, start: Int, where: JSON): SafeHarbourConnection
+  setting(publicationState: PublicationState): Settings
+  files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+type Mutation {
+  createAction(input: createActionInput): createActionPayload
+  updateAction(input: updateActionInput): updateActionPayload
+  deleteAction(input: deleteActionInput): deleteActionPayload
+  createCampaign(input: createCampaignInput): createCampaignPayload
+  updateCampaign(input: updateCampaignInput): updateCampaignPayload
+  deleteCampaign(input: deleteCampaignInput): deleteCampaignPayload
+  createCity(input: createCityInput): createCityPayload
+  updateCity(input: updateCityInput): updateCityPayload
+  deleteCity(input: deleteCityInput): deleteCityPayload
+  createFederalCountry(input: createFederalCountryInput): createFederalCountryPayload
+  updateFederalCountry(input: updateFederalCountryInput): updateFederalCountryPayload
+  deleteFederalCountry(input: deleteFederalCountryInput): deleteFederalCountryPayload
+  createGroup(input: createGroupInput): createGroupPayload
+  updateGroup(input: updateGroupInput): updateGroupPayload
+  deleteGroup(input: deleteGroupInput): deleteGroupPayload
+  updateMenu(input: updateMenuInput): updateMenuPayload
+  deleteMenu: deleteMenuPayload
+  createNewsEntry(input: createNewsEntryInput): createNewsEntryPayload
+  updateNewsEntry(input: updateNewsEntryInput): updateNewsEntryPayload
+  deleteNewsEntry(input: deleteNewsEntryInput): deleteNewsEntryPayload
+  createPage(input: createPageInput): createPagePayload
+  updatePage(input: updatePageInput): updatePagePayload
+  deletePage(input: deletePageInput): deletePagePayload
+  createSafeHarbour(input: createSafeHarbourInput): createSafeHarbourPayload
+  updateSafeHarbour(input: updateSafeHarbourInput): updateSafeHarbourPayload
+  deleteSafeHarbour(input: deleteSafeHarbourInput): deleteSafeHarbourPayload
+  updateSetting(input: updateSettingInput): updateSettingPayload
+  deleteSetting: deleteSettingPayload
+
+  """Delete one file"""
+  deleteFile(input: deleteFileInput): deleteFilePayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, field: String, source: String, file: Upload!): UploadFile!
+  multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
+  updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
+  login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+  register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+  forgotPassword(email: String!): UserPermissionsPasswordPayload
+  resetPassword(password: String!, passwordConfirmation: String!, code: String!): UsersPermissionsLoginPayload
+  emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+"""A time string with format: HH:mm:ss.SSS"""
+scalar Time
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload

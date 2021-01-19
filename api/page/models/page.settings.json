@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "name": "Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.richtext",
+        "shared-blocks.stage-large",
+        "shared-blocks.stage-medium",
+        "shared-blocks.accordion",
+        "shared-blocks.contact",
+        "shared-blocks.material",
+        "shared-blocks.sub-navigation"
+      ]
+    },
+    "parent": {
+      "model": "page"
+    }
+  }
+}

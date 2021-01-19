@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_blocks_contacts",
+  "info": {
+    "name": "Contact",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    }
+  }
+}

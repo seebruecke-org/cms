@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_blocks_materials",
+  "info": {
+    "name": "Material",
+    "icon": "download"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "material.item",
+      "required": true
+    }
+  }
+}

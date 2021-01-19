@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "federal_countries",
+  "info": {
+    "name": "Federal Country",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "city": {
+      "model": "city",
+      "via": "federal_country"
+    },
+    "group": {
+      "model": "group",
+      "via": "federal_country"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.contact",
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.stage-medium",
+        "shared-blocks.material",
+        "shared-blocks.accordion",
+        "shared-blocks.richtext",
+        "shared-blocks.stage-large"
+      ]
+    }
+  }
+}

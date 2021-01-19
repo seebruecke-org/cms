@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_blocks_headings",
+  "info": {
+    "name": "Heading",
+    "icon": "heading",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "kicker": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+      ],
+      "default": "h2",
+      "required": true
+    }
+  }
+}

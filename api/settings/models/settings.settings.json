@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "name": "settings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "homepage": {
+      "model": "page"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_blocks_stage_larges",
+  "info": {
+    "name": "Stage (large)",
+    "icon": "chalkboard-teacher",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.image",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

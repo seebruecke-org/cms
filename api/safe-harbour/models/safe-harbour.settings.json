@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "safe_harbour",
+  "info": {
+    "name": "Safe Harbour",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "city": {
+      "model": "city",
+      "via": "safe_harbour"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.richtext",
+        "shared-blocks.contact",
+        "shared-blocks.accordion",
+        "shared-blocks.material"
+      ]
+    },
+    "featured_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.image"
+    }
+  }
+}
