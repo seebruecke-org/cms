@@ -1,13 +1,7 @@
-uploads/
-vendor/
-themes/
-wordpress.sql
-node_modules/
-
+.cache/
 .env
-plugins/*
+.strapi-updater.json
+.tmp/
 build/
-
-# It's currently not possible to install polylang through composer
-!plugins/polylang-pro
-!plugins/sb-blocks
+node_modules/
+public/uploads
