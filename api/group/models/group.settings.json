@@ -12,8 +12,8 @@
   },
   "attributes": {
     "city": {
-      "model": "city",
-      "via": "group"
+      "via": "group",
+      "model": "city"
     },
     "content": {
       "type": "dynamiczone",
@@ -26,17 +26,13 @@
         "shared-blocks.material"
       ]
     },
-    "federal_country": {
-      "via": "group",
-      "model": "federal-country"
-    },
     "featured_image": {
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.image"
     },
     "actions": {
-      "via": "groups",
+      "via": "group",
       "collection": "action"
     }
   }

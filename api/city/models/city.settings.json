@@ -22,16 +22,21 @@
       "targetField": "name"
     },
     "federal_country": {
-      "via": "city",
-      "model": "federal-country"
+      "model": "federal-country",
+      "via": "cities"
     },
     "safe_harbour": {
-      "via": "city",
-      "model": "safe-harbour"
+      "model": "safe-harbour",
+      "via": "city"
     },
     "group": {
-      "via": "city",
-      "model": "group"
+      "model": "group",
+      "via": "city"
+    },
+    "is_city_state": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

@@ -19,14 +19,6 @@
       "type": "uid",
       "targetField": "name"
     },
-    "city": {
-      "model": "city",
-      "via": "federal_country"
-    },
-    "group": {
-      "model": "group",
-      "via": "federal_country"
-    },
     "content": {
       "type": "dynamiczone",
       "components": [
@@ -39,6 +31,14 @@
         "shared-blocks.richtext",
         "shared-blocks.stage-large"
       ]
+    },
+    "country": {
+      "via": "federal_countries",
+      "model": "country"
+    },
+    "cities": {
+      "via": "federal_country",
+      "collection": "city"
     }
   }
 }

@@ -12,8 +12,8 @@
   },
   "attributes": {
     "city": {
-      "model": "city",
-      "via": "safe_harbour"
+      "via": "safe_harbour",
+      "model": "city"
     },
     "content": {
       "type": "dynamiczone",

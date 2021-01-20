@@ -37,10 +37,9 @@
       "type": "string",
       "required": true
     },
-    "groups": {
-      "collection": "group",
-      "via": "actions",
-      "dominant": true
+    "group": {
+      "model": "group",
+      "via": "actions"
     }
   }
 }
