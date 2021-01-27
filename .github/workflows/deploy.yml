@@ -41,3 +41,11 @@ jobs:
           source: "*"
           target: "~/html/cms/"
           debug: true
+
+      - name: Restart supervisord service
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: supervisorctl restart ${{ secrets.SUPERVISORD_SERVICE }}
