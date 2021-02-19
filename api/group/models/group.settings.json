@@ -31,9 +31,9 @@
       "repeatable": false,
       "component": "helper-blocks.image"
     },
-    "actions": {
+    "action": {
       "via": "group",
-      "collection": "action"
+      "model": "action"
     }
   }
 }
