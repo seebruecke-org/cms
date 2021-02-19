@@ -39,6 +39,16 @@
         "large"
       ],
       "default": "small"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "join",
+        "campaign",
+        "action"
+      ],
+      "default": "join",
+      "required": true
     }
   }
 }
