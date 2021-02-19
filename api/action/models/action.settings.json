@@ -23,9 +23,7 @@
         "shared-blocks.media",
         "shared-blocks.material",
         "shared-blocks.accordion",
-        "shared-blocks.richtext",
-        "shared-blocks.stage-large",
-        "shared-blocks.stage-medium"
+        "shared-blocks.richtext"
       ],
       "required": true
     },
@@ -56,6 +54,9 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "facebook_link": {
+      "type": "string"
     }
   }
 }
