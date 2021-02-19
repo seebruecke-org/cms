@@ -1953,7 +1953,7 @@ enum ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE {
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE {
-  join
+  internal
   campaign
   action
 }
@@ -1962,32 +1962,32 @@ type ComponentSharedBlocksUnterbrecher {
   id: ID!
   title: ComponentSharedBlocksHeading
   intro: String
-  media: ComponentHelperBlocksImage
   orientation_reversed: Boolean
   cta: ComponentHelperBlocksCallToAction
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE!
+  media: UploadFile
 }
 
 input ComponentSharedBlocksUnterbrecherInput {
   title: ComponentSharedBlocksHeadingInput!
   intro: String
-  media: ComponentHelperBlocksImageInput!
   orientation_reversed: Boolean
   cta: ComponentHelperBlocksCallToActionInput!
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE
+  media: ID
 }
 
 input editComponentSharedBlocksUnterbrecherInput {
   id: ID
   title: editComponentSharedBlocksHeadingInput
   intro: String
-  media: editComponentHelperBlocksImageInput
   orientation_reversed: Boolean
   cta: editComponentHelperBlocksCallToActionInput
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE
+  media: ID
 }
 
 type ComponentSubNavigationItem {
