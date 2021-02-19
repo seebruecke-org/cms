@@ -48,4 +48,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          script: supervisorctl restart ${{ secrets.SUPERVISORD_SERVICE }}
+          script: |
+            cd ~/html/cms/
+            npm install sqlite3
+            supervisorctl restart ${{ secrets.SUPERVISORD_SERVICE }}
