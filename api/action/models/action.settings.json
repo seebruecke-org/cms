@@ -23,7 +23,8 @@
         "shared-blocks.media",
         "shared-blocks.material",
         "shared-blocks.accordion",
-        "shared-blocks.richtext"
+        "shared-blocks.richtext",
+        "shared-blocks.unterbrecher"
       ],
       "required": true
     },
@@ -40,8 +41,8 @@
       "via": "action"
     },
     "group": {
-      "model": "group",
-      "via": "action"
+      "via": "action",
+      "model": "group"
     },
     "end": {
       "type": "datetime",

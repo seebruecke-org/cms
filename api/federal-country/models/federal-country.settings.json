@@ -29,16 +29,17 @@
         "shared-blocks.material",
         "shared-blocks.accordion",
         "shared-blocks.richtext",
-        "shared-blocks.stage-large"
+        "shared-blocks.stage-large",
+        "shared-blocks.unterbrecher"
       ]
     },
     "country": {
-      "via": "federal_countries",
-      "model": "country"
+      "model": "country",
+      "via": "federal_countries"
     },
     "cities": {
-      "via": "federal_country",
-      "collection": "city"
+      "collection": "city",
+      "via": "federal_country"
     }
   }
 }

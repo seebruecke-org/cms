@@ -12,8 +12,8 @@
   },
   "attributes": {
     "city": {
-      "via": "group",
-      "model": "city"
+      "model": "city",
+      "via": "group"
     },
     "content": {
       "type": "dynamiczone",
@@ -23,7 +23,8 @@
         "shared-blocks.richtext",
         "shared-blocks.contact",
         "shared-blocks.accordion",
-        "shared-blocks.material"
+        "shared-blocks.material",
+        "shared-blocks.unterbrecher"
       ]
     },
     "featured_image": {
@@ -32,8 +33,8 @@
       "component": "helper-blocks.image"
     },
     "action": {
-      "via": "group",
-      "model": "action"
+      "model": "action",
+      "via": "group"
     }
   }
 }

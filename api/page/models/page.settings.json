@@ -30,7 +30,8 @@
         "shared-blocks.accordion",
         "shared-blocks.contact",
         "shared-blocks.material",
-        "shared-blocks.sub-navigation"
+        "shared-blocks.sub-navigation",
+        "shared-blocks.unterbrecher"
       ]
     },
     "parent": {

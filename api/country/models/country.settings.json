@@ -16,8 +16,8 @@
       "required": true
     },
     "federal_countries": {
-      "collection": "federal-country",
-      "via": "country"
+      "via": "country",
+      "collection": "federal-country"
     },
     "slug": {
       "type": "uid",

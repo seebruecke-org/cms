@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_blocks_interrupts",
+  "info": {
+    "name": "Unterbrecher",
+    "icon": "clone",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-blocks.heading",
+      "required": true
+    },
+    "intro": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.image",
+      "required": true
+    },
+    "orientation_reversed": {
+      "type": "boolean",
+      "default": false
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.call-to-action",
+      "required": true
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "large"
+      ],
+      "default": "small"
+    }
+  }
+}

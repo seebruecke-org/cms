@@ -16,6 +16,12 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.call-to-action",
+      "required": true
     }
   }
 }
