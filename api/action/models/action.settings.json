@@ -51,6 +51,11 @@
     },
     "intro": {
       "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }
