@@ -32,17 +32,13 @@
       "type": "datetime",
       "required": true
     },
-    "where": {
+    "location_detail": {
       "type": "string",
       "required": true
     },
-    "city": {
-      "model": "city",
-      "via": "action"
-    },
     "group": {
-      "via": "action",
-      "model": "group"
+      "model": "group",
+      "via": "action"
     },
     "end": {
       "type": "datetime",
@@ -58,6 +54,10 @@
     },
     "facebook_link": {
       "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "required": true
     }
   }
 }

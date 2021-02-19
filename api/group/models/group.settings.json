@@ -33,8 +33,8 @@
       "component": "helper-blocks.image"
     },
     "action": {
-      "model": "action",
-      "via": "group"
+      "via": "group",
+      "model": "action"
     }
   }
 }

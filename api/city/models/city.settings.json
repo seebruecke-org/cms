@@ -37,10 +37,6 @@
       "type": "boolean",
       "default": false,
       "required": true
-    },
-    "action": {
-      "via": "city",
-      "model": "action"
     }
   }
 }
