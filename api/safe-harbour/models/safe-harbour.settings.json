@@ -12,8 +12,8 @@
   },
   "attributes": {
     "city": {
-      "via": "safe_harbour",
-      "model": "city"
+      "model": "city",
+      "via": "safe_harbour"
     },
     "content": {
       "type": "dynamiczone",
@@ -30,6 +30,9 @@
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.image"
+    },
+    "since": {
+      "type": "date"
     }
   }
 }
