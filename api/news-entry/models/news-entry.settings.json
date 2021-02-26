@@ -19,7 +19,7 @@
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.image",
-      "required": true
+      "required": false
     },
     "content": {
       "type": "dynamiczone",

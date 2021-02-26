@@ -38,8 +38,8 @@
       "via": "federal_countries"
     },
     "cities": {
-      "collection": "city",
-      "via": "federal_country"
+      "via": "federal_country",
+      "collection": "city"
     }
   }
 }
