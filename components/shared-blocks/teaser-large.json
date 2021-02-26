@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_blocks_teaser_large_s",
+  "info": {
+    "name": "Teaser (Large)",
+    "icon": "medal"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "richtext"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.call-to-action",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "internal",
+        "campaign",
+        "action",
+        "general"
+      ],
+      "default": "internal",
+      "required": true
+    }
+  }
+}

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "campaigns",
   "info": {
-    "name": "campaign"
+    "name": "campaign",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -24,7 +25,9 @@
         "shared-blocks.material",
         "shared-blocks.accordion",
         "shared-blocks.richtext",
-        "shared-blocks.stage-large"
+        "shared-blocks.stage-large",
+        "shared-blocks.unterbrecher",
+        "shared-blocks.teaser-large"
       ]
     }
   }

@@ -12,8 +12,8 @@
   },
   "attributes": {
     "city": {
-      "via": "group",
-      "model": "city"
+      "model": "city",
+      "via": "group"
     },
     "content": {
       "type": "dynamiczone",
@@ -24,7 +24,8 @@
         "shared-blocks.contact",
         "shared-blocks.accordion",
         "shared-blocks.material",
-        "shared-blocks.unterbrecher"
+        "shared-blocks.unterbrecher",
+        "shared-blocks.teaser-large"
       ]
     },
     "featured_image": {
