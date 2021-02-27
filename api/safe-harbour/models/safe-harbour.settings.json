@@ -12,8 +12,8 @@
   },
   "attributes": {
     "city": {
-      "via": "safe_harbour",
-      "model": "city"
+      "model": "city",
+      "via": "safe_harbour"
     },
     "content": {
       "type": "dynamiczone",
@@ -23,7 +23,10 @@
         "shared-blocks.richtext",
         "shared-blocks.contact",
         "shared-blocks.accordion",
-        "shared-blocks.material"
+        "shared-blocks.material",
+        "shared-blocks.teasers-small",
+        "shared-blocks.teaser-large",
+        "shared-blocks.unterbrecher"
       ]
     },
     "featured_image": {

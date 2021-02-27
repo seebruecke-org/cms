@@ -26,8 +26,8 @@
       "model": "federal-country"
     },
     "safe_harbour": {
-      "model": "safe-harbour",
-      "via": "city"
+      "via": "city",
+      "model": "safe-harbour"
     },
     "group": {
       "via": "city",

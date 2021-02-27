@@ -31,7 +31,8 @@
         "shared-blocks.richtext",
         "shared-blocks.stage-large",
         "shared-blocks.unterbrecher",
-        "shared-blocks.teaser-large"
+        "shared-blocks.teaser-large",
+        "shared-blocks.teasers-small"
       ]
     },
     "country": {

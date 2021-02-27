@@ -25,7 +25,8 @@
         "shared-blocks.accordion",
         "shared-blocks.material",
         "shared-blocks.unterbrecher",
-        "shared-blocks.teaser-large"
+        "shared-blocks.teaser-large",
+        "shared-blocks.teasers-small"
       ]
     },
     "featured_image": {

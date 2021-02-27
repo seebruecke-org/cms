@@ -32,7 +32,8 @@
         "shared-blocks.material",
         "shared-blocks.sub-navigation",
         "shared-blocks.unterbrecher",
-        "shared-blocks.teaser-large"
+        "shared-blocks.teaser-large",
+        "shared-blocks.teasers-small"
       ]
     },
     "parent": {

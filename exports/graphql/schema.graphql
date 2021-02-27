@@ -41,7 +41,7 @@ type UserPermissionsPasswordPayload {
   ok: Boolean!
 }
 
-union ActionContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge
+union ActionContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall
 
 """Input type for dynamic zone content of Action"""
 scalar ActionContentDynamicZoneInput
@@ -212,7 +212,7 @@ type deleteActionPayload {
   action: Action
 }
 
-union CampaignContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge
+union CampaignContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall
 
 """Input type for dynamic zone content of Campaign"""
 scalar CampaignContentDynamicZoneInput
@@ -559,7 +559,7 @@ type deleteCountryPayload {
   country: Country
 }
 
-union FederalCountryContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge
+union FederalCountryContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall
 
 """Input type for dynamic zone content of FederalCountry"""
 scalar FederalCountryContentDynamicZoneInput
@@ -679,7 +679,7 @@ type deleteFederalCountryPayload {
   federalCountry: FederalCountry
 }
 
-union GroupContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksContact | ComponentSharedBlocksAccordion | ComponentSharedBlocksMaterial | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge
+union GroupContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksContact | ComponentSharedBlocksAccordion | ComponentSharedBlocksMaterial | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall
 
 """Input type for dynamic zone content of Group"""
 scalar GroupContentDynamicZoneInput
@@ -958,7 +958,7 @@ type deleteNewsEntryPayload {
   newsEntry: NewsEntry
 }
 
-union PageContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksAccordion | ComponentSharedBlocksContact | ComponentSharedBlocksMaterial | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge
+union PageContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksAccordion | ComponentSharedBlocksContact | ComponentSharedBlocksMaterial | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall
 
 """Input type for dynamic zone content of Page"""
 scalar PageContentDynamicZoneInput
@@ -1075,7 +1075,7 @@ type deletePagePayload {
   page: Page
 }
 
-union SafeHarbourContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksContact | ComponentSharedBlocksAccordion | ComponentSharedBlocksMaterial
+union SafeHarbourContentDynamicZone = ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksContact | ComponentSharedBlocksAccordion | ComponentSharedBlocksMaterial | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksUnterbrecher
 
 """Input type for dynamic zone content of SafeHarbour"""
 scalar SafeHarbourContentDynamicZoneInput
@@ -1989,6 +1989,20 @@ input editComponentSharedBlocksTeaserLargeInput {
   type: ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE
 }
 
+type ComponentSharedBlocksTeasersSmall {
+  id: ID!
+  item: [ComponentTeasersSmallItem]
+}
+
+input ComponentSharedBlocksTeasersSmallInput {
+  item: [ComponentTeasersSmallItemInput]
+}
+
+input editComponentSharedBlocksTeasersSmallInput {
+  id: ID
+  item: [editComponentTeasersSmallItemInput]
+}
+
 enum ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE {
   small
   large
@@ -2049,7 +2063,36 @@ input editComponentSubNavigationItemInput {
   label: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionGroup | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionFacebook_link | ActionConnectionLocation | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionFeatured_image | GroupConnectionAction | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionImage | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionFeatured_image | SafeHarbourConnectionSince | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentHelperBlocksCallToAction | ComponentHelperBlocksImage | ComponentMaterialItem | ComponentMenuItem | ComponentMenuMenu | ComponentSharedBlocksAccordion | ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksUnterbrecher | ComponentSubNavigationItem
+enum ENUM_COMPONENTTEASERSSMALLITEM_TYPE {
+  internal
+  campaign
+  action
+}
+
+type ComponentTeasersSmallItem {
+  id: ID!
+  title: String!
+  path: String!
+  label: String!
+  type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE!
+}
+
+input ComponentTeasersSmallItemInput {
+  title: String!
+  path: String!
+  label: String!
+  type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE
+}
+
+input editComponentTeasersSmallItemInput {
+  id: ID
+  title: String
+  path: String
+  label: String
+  type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionGroup | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionFacebook_link | ActionConnectionLocation | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionFeatured_image | GroupConnectionAction | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionImage | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionFeatured_image | SafeHarbourConnectionSince | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentHelperBlocksCallToAction | ComponentHelperBlocksImage | ComponentMaterialItem | ComponentMenuItem | ComponentMenuMenu | ComponentSharedBlocksAccordion | ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMedia | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentSubNavigationItem | ComponentTeasersSmallItem
 
 input InputID {
   id: ID!

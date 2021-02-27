@@ -25,7 +25,8 @@
         "shared-blocks.accordion",
         "shared-blocks.richtext",
         "shared-blocks.unterbrecher",
-        "shared-blocks.teaser-large"
+        "shared-blocks.teaser-large",
+        "shared-blocks.teasers-small"
       ],
       "required": true
     },
