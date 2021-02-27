@@ -1811,6 +1811,7 @@ type ComponentSharedBlocksContact {
   instagram: String
   email: String
   telephone: String
+  youtube: String
 }
 
 input ComponentSharedBlocksContactInput {
@@ -1819,6 +1820,7 @@ input ComponentSharedBlocksContactInput {
   instagram: String
   email: String
   telephone: String
+  youtube: String
 }
 
 input editComponentSharedBlocksContactInput {
@@ -1828,6 +1830,7 @@ input editComponentSharedBlocksContactInput {
   instagram: String
   email: String
   telephone: String
+  youtube: String
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL {
