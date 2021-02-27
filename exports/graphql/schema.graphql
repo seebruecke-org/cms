@@ -1727,12 +1727,14 @@ type ComponentMaterialItem {
   file: UploadFile
   description: String
   external_link: String
+  name: String
 }
 
 input ComponentMaterialItemInput {
   file: ID
   description: String
   external_link: String
+  name: String
 }
 
 input editComponentMaterialItemInput {
@@ -1740,6 +1742,7 @@ input editComponentMaterialItemInput {
   file: ID
   description: String
   external_link: String
+  name: String
 }
 
 type ComponentMenuItem {
