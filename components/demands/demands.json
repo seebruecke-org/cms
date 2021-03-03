@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_demands_demands",
+  "info": {
+    "name": "Demands",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "public_solidarity_declaration": {
+      "type": "boolean"
+    },
+    "supports_searescue_actively": {
+      "type": "boolean"
+    },
+    "admission_in_addition_quota": {
+      "type": "boolean"
+    },
+    "admission_program": {
+      "type": "boolean"
+    },
+    "communal_reception": {
+      "type": "boolean"
+    },
+    "national_international_networking": {
+      "type": "boolean"
+    },
+    "alliance_safe_harbours": {
+      "type": "boolean"
+    },
+    "transparency": {
+      "type": "boolean"
+    }
+  }
+}

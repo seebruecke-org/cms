@@ -36,6 +36,12 @@
     },
     "since": {
       "type": "date"
+    },
+    "Demands": {
+      "type": "component",
+      "repeatable": false,
+      "component": "demands.demands",
+      "required": true
     }
   }
 }
