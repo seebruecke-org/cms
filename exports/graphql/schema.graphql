@@ -1877,12 +1877,14 @@ type ComponentSharedBlocksActions {
   city: City
   max_actions_to_show: Int
   show_map: Boolean!
+  cta: ComponentHelperBlocksCallToAction
 }
 
 input ComponentSharedBlocksActionInput {
   city: ID
   max_actions_to_show: Int
   show_map: Boolean
+  cta: ComponentHelperBlocksCallToActionInput
 }
 
 input editComponentSharedBlocksActionInput {
@@ -1890,6 +1892,7 @@ input editComponentSharedBlocksActionInput {
   city: ID
   max_actions_to_show: Int
   show_map: Boolean
+  cta: editComponentHelperBlocksCallToActionInput
 }
 
 type ComponentSharedBlocksContact {

@@ -19,6 +19,11 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.call-to-action"
     }
   }
 }
