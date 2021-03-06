@@ -1876,17 +1876,20 @@ type ComponentSharedBlocksActions {
   id: ID!
   city: City
   max_actions_to_show: Int
+  show_map: Boolean!
 }
 
 input ComponentSharedBlocksActionInput {
   city: ID
   max_actions_to_show: Int
+  show_map: Boolean
 }
 
 input editComponentSharedBlocksActionInput {
   id: ID
   city: ID
   max_actions_to_show: Int
+  show_map: Boolean
 }
 
 type ComponentSharedBlocksContact {
