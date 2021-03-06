@@ -33,7 +33,8 @@
         "shared-blocks.sub-navigation",
         "shared-blocks.unterbrecher",
         "shared-blocks.teaser-large",
-        "shared-blocks.teasers-small"
+        "shared-blocks.teasers-small",
+        "shared-blocks.actions"
       ]
     },
     "parent": {
