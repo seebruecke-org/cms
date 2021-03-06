@@ -2,32 +2,57 @@
   "collectionName": "components_demands_demands",
   "info": {
     "name": "Demands",
-    "icon": "book"
+    "icon": "book",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "public_solidarity_declaration": {
+    "public_solidarity_declaration_decided": {
       "type": "boolean"
     },
-    "supports_searescue_actively": {
+    "supports_searescue_actively_decided": {
       "type": "boolean"
     },
-    "admission_in_addition_quota": {
+    "admission_in_addition_quota_decided": {
       "type": "boolean"
     },
-    "admission_program": {
+    "admission_program_decided_decided": {
       "type": "boolean"
     },
-    "communal_reception": {
+    "communal_reception_decided": {
       "type": "boolean"
     },
-    "national_international_networking": {
+    "national_international_networking_decided": {
       "type": "boolean"
     },
-    "alliance_safe_harbours": {
+    "alliance_safe_harbours_decided": {
       "type": "boolean"
     },
-    "transparency": {
+    "transparency_decided": {
+      "type": "boolean"
+    },
+    "public_solidarity_declaration_fullfilled": {
+      "type": "boolean"
+    },
+    "supports_searescue_actively_fullfilled": {
+      "type": "boolean"
+    },
+    "admission_in_addition_quota_fullfilled": {
+      "type": "boolean"
+    },
+    "admission_program_fullfilled": {
+      "type": "boolean"
+    },
+    "communal_reception_fullfilled": {
+      "type": "boolean"
+    },
+    "national_international_networking_fullfilled": {
+      "type": "boolean"
+    },
+    "alliance_safe_harbours_fullfilled": {
+      "type": "boolean"
+    },
+    "transparency_fullfilled": {
       "type": "boolean"
     }
   }

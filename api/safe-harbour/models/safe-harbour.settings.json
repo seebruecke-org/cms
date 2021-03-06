@@ -37,7 +37,7 @@
     "since": {
       "type": "date"
     },
-    "Demands": {
+    "demands": {
       "type": "component",
       "repeatable": false,
       "component": "demands.demands",

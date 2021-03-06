@@ -1088,7 +1088,7 @@ type SafeHarbour {
   content: [SafeHarbourContentDynamicZone]
   featured_image: ComponentHelperBlocksImage
   since: Date
-  Demands: ComponentDemandsDemands
+  demands: ComponentDemandsDemands
   published_at: DateTime
 }
 
@@ -1110,7 +1110,7 @@ type SafeHarbourGroupBy {
   city: [SafeHarbourConnectionCity]
   featured_image: [SafeHarbourConnectionFeatured_image]
   since: [SafeHarbourConnectionSince]
-  Demands: [SafeHarbourConnectionDemands]
+  demands: [SafeHarbourConnectionDemands]
   published_at: [SafeHarbourConnectionPublished_at]
 }
 
@@ -1159,7 +1159,7 @@ input SafeHarbourInput {
   content: [SafeHarbourContentDynamicZoneInput!]
   featured_image: ComponentHelperBlocksImageInput
   since: Date
-  Demands: ComponentDemandsDemandInput!
+  demands: ComponentDemandsDemandInput!
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1170,7 +1170,7 @@ input editSafeHarbourInput {
   content: [SafeHarbourContentDynamicZoneInput!]
   featured_image: editComponentHelperBlocksImageInput
   since: Date
-  Demands: editComponentDemandsDemandInput
+  demands: editComponentDemandsDemandInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1699,37 +1699,61 @@ input editComponentAccordionItemInput {
 
 type ComponentDemandsDemands {
   id: ID!
-  public_solidarity_declaration: Boolean
-  supports_searescue_actively: Boolean
-  admission_in_addition_quota: Boolean
-  admission_program: Boolean
-  communal_reception: Boolean
-  national_international_networking: Boolean
-  alliance_safe_harbours: Boolean
-  transparency: Boolean
+  public_solidarity_declaration_decided: Boolean
+  supports_searescue_actively_decided: Boolean
+  admission_in_addition_quota_decided: Boolean
+  admission_program_decided_decided: Boolean
+  communal_reception_decided: Boolean
+  national_international_networking_decided: Boolean
+  alliance_safe_harbours_decided: Boolean
+  transparency_decided: Boolean
+  public_solidarity_declaration_fullfilled: Boolean
+  supports_searescue_actively_fullfilled: Boolean
+  admission_in_addition_quota_fullfilled: Boolean
+  admission_program_fullfilled: Boolean
+  communal_reception_fullfilled: Boolean
+  national_international_networking_fullfilled: Boolean
+  alliance_safe_harbours_fullfilled: Boolean
+  transparency_fullfilled: Boolean
 }
 
 input ComponentDemandsDemandInput {
-  public_solidarity_declaration: Boolean
-  supports_searescue_actively: Boolean
-  admission_in_addition_quota: Boolean
-  admission_program: Boolean
-  communal_reception: Boolean
-  national_international_networking: Boolean
-  alliance_safe_harbours: Boolean
-  transparency: Boolean
+  public_solidarity_declaration_decided: Boolean
+  supports_searescue_actively_decided: Boolean
+  admission_in_addition_quota_decided: Boolean
+  admission_program_decided_decided: Boolean
+  communal_reception_decided: Boolean
+  national_international_networking_decided: Boolean
+  alliance_safe_harbours_decided: Boolean
+  transparency_decided: Boolean
+  public_solidarity_declaration_fullfilled: Boolean
+  supports_searescue_actively_fullfilled: Boolean
+  admission_in_addition_quota_fullfilled: Boolean
+  admission_program_fullfilled: Boolean
+  communal_reception_fullfilled: Boolean
+  national_international_networking_fullfilled: Boolean
+  alliance_safe_harbours_fullfilled: Boolean
+  transparency_fullfilled: Boolean
 }
 
 input editComponentDemandsDemandInput {
   id: ID
-  public_solidarity_declaration: Boolean
-  supports_searescue_actively: Boolean
-  admission_in_addition_quota: Boolean
-  admission_program: Boolean
-  communal_reception: Boolean
-  national_international_networking: Boolean
-  alliance_safe_harbours: Boolean
-  transparency: Boolean
+  public_solidarity_declaration_decided: Boolean
+  supports_searescue_actively_decided: Boolean
+  admission_in_addition_quota_decided: Boolean
+  admission_program_decided_decided: Boolean
+  communal_reception_decided: Boolean
+  national_international_networking_decided: Boolean
+  alliance_safe_harbours_decided: Boolean
+  transparency_decided: Boolean
+  public_solidarity_declaration_fullfilled: Boolean
+  supports_searescue_actively_fullfilled: Boolean
+  admission_in_addition_quota_fullfilled: Boolean
+  admission_program_fullfilled: Boolean
+  communal_reception_fullfilled: Boolean
+  national_international_networking_fullfilled: Boolean
+  alliance_safe_harbours_fullfilled: Boolean
+  transparency_fullfilled: Boolean
 }
 
 type ComponentHelperBlocksCallToAction {
