@@ -16,7 +16,7 @@
     "admission_in_addition_quota_decided": {
       "type": "boolean"
     },
-    "admission_program_decided_decided": {
+    "admission_program_decided": {
       "type": "boolean"
     },
     "communal_reception_decided": {
