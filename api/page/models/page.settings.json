@@ -34,7 +34,8 @@
         "shared-blocks.unterbrecher",
         "shared-blocks.teaser-large",
         "shared-blocks.teasers-small",
-        "shared-blocks.actions"
+        "shared-blocks.actions",
+        "shared-blocks.media-gallery"
       ]
     },
     "parent": {
