@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_media_gallery_items",
+  "info": {
+    "name": "items",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "caption": {
+      "type": "richtext"
+    }
+  }
+}
