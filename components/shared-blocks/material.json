@@ -2,7 +2,8 @@
   "collectionName": "components_shared_blocks_materials",
   "info": {
     "name": "Material",
-    "icon": "download"
+    "icon": "download",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,10 @@
       "repeatable": true,
       "component": "material.item",
       "required": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Material"
     }
   }
 }

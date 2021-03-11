@@ -1971,15 +1971,18 @@ input editComponentSharedBlocksHeadingInput {
 type ComponentSharedBlocksMaterial {
   id: ID!
   item: [ComponentMaterialItem]
+  title: String
 }
 
 input ComponentSharedBlocksMaterialInput {
   item: [ComponentMaterialItemInput!]
+  title: String
 }
 
 input editComponentSharedBlocksMaterialInput {
   id: ID
   item: [editComponentMaterialItemInput]
+  title: String
 }
 
 type ComponentSharedBlocksMediaGallery {
