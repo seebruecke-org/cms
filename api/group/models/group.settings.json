@@ -26,7 +26,10 @@
         "shared-blocks.material",
         "shared-blocks.unterbrecher",
         "shared-blocks.teaser-large",
-        "shared-blocks.teasers-small"
+        "shared-blocks.teasers-small",
+        "shared-blocks.oembed",
+        "shared-blocks.actions",
+        "shared-blocks.media-gallery"
       ]
     },
     "featured_image": {
@@ -35,8 +38,8 @@
       "component": "helper-blocks.image"
     },
     "action": {
-      "via": "group",
-      "model": "action"
+      "model": "action",
+      "via": "group"
     }
   }
 }

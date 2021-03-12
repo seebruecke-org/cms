@@ -28,8 +28,15 @@
         "shared-blocks.heading",
         "shared-blocks.media",
         "shared-blocks.material",
+        "shared-blocks.accordion",
         "shared-blocks.richtext",
-        "shared-blocks.accordion"
+        "shared-blocks.unterbrecher",
+        "shared-blocks.teaser-large",
+        "shared-blocks.teasers-small",
+        "shared-blocks.media-gallery",
+        "shared-blocks.oembed",
+        "shared-blocks.newsletter",
+        "shared-blocks.actions"
       ],
       "required": true
     },

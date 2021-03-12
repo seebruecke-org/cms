@@ -26,7 +26,11 @@
         "shared-blocks.richtext",
         "shared-blocks.unterbrecher",
         "shared-blocks.teaser-large",
-        "shared-blocks.teasers-small"
+        "shared-blocks.teasers-small",
+        "shared-blocks.media-gallery",
+        "shared-blocks.oembed",
+        "shared-blocks.newsletter",
+        "shared-blocks.actions"
       ],
       "required": true
     },
@@ -39,8 +43,8 @@
       "required": true
     },
     "group": {
-      "model": "group",
-      "via": "action"
+      "via": "action",
+      "model": "group"
     },
     "end": {
       "type": "datetime",

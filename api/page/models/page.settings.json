@@ -36,7 +36,8 @@
         "shared-blocks.teasers-small",
         "shared-blocks.actions",
         "shared-blocks.media-gallery",
-        "shared-blocks.newsletter"
+        "shared-blocks.newsletter",
+        "shared-blocks.oembed"
       ]
     },
     "parent": {
