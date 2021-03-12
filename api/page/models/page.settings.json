@@ -37,7 +37,8 @@
         "shared-blocks.actions",
         "shared-blocks.media-gallery",
         "shared-blocks.newsletter",
-        "shared-blocks.oembed"
+        "shared-blocks.oembed",
+        "shared-blocks.fundraisingbox"
       ]
     },
     "parent": {
