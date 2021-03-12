@@ -42,6 +42,11 @@
       "repeatable": false,
       "component": "demands.demands",
       "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo"
     }
   }
 }

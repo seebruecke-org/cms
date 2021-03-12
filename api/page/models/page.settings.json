@@ -43,6 +43,11 @@
     },
     "parent": {
       "model": "page"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo"
     }
   }
 }

@@ -15,6 +15,18 @@
       "type": "string",
       "required": true
     },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "news",
+        "pressrelease"
+      ],
+      "default": "news"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
     "image": {
       "type": "component",
       "repeatable": false,
@@ -40,17 +52,10 @@
       ],
       "required": true
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "news",
-        "pressrelease"
-      ],
-      "default": "news"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo"
     }
   }
 }

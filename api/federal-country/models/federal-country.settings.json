@@ -46,6 +46,11 @@
     "cities": {
       "collection": "city",
       "via": "federal_country"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo"
     }
   }
 }
