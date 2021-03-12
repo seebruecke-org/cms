@@ -64,6 +64,11 @@
     "location": {
       "type": "string",
       "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo"
     }
   }
 }
