@@ -43,6 +43,11 @@
         "shared-blocks.teaser-large",
         "shared-blocks.unterbrecher"
       ]
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo"
     }
   }
 }
