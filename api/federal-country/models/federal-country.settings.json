@@ -40,8 +40,8 @@
       ]
     },
     "country": {
-      "model": "country",
-      "via": "federal_countries"
+      "via": "federal_countries",
+      "model": "country"
     },
     "cities": {
       "collection": "city",

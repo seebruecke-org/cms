@@ -474,12 +474,18 @@ type deleteCityPayload {
   city: City
 }
 
+union CountryContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksStageMedium | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksRichtext | ComponentSharedBlocksOembed | ComponentSharedBlocksStageLarge | ComponentSharedBlocksNewsletter | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksActions | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksUnterbrecher
+
+"""Input type for dynamic zone content of Country"""
+scalar CountryContentDynamicZoneInput
+
 type Country {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
   name: String!
   slug: String!
+  content: [CountryContentDynamicZone]
   published_at: DateTime
   federal_countries(sort: String, limit: Int, start: Int, where: JSON): [FederalCountry]
 }
@@ -538,6 +544,7 @@ input CountryInput {
   name: String!
   federal_countries: [ID]
   slug: String!
+  content: [CountryContentDynamicZoneInput!]
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -547,6 +554,7 @@ input editCountryInput {
   name: String
   federal_countries: [ID]
   slug: String
+  content: [CountryContentDynamicZoneInput!]
   published_at: DateTime
   created_by: ID
   updated_by: ID

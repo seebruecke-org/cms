@@ -16,13 +16,33 @@
       "required": true
     },
     "federal_countries": {
-      "via": "country",
-      "collection": "federal-country"
+      "collection": "federal-country",
+      "via": "country"
     },
     "slug": {
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.contact",
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.stage-medium",
+        "shared-blocks.material",
+        "shared-blocks.accordion",
+        "shared-blocks.media-gallery",
+        "shared-blocks.richtext",
+        "shared-blocks.oembed",
+        "shared-blocks.stage-large",
+        "shared-blocks.newsletter",
+        "shared-blocks.teasers-small",
+        "shared-blocks.actions",
+        "shared-blocks.teaser-large",
+        "shared-blocks.unterbrecher"
+      ]
     }
   }
 }
