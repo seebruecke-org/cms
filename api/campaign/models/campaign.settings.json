@@ -39,6 +39,11 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-smo"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }
