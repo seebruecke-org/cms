@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sub_navigation_subnavigations",
+  "info": {
+    "name": "subnavigation",
+    "icon": "angle-double-right"
+  },
+  "options": {},
+  "attributes": {
+    "path": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

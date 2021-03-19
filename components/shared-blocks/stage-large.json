@@ -26,7 +26,7 @@
     "subnavigation": {
       "type": "component",
       "repeatable": true,
-      "component": "sub-navigation.item"
+      "component": "sub-navigation.subnavigation"
     }
   }
 }
