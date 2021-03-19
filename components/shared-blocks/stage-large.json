@@ -21,7 +21,7 @@
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.call-to-action",
-      "required": true
+      "required": false
     },
     "subnavigation": {
       "type": "component",
