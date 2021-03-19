@@ -2324,12 +2324,14 @@ type ComponentSharedBlocksStageLarge {
   image: ComponentHelperBlocksImage
   title: String!
   cta: ComponentHelperBlocksCallToAction
+  subnavigation: [ComponentSubNavigationItem]
 }
 
 input ComponentSharedBlocksStageLargeInput {
   image: ComponentHelperBlocksImageInput!
   title: String!
   cta: ComponentHelperBlocksCallToActionInput!
+  subnavigation: [ComponentSubNavigationItemInput]
 }
 
 input editComponentSharedBlocksStageLargeInput {
@@ -2337,6 +2339,7 @@ input editComponentSharedBlocksStageLargeInput {
   image: editComponentHelperBlocksImageInput
   title: String
   cta: editComponentHelperBlocksCallToActionInput
+  subnavigation: [editComponentSubNavigationItemInput]
 }
 
 type ComponentSharedBlocksStageMedium {
