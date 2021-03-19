@@ -22,11 +22,6 @@
       "repeatable": false,
       "component": "helper-blocks.call-to-action",
       "required": true
-    },
-    "subnavigation": {
-      "type": "component",
-      "repeatable": true,
-      "component": "sub-navigation.subnavigation"
     }
   }
 }
