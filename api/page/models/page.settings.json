@@ -48,6 +48,10 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-smo"
+    },
+    "campaign": {
+      "model": "campaign",
+      "via": "page"
     }
   }
 }
