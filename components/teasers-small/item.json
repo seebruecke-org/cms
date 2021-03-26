@@ -14,7 +14,7 @@
     "link": {
       "type": "link",
       "required": true,
-      "columnType": "string"
+      "columnType": "longtext"
     },
     "type": {
       "type": "enumeration",
