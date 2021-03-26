@@ -16,8 +16,7 @@
       "required": true
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title"
+      "type": "string"
     },
     "content": {
       "type": "dynamiczone",
@@ -52,6 +51,9 @@
     "campaign": {
       "model": "campaign",
       "via": "page"
+    },
+    "algolia_id": {
+      "type": "string"
     }
   }
 }

@@ -9,10 +9,20 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
   "dependencies": {
+    "algoliasearch": "^4.8.6",
     "knex": "^0.95.1",
+    "lodash.pick": "^4.4.0",
     "mysql": "^2.18.1",
+    "slugify": "^1.5.0",
     "sqlite3": "^5.0.2",
     "strapi": "3.5.3",
     "strapi-admin": "3.5.3",

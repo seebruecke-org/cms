@@ -6,13 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "label": {
-      "type": "string",
-      "required": true
-    },
-    "path": {
-      "type": "string",
-      "required": true
+    "link": {
+      "type": "link",
+      "required": true,
+      "columnType": "string"
     }
   }
 }

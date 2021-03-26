@@ -11,13 +11,10 @@
       "type": "string",
       "required": true
     },
-    "path": {
-      "type": "string",
-      "required": true
-    },
-    "label": {
-      "type": "string",
-      "required": true
+    "link": {
+      "type": "link",
+      "required": true,
+      "columnType": "string"
     },
     "type": {
       "type": "enumeration",
