@@ -32,7 +32,7 @@ jobs:
             NODE_ENV: production
         run: npm run build
 
-      - name: Build Link Plugin
+      - name: Build WYSIWYG Plugin
         env:
             CI: true
             NODE_ENV: production
@@ -40,6 +40,14 @@ jobs:
           cd plugins/field-wysiwyg
           npm install
           npm run build
+
+      - name: Build Link Plugin
+        env:
+            CI: true
+            NODE_ENV: production
+        run: |
+          cd plugins/field-link
+          npm install
 
       - name: Copy Files
         uses: appleboy/scp-action@master
