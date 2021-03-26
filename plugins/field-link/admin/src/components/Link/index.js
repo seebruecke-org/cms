@@ -18,7 +18,8 @@ export default function Link({
   value: defaultValue,
   onChange,
 }) {
-  const jwtToken = JSON.parse(localStorage.getItem('jwtToken'));
+  const jwtKey = 'jwtToken';
+  const jwtToken = JSON.parse(localStorage.getItem(jwtKey) || sessionStorage.getItem(jwtKey));
   let parsedDefaultValue = {};
 
   try {
