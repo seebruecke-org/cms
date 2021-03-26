@@ -47,6 +47,8 @@ module.exports = {
     },
 
     async afterCreate(data) {
+      const { id } = data;
+
       try {
         const { objectID } = await strapi.services.algolia.save({
           ...pick(data, attributes),
@@ -54,7 +56,7 @@ module.exports = {
         });
 
         if (objectID) {
-          data.algolia_id = objectID;
+          await strapi.query('page').update({ id }, { algolia_id: objectID });
         }
       } catch (err) {
         console.log('Could not create entry in algolia', err.message);
@@ -75,6 +77,7 @@ module.exports = {
     async afterUpdate(data) {
       const {
         algolia_id,
+        id,
       } = data;
 
       if (algolia_id) {
@@ -87,7 +90,7 @@ module.exports = {
           });
 
           if (objectID) {
-            data.algolia_id = objectID;
+            await strapi.query('page').update({ id }, { algolia_id: objectID });
           }
         } catch (err) {
           console.log('Could not update entry in algolia', err.message);
@@ -100,7 +103,7 @@ module.exports = {
           });
 
           if (objectID) {
-            data.algolia_id = objectID;
+            await strapi.query('page').update({ id }, { algolia_id: objectID });
           }
         } catch (err) {
           console.log('Could not create entry in algolia', err.message);
