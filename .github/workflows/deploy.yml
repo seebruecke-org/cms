@@ -26,12 +26,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Strapi
-        env:
-            CI: true
-            NODE_ENV: production
-        run: npm run build
-
       - name: Build WYSIWYG Plugin
         env:
             CI: true
@@ -48,6 +42,12 @@ jobs:
         run: |
           cd plugins/field-link
           npm install
+
+      - name: Build Strapi
+        env:
+            CI: true
+            NODE_ENV: production
+        run: npm run build
 
       - name: Copy Files
         uses: appleboy/scp-action@master

@@ -9,9 +9,6 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^3.0.2",
-    "ckeditor5-custom-build": "file:./ckeditor-build"
-  },
-  "devDependencies": {
     "@ckeditor/ckeditor5-autoformat": "^27.0.0",
     "@ckeditor/ckeditor5-basic-styles": "^27.0.0",
     "@ckeditor/ckeditor5-dev-utils": "^24.4.2",
@@ -35,7 +32,8 @@
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^4.46.0",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "ckeditor5-custom-build": "file:./ckeditor-build"
   },
   "scripts": {
     "build": "webpack --mode production"
