@@ -2290,14 +2290,14 @@ input editComponentSharedBlocksRichtextInput {
 
 type ComponentSharedBlocksStageLarge {
   id: ID!
-  image: ComponentHelperBlocksMedia
+  media: ComponentHelperBlocksMedia
   title: String!
   cta: ComponentHelperBlocksLink
   subnavigation: [ComponentHelperBlocksLink]
 }
 
 input ComponentSharedBlocksStageLargeInput {
-  image: ComponentHelperBlocksMediaInput!
+  media: ComponentHelperBlocksMediaInput
   title: String!
   cta: ComponentHelperBlocksLinkInput
   subnavigation: [ComponentHelperBlocksLinkInput!]
@@ -2305,7 +2305,7 @@ input ComponentSharedBlocksStageLargeInput {
 
 input editComponentSharedBlocksStageLargeInput {
   id: ID
-  image: editComponentHelperBlocksMediaInput
+  media: editComponentHelperBlocksMediaInput
   title: String
   cta: editComponentHelperBlocksLinkInput
   subnavigation: [editComponentHelperBlocksLinkInput]
@@ -2314,14 +2314,14 @@ input editComponentSharedBlocksStageLargeInput {
 type ComponentSharedBlocksStageMedium {
   id: ID!
   intro: String
-  image: ComponentHelperBlocksMedia
+  media: ComponentHelperBlocksMedia
   title: String!
   kicker: String
 }
 
 input ComponentSharedBlocksStageMediumInput {
   intro: String
-  image: ComponentHelperBlocksMediaInput
+  media: ComponentHelperBlocksMediaInput
   title: String!
   kicker: String
 }
@@ -2329,7 +2329,7 @@ input ComponentSharedBlocksStageMediumInput {
 input editComponentSharedBlocksStageMediumInput {
   id: ID
   intro: String
-  image: editComponentHelperBlocksMediaInput
+  media: editComponentHelperBlocksMediaInput
   title: String
   kicker: String
 }

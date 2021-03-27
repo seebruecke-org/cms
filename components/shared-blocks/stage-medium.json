@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_shared_blocks_stage_mediums",
+  "collectionName": "components_shared_blocks_stage_medium",
   "info": {
-    "name": "Stage (medium)",
+    "name": "Stage (Medium)",
     "icon": "chalkboard",
     "description": ""
   },
@@ -10,7 +10,7 @@
     "intro": {
       "type": "text"
     },
-    "image": {
+    "media": {
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.media"
