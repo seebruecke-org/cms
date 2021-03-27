@@ -1993,18 +1993,18 @@ input editComponentHelperBlocksLinkInput {
 
 type ComponentHelperBlocksMedia {
   id: ID!
-  image: UploadFile
+  media: UploadFile
   caption: String
 }
 
 input ComponentHelperBlocksMediaInput {
-  image: ID
+  media: ID
   caption: String
 }
 
 input editComponentHelperBlocksMediaInput {
   id: ID
-  image: ID
+  media: ID
   caption: String
 }
 
@@ -2041,20 +2041,20 @@ enum ENUM_COMPONENTMENUMENU_LOCATION {
 
 type ComponentMenuMenu {
   id: ID!
-  item: [ComponentHelperBlocksLink]
+  items: [ComponentHelperBlocksLink]
   location: ENUM_COMPONENTMENUMENU_LOCATION
   title: String
 }
 
 input ComponentMenuMenuInput {
-  item: [ComponentHelperBlocksLinkInput!]
+  items: [ComponentHelperBlocksLinkInput!]
   location: ENUM_COMPONENTMENUMENU_LOCATION
   title: String
 }
 
 input editComponentMenuMenuInput {
   id: ID
-  item: [editComponentHelperBlocksLinkInput]
+  items: [editComponentHelperBlocksLinkInput]
   location: ENUM_COMPONENTMENUMENU_LOCATION
   title: String
 }
@@ -2093,16 +2093,16 @@ input editComponentSeoSeoSmoInput {
 
 type ComponentSharedBlocksAccordion {
   id: ID!
-  item: [ComponentAccordionItem]
+  items: [ComponentAccordionItem]
 }
 
 input ComponentSharedBlocksAccordionInput {
-  item: [ComponentAccordionItemInput]
+  items: [ComponentAccordionItemInput]
 }
 
 input editComponentSharedBlocksAccordionInput {
   id: ID
-  item: [editComponentAccordionItemInput]
+  items: [editComponentAccordionItemInput]
 }
 
 type ComponentSharedBlocksActions {
@@ -2200,33 +2200,33 @@ input editComponentSharedBlocksHeadingInput {
 
 type ComponentSharedBlocksMaterial {
   id: ID!
-  item: [ComponentMaterialItem]
+  items: [ComponentMaterialItem]
   title: String
 }
 
 input ComponentSharedBlocksMaterialInput {
-  item: [ComponentMaterialItemInput!]
+  items: [ComponentMaterialItemInput!]
   title: String
 }
 
 input editComponentSharedBlocksMaterialInput {
   id: ID
-  item: [editComponentMaterialItemInput]
+  items: [editComponentMaterialItemInput]
   title: String
 }
 
 type ComponentSharedBlocksMediaGallery {
   id: ID!
-  item: [ComponentHelperBlocksMedia]
+  items: [ComponentHelperBlocksMedia]
 }
 
 input ComponentSharedBlocksMediaGalleryInput {
-  item: [ComponentHelperBlocksMediaInput!]
+  items: [ComponentHelperBlocksMediaInput!]
 }
 
 input editComponentSharedBlocksMediaGalleryInput {
   id: ID
-  item: [editComponentHelperBlocksMediaInput]
+  items: [editComponentHelperBlocksMediaInput]
 }
 
 type ComponentSharedBlocksMedia {
@@ -2336,16 +2336,16 @@ input editComponentSharedBlocksStageMediumInput {
 
 type ComponentSharedBlocksSubNavigation {
   id: ID!
-  item: [ComponentHelperBlocksLink]
+  items: [ComponentHelperBlocksLink]
 }
 
 input ComponentSharedBlocksSubNavigationInput {
-  item: [ComponentHelperBlocksLinkInput!]
+  items: [ComponentHelperBlocksLinkInput!]
 }
 
 input editComponentSharedBlocksSubNavigationInput {
   id: ID
-  item: [editComponentHelperBlocksLinkInput]
+  items: [editComponentHelperBlocksLinkInput]
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE {
@@ -2380,16 +2380,16 @@ input editComponentSharedBlocksTeaserLargeInput {
 
 type ComponentSharedBlocksTeasersSmall {
   id: ID!
-  item: [ComponentTeasersSmallItem]
+  items: [ComponentTeasersSmallItem]
 }
 
 input ComponentSharedBlocksTeasersSmallInput {
-  item: [ComponentTeasersSmallItemInput]
+  items: [ComponentTeasersSmallItemInput]
 }
 
 input editComponentSharedBlocksTeasersSmallInput {
   id: ID
-  item: [editComponentTeasersSmallItemInput]
+  items: [editComponentTeasersSmallItemInput]
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE {
