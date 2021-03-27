@@ -9,8 +9,8 @@
     "item": {
       "type": "component",
       "repeatable": true,
-      "component": "sub-navigation.item",
-      "required": true
+      "required": true,
+      "component": "helper-blocks.link"
     }
   }
 }

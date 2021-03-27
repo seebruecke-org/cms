@@ -752,7 +752,7 @@ type Group {
   updated_at: DateTime!
   city: City
   content: [GroupContentDynamicZone]
-  featured_image: ComponentHelperBlocksImage
+  image: ComponentHelperBlocksMedia
   action: Action
   metadata: ComponentSeoSeoSmo
   published_at: DateTime
@@ -774,7 +774,7 @@ type GroupGroupBy {
   created_at: [GroupConnectionCreated_at]
   updated_at: [GroupConnectionUpdated_at]
   city: [GroupConnectionCity]
-  featured_image: [GroupConnectionFeatured_image]
+  image: [GroupConnectionImage]
   action: [GroupConnectionAction]
   metadata: [GroupConnectionMetadata]
   published_at: [GroupConnectionPublished_at]
@@ -800,7 +800,7 @@ type GroupConnectionCity {
   connection: GroupConnection
 }
 
-type GroupConnectionFeatured_image {
+type GroupConnectionImage {
   key: ID
   connection: GroupConnection
 }
@@ -823,7 +823,7 @@ type GroupConnectionPublished_at {
 input GroupInput {
   city: ID
   content: [GroupContentDynamicZoneInput!]
-  featured_image: ComponentHelperBlocksImageInput
+  image: ComponentHelperBlocksMediaInput
   action: ID
   metadata: ComponentSeoSeoSmoInput
   published_at: DateTime
@@ -834,7 +834,7 @@ input GroupInput {
 input editGroupInput {
   city: ID
   content: [GroupContentDynamicZoneInput!]
-  featured_image: editComponentHelperBlocksImageInput
+  image: editComponentHelperBlocksMediaInput
   action: ID
   metadata: editComponentSeoSeoSmoInput
   published_at: DateTime
@@ -915,7 +915,7 @@ type NewsEntry {
   title: String!
   type: ENUM_NEWSENTRY_TYPE
   slug: String
-  image: ComponentHelperBlocksImage
+  image: ComponentHelperBlocksMedia
   content: [NewsEntryContentDynamicZone]!
   metadata: ComponentSeoSeoSmo
   published_at: DateTime
@@ -993,7 +993,7 @@ input NewsEntryInput {
   title: String!
   type: ENUM_NEWSENTRY_TYPE
   slug: String
-  image: ComponentHelperBlocksImageInput
+  image: ComponentHelperBlocksMediaInput
   content: [NewsEntryContentDynamicZoneInput!]!
   metadata: ComponentSeoSeoSmoInput
   published_at: DateTime
@@ -1005,7 +1005,7 @@ input editNewsEntryInput {
   title: String
   type: ENUM_NEWSENTRY_TYPE
   slug: String
-  image: editComponentHelperBlocksImageInput
+  image: editComponentHelperBlocksMediaInput
   content: [NewsEntryContentDynamicZoneInput!]!
   metadata: editComponentSeoSeoSmoInput
   published_at: DateTime
@@ -1298,7 +1298,7 @@ type SafeHarbour {
   updated_at: DateTime!
   city: City
   content: [SafeHarbourContentDynamicZone]
-  featured_image: ComponentHelperBlocksImage
+  image: ComponentHelperBlocksMedia
   since: Date
   demands: ComponentDemandsDemands
   metadata: ComponentSeoSeoSmo
@@ -1321,7 +1321,7 @@ type SafeHarbourGroupBy {
   created_at: [SafeHarbourConnectionCreated_at]
   updated_at: [SafeHarbourConnectionUpdated_at]
   city: [SafeHarbourConnectionCity]
-  featured_image: [SafeHarbourConnectionFeatured_image]
+  image: [SafeHarbourConnectionImage]
   since: [SafeHarbourConnectionSince]
   demands: [SafeHarbourConnectionDemands]
   metadata: [SafeHarbourConnectionMetadata]
@@ -1348,7 +1348,7 @@ type SafeHarbourConnectionCity {
   connection: SafeHarbourConnection
 }
 
-type SafeHarbourConnectionFeatured_image {
+type SafeHarbourConnectionImage {
   key: ID
   connection: SafeHarbourConnection
 }
@@ -1376,7 +1376,7 @@ type SafeHarbourConnectionPublished_at {
 input SafeHarbourInput {
   city: ID
   content: [SafeHarbourContentDynamicZoneInput!]
-  featured_image: ComponentHelperBlocksImageInput
+  image: ComponentHelperBlocksMediaInput
   since: Date
   demands: ComponentDemandsDemandInput!
   metadata: ComponentSeoSeoSmoInput
@@ -1388,7 +1388,7 @@ input SafeHarbourInput {
 input editSafeHarbourInput {
   city: ID
   content: [SafeHarbourContentDynamicZoneInput!]
-  featured_image: editComponentHelperBlocksImageInput
+  image: editComponentHelperBlocksMediaInput
   since: Date
   demands: editComponentDemandsDemandInput
   metadata: editComponentSeoSeoSmoInput
@@ -1977,32 +1977,32 @@ input editComponentDemandsDemandInput {
   transparency_fullfilled: Boolean
 }
 
-type ComponentHelperBlocksCallToAction {
+type ComponentHelperBlocksLink {
   id: ID!
   link: String!
 }
 
-input ComponentHelperBlocksCallToActionInput {
+input ComponentHelperBlocksLinkInput {
   link: String!
 }
 
-input editComponentHelperBlocksCallToActionInput {
+input editComponentHelperBlocksLinkInput {
   id: ID
   link: String
 }
 
-type ComponentHelperBlocksImage {
+type ComponentHelperBlocksMedia {
   id: ID!
   image: UploadFile
   caption: String
 }
 
-input ComponentHelperBlocksImageInput {
+input ComponentHelperBlocksMediaInput {
   image: ID
   caption: String
 }
 
-input editComponentHelperBlocksImageInput {
+input editComponentHelperBlocksMediaInput {
   id: ID
   image: ID
   caption: String
@@ -2031,37 +2031,6 @@ input editComponentMaterialItemInput {
   name: String
 }
 
-type ComponentMediaGalleryItems {
-  id: ID!
-  media: UploadFile
-  caption: String
-}
-
-input ComponentMediaGalleryItemInput {
-  media: ID
-  caption: String
-}
-
-input editComponentMediaGalleryItemInput {
-  id: ID
-  media: ID
-  caption: String
-}
-
-type ComponentMenuItem {
-  id: ID!
-  link: String!
-}
-
-input ComponentMenuItemInput {
-  link: String!
-}
-
-input editComponentMenuItemInput {
-  id: ID
-  link: String
-}
-
 enum ENUM_COMPONENTMENUMENU_LOCATION {
   header_meta
   header_main
@@ -2072,20 +2041,20 @@ enum ENUM_COMPONENTMENUMENU_LOCATION {
 
 type ComponentMenuMenu {
   id: ID!
-  item: [ComponentMenuItem]
+  item: [ComponentHelperBlocksLink]
   location: ENUM_COMPONENTMENUMENU_LOCATION
   title: String
 }
 
 input ComponentMenuMenuInput {
-  item: [ComponentMenuItemInput]
+  item: [ComponentHelperBlocksLinkInput!]
   location: ENUM_COMPONENTMENUMENU_LOCATION
   title: String
 }
 
 input editComponentMenuMenuInput {
   id: ID
-  item: [editComponentMenuItemInput]
+  item: [editComponentHelperBlocksLinkInput]
   location: ENUM_COMPONENTMENUMENU_LOCATION
   title: String
 }
@@ -2141,14 +2110,14 @@ type ComponentSharedBlocksActions {
   city: City
   max_actions_to_show: Int
   show_map: Boolean!
-  cta: ComponentHelperBlocksCallToAction
+  cta: ComponentHelperBlocksLink
 }
 
 input ComponentSharedBlocksActionInput {
   city: ID
   max_actions_to_show: Int
   show_map: Boolean
-  cta: ComponentHelperBlocksCallToActionInput
+  cta: ComponentHelperBlocksLinkInput
 }
 
 input editComponentSharedBlocksActionInput {
@@ -2156,7 +2125,7 @@ input editComponentSharedBlocksActionInput {
   city: ID
   max_actions_to_show: Int
   show_map: Boolean
-  cta: editComponentHelperBlocksCallToActionInput
+  cta: editComponentHelperBlocksLinkInput
 }
 
 type ComponentSharedBlocksContact {
@@ -2248,33 +2217,30 @@ input editComponentSharedBlocksMaterialInput {
 
 type ComponentSharedBlocksMediaGallery {
   id: ID!
-  items: [ComponentMediaGalleryItems]
+  item: [ComponentHelperBlocksMedia]
 }
 
 input ComponentSharedBlocksMediaGalleryInput {
-  items: [ComponentMediaGalleryItemInput]
+  item: [ComponentHelperBlocksMediaInput!]
 }
 
 input editComponentSharedBlocksMediaGalleryInput {
   id: ID
-  items: [editComponentMediaGalleryItemInput]
+  item: [editComponentHelperBlocksMediaInput]
 }
 
 type ComponentSharedBlocksMedia {
   id: ID!
-  description: String
-  media(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  media: ComponentHelperBlocksMedia
 }
 
 input ComponentSharedBlocksMediaInput {
-  media: [ID]
-  description: String
+  media: ComponentHelperBlocksMediaInput
 }
 
 input editComponentSharedBlocksMediaInput {
   id: ID
-  media: [ID]
-  description: String
+  media: editComponentHelperBlocksMediaInput
 }
 
 type ComponentSharedBlocksNewsletter {
@@ -2324,38 +2290,38 @@ input editComponentSharedBlocksRichtextInput {
 
 type ComponentSharedBlocksStageLarge {
   id: ID!
-  image: ComponentHelperBlocksImage
+  image: ComponentHelperBlocksMedia
   title: String!
-  cta: ComponentHelperBlocksCallToAction
-  subnavigation: [ComponentSubNavigationItem]
+  cta: ComponentHelperBlocksLink
+  subnavigation: [ComponentHelperBlocksLink]
 }
 
 input ComponentSharedBlocksStageLargeInput {
-  image: ComponentHelperBlocksImageInput!
+  image: ComponentHelperBlocksMediaInput!
   title: String!
-  cta: ComponentHelperBlocksCallToActionInput
-  subnavigation: [ComponentSubNavigationItemInput]
+  cta: ComponentHelperBlocksLinkInput
+  subnavigation: [ComponentHelperBlocksLinkInput!]
 }
 
 input editComponentSharedBlocksStageLargeInput {
   id: ID
-  image: editComponentHelperBlocksImageInput
+  image: editComponentHelperBlocksMediaInput
   title: String
-  cta: editComponentHelperBlocksCallToActionInput
-  subnavigation: [editComponentSubNavigationItemInput]
+  cta: editComponentHelperBlocksLinkInput
+  subnavigation: [editComponentHelperBlocksLinkInput]
 }
 
 type ComponentSharedBlocksStageMedium {
   id: ID!
   intro: String
-  image: ComponentHelperBlocksImage
+  image: ComponentHelperBlocksMedia
   title: String!
   kicker: String
 }
 
 input ComponentSharedBlocksStageMediumInput {
   intro: String
-  image: ComponentHelperBlocksImageInput
+  image: ComponentHelperBlocksMediaInput
   title: String!
   kicker: String
 }
@@ -2363,23 +2329,23 @@ input ComponentSharedBlocksStageMediumInput {
 input editComponentSharedBlocksStageMediumInput {
   id: ID
   intro: String
-  image: editComponentHelperBlocksImageInput
+  image: editComponentHelperBlocksMediaInput
   title: String
   kicker: String
 }
 
 type ComponentSharedBlocksSubNavigation {
   id: ID!
-  item: [ComponentSubNavigationItem]
+  item: [ComponentHelperBlocksLink]
 }
 
 input ComponentSharedBlocksSubNavigationInput {
-  item: [ComponentSubNavigationItemInput!]
+  item: [ComponentHelperBlocksLinkInput!]
 }
 
 input editComponentSharedBlocksSubNavigationInput {
   id: ID
-  item: [editComponentSubNavigationItemInput]
+  item: [editComponentHelperBlocksLinkInput]
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE {
@@ -2393,14 +2359,14 @@ type ComponentSharedBlocksTeaserLarge {
   id: ID!
   title: String!
   intro: String
-  cta: ComponentHelperBlocksCallToAction
+  cta: ComponentHelperBlocksLink
   type: ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE!
 }
 
 input ComponentSharedBlocksTeaserLargeInput {
   title: String!
   intro: String
-  cta: ComponentHelperBlocksCallToActionInput!
+  cta: ComponentHelperBlocksLinkInput!
   type: ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE
 }
 
@@ -2408,7 +2374,7 @@ input editComponentSharedBlocksTeaserLargeInput {
   id: ID
   title: String
   intro: String
-  cta: editComponentHelperBlocksCallToActionInput
+  cta: editComponentHelperBlocksLinkInput
   type: ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE
 }
 
@@ -2442,7 +2408,7 @@ type ComponentSharedBlocksUnterbrecher {
   title: ComponentSharedBlocksHeading
   intro: String
   orientation_reversed: Boolean
-  cta: ComponentHelperBlocksCallToAction
+  cta: ComponentHelperBlocksLink
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE!
   media: UploadFile
@@ -2452,7 +2418,7 @@ input ComponentSharedBlocksUnterbrecherInput {
   title: ComponentSharedBlocksHeadingInput!
   intro: String
   orientation_reversed: Boolean
-  cta: ComponentHelperBlocksCallToActionInput!
+  cta: ComponentHelperBlocksLinkInput!
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE
   media: ID
@@ -2463,24 +2429,10 @@ input editComponentSharedBlocksUnterbrecherInput {
   title: editComponentSharedBlocksHeadingInput
   intro: String
   orientation_reversed: Boolean
-  cta: editComponentHelperBlocksCallToActionInput
+  cta: editComponentHelperBlocksLinkInput
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE
   media: ID
-}
-
-type ComponentSubNavigationItem {
-  id: ID!
-  link: String!
-}
-
-input ComponentSubNavigationItemInput {
-  link: String!
-}
-
-input editComponentSubNavigationItemInput {
-  id: ID
-  link: String
 }
 
 enum ENUM_COMPONENTTEASERSSMALLITEM_TYPE {
@@ -2509,7 +2461,7 @@ input editComponentTeasersSmallItemInput {
   type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionGroup | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionFacebook_link | ActionConnectionLocation | ActionConnectionMetadata | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionMetadata | CampaignConnectionSlug | CampaignConnectionPage | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionMetadata | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionMetadata | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionFeatured_image | GroupConnectionAction | GroupConnectionMetadata | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionImage | NewsEntryConnectionMetadata | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionMetadata | PageConnectionCampaign | PageConnectionAlgolia_id | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | Redirects | RedirectsConnection | RedirectsAggregator | RedirectsGroupBy | RedirectsConnectionId | RedirectsConnectionCreated_at | RedirectsConnectionUpdated_at | RedirectsConnectionFrom | RedirectsConnectionTo | RedirectsConnectionType | createRedirectPayload | updateRedirectPayload | deleteRedirectPayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionFeatured_image | SafeHarbourConnectionSince | SafeHarbourConnectionDemands | SafeHarbourConnectionMetadata | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentDemandsDemands | ComponentHelperBlocksCallToAction | ComponentHelperBlocksImage | ComponentMaterialItem | ComponentMediaGalleryItems | ComponentMenuItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksMedia | ComponentSharedBlocksNewsletter | ComponentSharedBlocksOembed | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentSubNavigationItem | ComponentTeasersSmallItem
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionGroup | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionFacebook_link | ActionConnectionLocation | ActionConnectionMetadata | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionMetadata | CampaignConnectionSlug | CampaignConnectionPage | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionMetadata | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionMetadata | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionImage | GroupConnectionAction | GroupConnectionMetadata | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionImage | NewsEntryConnectionMetadata | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionMetadata | PageConnectionCampaign | PageConnectionAlgolia_id | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | Redirects | RedirectsConnection | RedirectsAggregator | RedirectsGroupBy | RedirectsConnectionId | RedirectsConnectionCreated_at | RedirectsConnectionUpdated_at | RedirectsConnectionFrom | RedirectsConnectionTo | RedirectsConnectionType | createRedirectPayload | updateRedirectPayload | deleteRedirectPayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionImage | SafeHarbourConnectionSince | SafeHarbourConnectionDemands | SafeHarbourConnectionMetadata | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksMedia | ComponentSharedBlocksNewsletter | ComponentSharedBlocksOembed | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem
 
 input InputID {
   id: ID!

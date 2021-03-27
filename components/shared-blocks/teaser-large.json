@@ -16,7 +16,7 @@
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.call-to-action",
+      "component": "helper-blocks.link",
       "required": true
     },
     "type": {

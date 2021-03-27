@@ -29,10 +29,10 @@
         "shared-blocks.unterbrecher"
       ]
     },
-    "featured_image": {
+    "image": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.image"
+      "component": "helper-blocks.media"
     },
     "since": {
       "type": "date"

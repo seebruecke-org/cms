@@ -10,7 +10,7 @@
     "image": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.image",
+      "component": "helper-blocks.media",
       "required": true
     },
     "title": {
@@ -20,13 +20,14 @@
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.call-to-action",
+      "component": "helper-blocks.link",
       "required": false
     },
     "subnavigation": {
       "type": "component",
       "repeatable": true,
-      "component": "sub-navigation.item"
+      "required": true,
+      "component": "helper-blocks.link"
     }
   }
 }

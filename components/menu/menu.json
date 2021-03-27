@@ -10,8 +10,10 @@
     "item": {
       "type": "component",
       "repeatable": true,
-      "component": "menu.item"
+      "required": true,
+      "component": "helper-blocks.link"
     },
+
     "location": {
       "type": "enumeration",
       "enum": [
@@ -22,6 +24,7 @@
         "footer_meta"
       ]
     },
+
     "title": {
       "type": "string"
     }
