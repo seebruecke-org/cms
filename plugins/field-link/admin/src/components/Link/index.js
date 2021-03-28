@@ -52,23 +52,31 @@ export default function Link({
     onChange({ target: { name, value: finalValue } });
   }, [store]);
 
-  const loadOptions = (query) => fetch('/field-link/suggestions', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${jwtToken}`,
-    },
-    body: JSON.stringify({
-      query,
-    }),
-  })
-    .then((res) => res.json())
-    .then(({ hits }) => hits.map(({ id, title, contentType }) => ({
-      value: id,
-      label: title,
-      title,
-      id,
-      contentType,
-    })));
+  const loadOptions = (query) => {
+    const isURL = query && (query.startsWith('http') || query.startsWith('/'));
+
+    if (isURL) {
+      return Promise.resolve([]);
+    }
+
+    return fetch('/field-link/suggestions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+      body: JSON.stringify({
+        query,
+      }),
+    })
+      .then((res) => res.json())
+      .then(({ hits }) => hits.map(({ id, title, contentType }) => ({
+        value: id,
+        label: title,
+        title,
+        id,
+        contentType,
+      })));
+  };
 
   const onSelectChange = (newValue) => {
     const { label: linkLabel, ...newProps } = newValue;
