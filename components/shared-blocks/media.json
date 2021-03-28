@@ -6,18 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "media": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": true
-    },
-    "description": {
-      "type": "richtext"
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media"
     }
   }
 }

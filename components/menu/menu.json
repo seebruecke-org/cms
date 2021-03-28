@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_menu_menus",
+  "collectionName": "components_menu_menu",
   "info": {
     "name": "Menu",
     "icon": "ellipsis-h",
@@ -7,11 +7,13 @@
   },
   "options": {},
   "attributes": {
-    "item": {
+    "items": {
       "type": "component",
       "repeatable": true,
-      "component": "menu.item"
+      "required": true,
+      "component": "helper-blocks.link"
     },
+
     "location": {
       "type": "enumeration",
       "enum": [
@@ -22,6 +24,7 @@
         "footer_meta"
       ]
     },
+
     "title": {
       "type": "string"
     }

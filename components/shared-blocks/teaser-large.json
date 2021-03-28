@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_shared_blocks_teaser_large_s",
+  "collectionName": "components_shared_blocks_teaser_large",
   "info": {
     "name": "Teaser (Large)",
     "icon": "medal"
@@ -16,7 +16,7 @@
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.call-to-action",
+      "component": "helper-blocks.link",
       "required": true
     },
     "type": {

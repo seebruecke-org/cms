@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_demands_demands",
+  "collectionName": "components_demands_demand",
   "info": {
     "name": "Demands",
     "icon": "book",
@@ -54,6 +54,14 @@
     },
     "transparency_fullfilled": {
       "type": "boolean"
+    },
+    "last_updated": {
+      "type": "datetime"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.link"
     }
   }
 }

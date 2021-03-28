@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_actions_filters",
+  "info": {
+    "name": "Filter",
+    "icon": "broom"
+  },
+  "options": {},
+  "attributes": {
+    "connect_via": {
+      "type": "enumeration",
+      "enum": [
+        "and",
+        "or"
+      ],
+      "default": "and"
+    },
+    "key": {
+      "type": "enumeration",
+      "enum": [
+        "city",
+        "campaign",
+        "group",
+        "federal_country"
+      ]
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

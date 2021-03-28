@@ -1,12 +1,12 @@
 {
-  "collectionName": "components_helper_blocks_images",
+  "collectionName": "components_helper_blocks_media",
   "info": {
-    "name": "Image",
+    "name": "Media",
     "icon": "camera-retro"
   },
   "options": {},
   "attributes": {
-    "image": {
+    "media": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

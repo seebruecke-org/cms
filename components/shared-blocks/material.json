@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_shared_blocks_materials",
+  "collectionName": "components_shared_blocks_material",
   "info": {
     "name": "Material",
     "icon": "download",
@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "item": {
+    "items": {
       "type": "component",
       "repeatable": true,
       "component": "material.item",

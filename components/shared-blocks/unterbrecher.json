@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_shared_blocks_unterbrechers",
+  "collectionName": "components_shared_blocks_unterbrecher",
   "info": {
     "name": "Unterbrecher",
     "icon": "clone",
@@ -23,7 +23,7 @@
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.call-to-action",
+      "component": "helper-blocks.link",
       "required": true
     },
     "size": {
@@ -44,14 +44,10 @@
       "default": "internal",
       "required": true
     },
-    "media": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media"
     }
   }
 }

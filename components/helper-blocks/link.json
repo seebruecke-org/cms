@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_helper_blocks_call_to_actions",
+  "collectionName": "components_helper_blocks_link",
   "info": {
-    "name": "Call To Action",
+    "name": "Link",
     "icon": "arrow-right"
   },
   "options": {},
