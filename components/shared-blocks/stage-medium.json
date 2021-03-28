@@ -10,7 +10,7 @@
     "intro": {
       "type": "text"
     },
-    "media": {
+    "image": {
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.media"

@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "media": {
+    "image": {
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.media"

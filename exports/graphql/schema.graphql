@@ -2231,16 +2231,16 @@ input editComponentSharedBlocksMediaGalleryInput {
 
 type ComponentSharedBlocksMedia {
   id: ID!
-  media: ComponentHelperBlocksMedia
+  image: ComponentHelperBlocksMedia
 }
 
 input ComponentSharedBlocksMediaInput {
-  media: ComponentHelperBlocksMediaInput
+  image: ComponentHelperBlocksMediaInput
 }
 
 input editComponentSharedBlocksMediaInput {
   id: ID
-  media: editComponentHelperBlocksMediaInput
+  image: editComponentHelperBlocksMediaInput
 }
 
 type ComponentSharedBlocksNewsletter {
@@ -2290,14 +2290,14 @@ input editComponentSharedBlocksRichtextInput {
 
 type ComponentSharedBlocksStageLarge {
   id: ID!
-  media: ComponentHelperBlocksMedia
+  image: ComponentHelperBlocksMedia
   title: String!
   cta: ComponentHelperBlocksLink
   subnavigation: [ComponentHelperBlocksLink]
 }
 
 input ComponentSharedBlocksStageLargeInput {
-  media: ComponentHelperBlocksMediaInput
+  image: ComponentHelperBlocksMediaInput
   title: String!
   cta: ComponentHelperBlocksLinkInput
   subnavigation: [ComponentHelperBlocksLinkInput!]
@@ -2305,7 +2305,7 @@ input ComponentSharedBlocksStageLargeInput {
 
 input editComponentSharedBlocksStageLargeInput {
   id: ID
-  media: editComponentHelperBlocksMediaInput
+  image: editComponentHelperBlocksMediaInput
   title: String
   cta: editComponentHelperBlocksLinkInput
   subnavigation: [editComponentHelperBlocksLinkInput]
@@ -2314,14 +2314,14 @@ input editComponentSharedBlocksStageLargeInput {
 type ComponentSharedBlocksStageMedium {
   id: ID!
   intro: String
-  media: ComponentHelperBlocksMedia
+  image: ComponentHelperBlocksMedia
   title: String!
   kicker: String
 }
 
 input ComponentSharedBlocksStageMediumInput {
   intro: String
-  media: ComponentHelperBlocksMediaInput
+  image: ComponentHelperBlocksMediaInput
   title: String!
   kicker: String
 }
@@ -2329,7 +2329,7 @@ input ComponentSharedBlocksStageMediumInput {
 input editComponentSharedBlocksStageMediumInput {
   id: ID
   intro: String
-  media: editComponentHelperBlocksMediaInput
+  image: editComponentHelperBlocksMediaInput
   title: String
   kicker: String
 }
