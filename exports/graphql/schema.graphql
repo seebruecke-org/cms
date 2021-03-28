@@ -1918,6 +1918,38 @@ input editComponentAccordionItemInput {
   content: String
 }
 
+enum ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA {
+  and
+  or
+}
+
+enum ENUM_COMPONENTACTIONSFILTER_KEY {
+  city
+  campaign
+  group
+  federal_country
+}
+
+type ComponentActionsFilter {
+  id: ID!
+  connect_via: ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA
+  key: ENUM_COMPONENTACTIONSFILTER_KEY
+  value: String
+}
+
+input ComponentActionsFilterInput {
+  connect_via: ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA
+  key: ENUM_COMPONENTACTIONSFILTER_KEY
+  value: String
+}
+
+input editComponentActionsFilterInput {
+  id: ID
+  connect_via: ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA
+  key: ENUM_COMPONENTACTIONSFILTER_KEY
+  value: String
+}
+
 type ComponentDemandsDemands {
   id: ID!
   public_solidarity_declaration_decided: Boolean
@@ -2107,25 +2139,25 @@ input editComponentSharedBlocksAccordionInput {
 
 type ComponentSharedBlocksActions {
   id: ID!
-  city: City
   max_actions_to_show: Int
   show_map: Boolean!
   cta: ComponentHelperBlocksLink
+  filter: [ComponentActionsFilter]
 }
 
 input ComponentSharedBlocksActionInput {
-  city: ID
   max_actions_to_show: Int
   show_map: Boolean
   cta: ComponentHelperBlocksLinkInput
+  filter: [ComponentActionsFilterInput]
 }
 
 input editComponentSharedBlocksActionInput {
   id: ID
-  city: ID
   max_actions_to_show: Int
   show_map: Boolean
   cta: editComponentHelperBlocksLinkInput
+  filter: [editComponentActionsFilterInput]
 }
 
 type ComponentSharedBlocksContact {
@@ -2411,7 +2443,7 @@ type ComponentSharedBlocksUnterbrecher {
   cta: ComponentHelperBlocksLink
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE!
-  media: UploadFile
+  image: ComponentHelperBlocksMedia
 }
 
 input ComponentSharedBlocksUnterbrecherInput {
@@ -2421,7 +2453,7 @@ input ComponentSharedBlocksUnterbrecherInput {
   cta: ComponentHelperBlocksLinkInput!
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE
-  media: ID
+  image: ComponentHelperBlocksMediaInput
 }
 
 input editComponentSharedBlocksUnterbrecherInput {
@@ -2432,7 +2464,7 @@ input editComponentSharedBlocksUnterbrecherInput {
   cta: editComponentHelperBlocksLinkInput
   size: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE
   type: ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE
-  media: ID
+  image: editComponentHelperBlocksMediaInput
 }
 
 enum ENUM_COMPONENTTEASERSSMALLITEM_TYPE {
@@ -2461,7 +2493,7 @@ input editComponentTeasersSmallItemInput {
   type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionGroup | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionFacebook_link | ActionConnectionLocation | ActionConnectionMetadata | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionMetadata | CampaignConnectionSlug | CampaignConnectionPage | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionMetadata | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionMetadata | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionImage | GroupConnectionAction | GroupConnectionMetadata | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionImage | NewsEntryConnectionMetadata | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionMetadata | PageConnectionCampaign | PageConnectionAlgolia_id | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | Redirects | RedirectsConnection | RedirectsAggregator | RedirectsGroupBy | RedirectsConnectionId | RedirectsConnectionCreated_at | RedirectsConnectionUpdated_at | RedirectsConnectionFrom | RedirectsConnectionTo | RedirectsConnectionType | createRedirectPayload | updateRedirectPayload | deleteRedirectPayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionImage | SafeHarbourConnectionSince | SafeHarbourConnectionDemands | SafeHarbourConnectionMetadata | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksMedia | ComponentSharedBlocksNewsletter | ComponentSharedBlocksOembed | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionGroup | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionFacebook_link | ActionConnectionLocation | ActionConnectionMetadata | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionMetadata | CampaignConnectionSlug | CampaignConnectionPage | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionMetadata | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionMetadata | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionImage | GroupConnectionAction | GroupConnectionMetadata | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionType | NewsEntryConnectionSlug | NewsEntryConnectionImage | NewsEntryConnectionMetadata | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionMetadata | PageConnectionCampaign | PageConnectionAlgolia_id | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | Redirects | RedirectsConnection | RedirectsAggregator | RedirectsGroupBy | RedirectsConnectionId | RedirectsConnectionCreated_at | RedirectsConnectionUpdated_at | RedirectsConnectionFrom | RedirectsConnectionTo | RedirectsConnectionType | createRedirectPayload | updateRedirectPayload | deleteRedirectPayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionImage | SafeHarbourConnectionSince | SafeHarbourConnectionDemands | SafeHarbourConnectionMetadata | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentActionsFilter | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksMedia | ComponentSharedBlocksNewsletter | ComponentSharedBlocksOembed | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem
 
 input InputID {
   id: ID!

@@ -44,14 +44,10 @@
       "default": "internal",
       "required": true
     },
-    "media": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media"
     }
   }
 }

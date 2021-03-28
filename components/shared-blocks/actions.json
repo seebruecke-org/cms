@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "city": {
-      "model": "city"
-    },
     "max_actions_to_show": {
       "type": "integer",
       "min": 0,
@@ -24,6 +21,11 @@
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.link"
+    },
+    "filter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "actions.filter"
     }
   }
 }
