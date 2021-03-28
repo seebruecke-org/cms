@@ -42,8 +42,8 @@ const createPageSlug = async ({
 module.exports = {
   lifecycles: {
     async beforeCreate(data) {
-      const { title, parent } = data;
-      data.slug = await createPageSlug({ title, parent, slug: null });
+      const { title, parent, slug } = data;
+      data.slug = await createPageSlug({ title, parent, slug });
     },
 
     async afterCreate(data) {
@@ -78,7 +78,13 @@ module.exports = {
       const {
         algolia_id,
         id,
+        published_at,
       } = data;
+
+      // Draft pages shouldn't be pushed into algolia
+      if (!published_at) {
+        return;
+      }
 
       if (algolia_id) {
         const picked = pick(data, attributes);
