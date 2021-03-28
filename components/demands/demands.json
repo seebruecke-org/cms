@@ -54,6 +54,14 @@
     },
     "transparency_fullfilled": {
       "type": "boolean"
+    },
+    "last_updated": {
+      "type": "datetime"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.link"
     }
   }
 }

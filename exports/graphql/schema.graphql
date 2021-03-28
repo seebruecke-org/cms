@@ -1968,6 +1968,8 @@ type ComponentDemandsDemands {
   national_international_networking_fullfilled: Boolean
   alliance_safe_harbours_fullfilled: Boolean
   transparency_fullfilled: Boolean
+  last_updated: DateTime
+  cta: ComponentHelperBlocksLink
 }
 
 input ComponentDemandsDemandInput {
@@ -1987,6 +1989,8 @@ input ComponentDemandsDemandInput {
   national_international_networking_fullfilled: Boolean
   alliance_safe_harbours_fullfilled: Boolean
   transparency_fullfilled: Boolean
+  last_updated: DateTime
+  cta: ComponentHelperBlocksLinkInput
 }
 
 input editComponentDemandsDemandInput {
@@ -2007,6 +2011,8 @@ input editComponentDemandsDemandInput {
   national_international_networking_fullfilled: Boolean
   alliance_safe_harbours_fullfilled: Boolean
   transparency_fullfilled: Boolean
+  last_updated: DateTime
+  cta: editComponentHelperBlocksLinkInput
 }
 
 type ComponentHelperBlocksLink {
