@@ -54,8 +54,9 @@ export default function Link({
 
   const loadOptions = (query) => {
     const isURL = query && (query.startsWith('http') || query.startsWith('/'));
+    const hasMinChars = query && query.length > 3;
 
-    if (isURL) {
+    if (!query || isURL || !hasMinChars) {
       return Promise.resolve([]);
     }
 
