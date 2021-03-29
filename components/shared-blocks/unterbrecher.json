@@ -24,7 +24,7 @@
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.link",
-      "required": true
+      "required": false
     },
     "size": {
       "type": "enumeration",
