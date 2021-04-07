@@ -38,8 +38,8 @@
       "component": "helper-blocks.media"
     },
     "action": {
-      "model": "action",
-      "via": "group"
+      "via": "group",
+      "model": "action"
     },
     "metadata": {
       "type": "component",
