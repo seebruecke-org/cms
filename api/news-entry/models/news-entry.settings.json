@@ -23,6 +23,9 @@
       ],
       "default": "news"
     },
+    "publication_date": {
+      "type": "date"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title"
