@@ -44,10 +44,6 @@
       "type": "uid",
       "targetField": "title",
       "required": true
-    },
-    "page": {
-      "via": "campaign",
-      "model": "page"
     }
   }
 }

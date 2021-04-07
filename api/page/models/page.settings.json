@@ -48,12 +48,11 @@
       "repeatable": false,
       "component": "seo.seo-smo"
     },
-    "campaign": {
-      "model": "campaign",
-      "via": "page"
-    },
     "algolia_id": {
       "type": "string"
+    },
+    "campaign": {
+      "model": "campaign"
     }
   }
 }
