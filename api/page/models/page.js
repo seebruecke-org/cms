@@ -20,18 +20,20 @@ const createSlug = (text) => slugify(text, {
 });
 
 const createPageSlug = async ({
-  title, parent, slug,
+  title, parent, campaign, slug,
 }) => {
   let newSlug = slug || createSlug(title);
   const pagesBySlug = await strapi.query('page').find({ slug: newSlug });
   const pageCount = pagesBySlug.length;
 
-  const areParentsEqual = (pages, parent) => !!pages.find((page) => page.parent === parent);
+  const areParentsEqual = (pages, pageParent) => !!pages.find((page) => page.parent === pageParent);
+
+  const areCampaignsEqual = (pages, pageCampaign) => !!pages.find((page) => page.campaign === pageCampaign);
 
   if ((!slug && pageCount > 0) || (slug && pageCount > 1)) {
     // we need to check, whether pages with the same slug also have
-    // the same parent
-    if (areParentsEqual(pagesBySlug, parent)) {
+    // the same parent or the same campaign
+    if (areParentsEqual(pagesBySlug, parent) || areCampaignsEqual(pagesBySlug, campaign)) {
       newSlug += `-${pageCount}`;
     }
   }
@@ -42,8 +44,12 @@ const createPageSlug = async ({
 module.exports = {
   lifecycles: {
     async beforeCreate(data) {
-      const { title, parent, slug } = data;
-      data.slug = await createPageSlug({ title, parent, slug });
+      const {
+        title, parent, campaign, slug,
+      } = data;
+      data.slug = await createPageSlug({
+        title, parent, campaign, slug,
+      });
     },
 
     async afterCreate(data) {
@@ -65,12 +71,12 @@ module.exports = {
 
     async beforeUpdate(params, data) {
       const {
-        title, parent, slug,
+        title, parent, campaign, slug,
       } = data;
 
       // Otherwise is a "draft -> publish" event
       if (title) {
-        data.slug = await createPageSlug({ title, parent, slug });
+        data.slug = await createPageSlug({ title, parent, campaign, slug });
       }
     },
 
