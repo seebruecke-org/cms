@@ -68,9 +68,9 @@
       "repeatable": false,
       "component": "seo.seo-smo"
     },
-    "groups": {
-      "via": "actions",
-      "collection": "group"
+    "group": {
+      "model": "group",
+      "via": "actions"
     }
   }
 }

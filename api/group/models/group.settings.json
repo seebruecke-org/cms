@@ -37,15 +37,14 @@
       "repeatable": false,
       "component": "helper-blocks.media"
     },
-    "actions": {
-      "collection": "action",
-      "via": "groups",
-      "dominant": true
-    },
     "metadata": {
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-smo"
+    },
+    "actions": {
+      "via": "group",
+      "collection": "action"
     }
   }
 }
