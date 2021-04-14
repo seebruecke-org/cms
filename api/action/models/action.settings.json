@@ -44,10 +44,6 @@
     "coordinates": {
       "type": "string"
     },
-    "group": {
-      "model": "group",
-      "via": "action"
-    },
     "end": {
       "type": "datetime",
       "required": true
@@ -71,6 +67,10 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-smo"
+    },
+    "groups": {
+      "via": "actions",
+      "collection": "group"
     }
   }
 }

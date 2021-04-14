@@ -37,9 +37,10 @@
       "repeatable": false,
       "component": "helper-blocks.media"
     },
-    "action": {
-      "via": "group",
-      "model": "action"
+    "actions": {
+      "collection": "action",
+      "via": "groups",
+      "dominant": true
     },
     "metadata": {
       "type": "component",
