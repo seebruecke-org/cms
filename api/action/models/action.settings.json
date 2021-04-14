@@ -39,8 +39,10 @@
       "required": true
     },
     "location_detail": {
-      "type": "string",
-      "required": true
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "string"
     },
     "group": {
       "model": "group",
@@ -58,7 +60,7 @@
       "targetField": "title",
       "required": true
     },
-    "facebook_link": {
+    "link": {
       "type": "string"
     },
     "location": {
@@ -69,9 +71,6 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-smo"
-    },
-    "coordinates": {
-      "type": "string"
     }
   }
 }
