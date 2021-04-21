@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "algoliasearch": "^4.8.6",
+    "isomorphic-fetch": "^3.0.0",
     "knex": "^0.95.1",
     "lodash.pick": "^4.4.0",
     "mysql": "^2.18.1",

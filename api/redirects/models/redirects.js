@@ -1,8 +1,25 @@
-'use strict';
+require('isomorphic-fetch');
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
- * to customize this model
- */
+const { VERCEL_PRODUCTION_WEBHOOK } = process.env;
 
-module.exports = {};
+async function triggerDeployment() {
+  await fetch(VERCEL_PRODUCTION_WEBHOOK, {
+    method: 'post',
+  });
+}
+
+module.exports = {
+  lifecycles: {
+    async afterCreate() {
+      await triggerDeployment();
+    },
+
+    async afterUpdate() {
+      await triggerDeployment();
+    },
+
+    async afterDelete() {
+      await triggerDeployment();
+    },
+  },
+};
