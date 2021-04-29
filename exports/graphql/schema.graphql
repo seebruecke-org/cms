@@ -1927,10 +1927,9 @@ enum ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA {
 }
 
 enum ENUM_COMPONENTACTIONSFILTER_KEY {
-  city
-  campaign
-  group
-  federal_country
+  location
+  campaign_title
+  group_name
 }
 
 type ComponentActionsFilter {

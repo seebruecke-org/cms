@@ -2,7 +2,8 @@
   "collectionName": "components_actions_filters",
   "info": {
     "name": "Filter",
-    "icon": "broom"
+    "icon": "broom",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,10 +18,9 @@
     "key": {
       "type": "enumeration",
       "enum": [
-        "city",
-        "campaign",
-        "group",
-        "federal_country"
+        "location",
+        "campaign_title",
+        "group_name"
       ]
     },
     "value": {
