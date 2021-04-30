@@ -71,6 +71,10 @@
     "group": {
       "model": "group",
       "via": "actions"
+    },
+    "campaign": {
+      "model": "campaign",
+      "via": "actions"
     }
   }
 }

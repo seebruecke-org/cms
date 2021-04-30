@@ -44,6 +44,10 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "actions": {
+      "via": "campaign",
+      "collection": "action"
     }
   }
 }
