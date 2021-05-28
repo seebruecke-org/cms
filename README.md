@@ -21,8 +21,6 @@ The database setup is pre-configured in [`config/env/development/database.js`](/
 
 ## Production setup
 
-### Setup the proper node environment variable
-
 `NODE_ENV` needs to be set to `production`.
 
 1. Install npm dependencies
