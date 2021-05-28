@@ -46,7 +46,7 @@ Some content changes (e.g. redirects) needs to trigger a rebuild of the frontend
 
 `cp .env.example .env`
 
-2. Enter your Algolia credentials into rout `.env` file
+2. Enter your Algolia credentials into `.env`:
 
 - VERCEL_PRODUCTION_WEBHOOK
 
@@ -57,7 +57,7 @@ Some content changes (e.g. redirects) needs to trigger a rebuild of the frontend
 
 `cp .env.example .env`
 
-2. Enter your Algolia credentials into rout `.env` file
+2. Enter your Algolia credentials into `.env`:
 
 - ALGOLIA_PROJECT
 - ALGOLIA_ACCESS_TOKEN
@@ -72,7 +72,7 @@ The configuration database of the production environment is set in [`config/env/
 
 `cp .env.example .env`
 
-2. Enter the following credentials into your `.env` file
+2. Enter the following credentials into your `.env`:
 
 - DATABASE_HOST
 - DATABASE_NAME
