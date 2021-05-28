@@ -16,6 +16,8 @@ The database setup is pre-configured in [`config/env/development/database.js`](/
 
 `npm run develop`
 
+3. You should now be able to access the admin panel via [localhost:1337/admin](http://localhost:1337/admin).
+
 
 ## Production setup
 
