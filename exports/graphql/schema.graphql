@@ -2354,14 +2354,14 @@ type ComponentSharedBlocksStageLarge {
   image: ComponentHelperBlocksMedia
   cta: ComponentHelperBlocksLink
   subnavigation: [ComponentHelperBlocksLink]
-  title: ComponentSharedBlocksHeading
+  heading: ComponentSharedBlocksHeading
 }
 
 input ComponentSharedBlocksStageLargeInput {
   image: ComponentHelperBlocksMediaInput
   cta: ComponentHelperBlocksLinkInput
   subnavigation: [ComponentHelperBlocksLinkInput!]
-  title: ComponentSharedBlocksHeadingInput
+  heading: ComponentSharedBlocksHeadingInput
 }
 
 input editComponentSharedBlocksStageLargeInput {
@@ -2369,7 +2369,7 @@ input editComponentSharedBlocksStageLargeInput {
   image: editComponentHelperBlocksMediaInput
   cta: editComponentHelperBlocksLinkInput
   subnavigation: [editComponentHelperBlocksLinkInput]
-  title: editComponentSharedBlocksHeadingInput
+  heading: editComponentSharedBlocksHeadingInput
 }
 
 type ComponentSharedBlocksStageMedium {

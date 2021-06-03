@@ -24,7 +24,7 @@
       "required": true,
       "component": "helper-blocks.link"
     },
-    "title": {
+    "heading": {
       "type": "component",
       "repeatable": false,
       "component": "shared-blocks.heading"
