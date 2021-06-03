@@ -12,10 +12,6 @@
       "repeatable": false,
       "component": "helper-blocks.media"
     },
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "cta": {
       "type": "component",
       "repeatable": false,
@@ -27,6 +23,11 @@
       "repeatable": true,
       "required": true,
       "component": "helper-blocks.link"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-blocks.heading"
     }
   }
 }
