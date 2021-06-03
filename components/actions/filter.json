@@ -19,8 +19,8 @@
       "type": "enumeration",
       "enum": [
         "location",
-        "campaign_title",
-        "group_name"
+        "campaign",
+        "group"
       ]
     },
     "value": {
