@@ -1949,8 +1949,8 @@ enum ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA {
 
 enum ENUM_COMPONENTACTIONSFILTER_KEY {
   location
-  campaign_title
-  group_name
+  campaign
+  group
 }
 
 type ComponentActionsFilter {
@@ -2355,6 +2355,7 @@ type ComponentSharedBlocksStageLarge {
   cta: ComponentHelperBlocksLink
   subnavigation: [ComponentHelperBlocksLink]
   heading: ComponentSharedBlocksHeading
+  intro: String
 }
 
 input ComponentSharedBlocksStageLargeInput {
@@ -2362,6 +2363,7 @@ input ComponentSharedBlocksStageLargeInput {
   cta: ComponentHelperBlocksLinkInput
   subnavigation: [ComponentHelperBlocksLinkInput!]
   heading: ComponentSharedBlocksHeadingInput
+  intro: String
 }
 
 input editComponentSharedBlocksStageLargeInput {
@@ -2370,6 +2372,7 @@ input editComponentSharedBlocksStageLargeInput {
   cta: editComponentHelperBlocksLinkInput
   subnavigation: [editComponentHelperBlocksLinkInput]
   heading: editComponentSharedBlocksHeadingInput
+  intro: String
 }
 
 type ComponentSharedBlocksStageMedium {
