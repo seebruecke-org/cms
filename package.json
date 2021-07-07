@@ -10,31 +10,31 @@
     "strapi": "strapi"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
   "dependencies": {
-    "algoliasearch": "^4.8.6",
+    "algoliasearch": "^4.10.3",
     "isomorphic-fetch": "^3.0.0",
     "knex": "^0.95.1",
     "lodash.pick": "^4.4.0",
     "mysql": "^2.18.1",
     "slugify": "^1.5.0",
     "sqlite3": "^5.0.2",
-    "strapi": "3.6.3",
-    "strapi-admin": "3.6.3",
-    "strapi-connector-bookshelf": "3.6.3",
-    "strapi-plugin-content-manager": "3.6.3",
-    "strapi-plugin-content-type-builder": "3.6.3",
-    "strapi-plugin-email": "3.6.3",
-    "strapi-plugin-graphql": "3.6.3",
-    "strapi-plugin-upload": "3.6.3",
-    "strapi-plugin-users-permissions": "3.6.3",
-    "strapi-utils": "3.6.3"
+    "strapi": "3.6.5",
+    "strapi-admin": "3.6.5",
+    "strapi-connector-bookshelf": "3.6.5",
+    "strapi-plugin-content-manager": "3.6.5",
+    "strapi-plugin-content-type-builder": "3.6.5",
+    "strapi-plugin-email": "3.6.5",
+    "strapi-plugin-graphql": "3.6.5",
+    "strapi-plugin-upload": "3.6.5",
+    "strapi-plugin-users-permissions": "3.6.5",
+    "strapi-utils": "3.6.5"
   },
   "author": {
     "name": "A Strapi developer"
