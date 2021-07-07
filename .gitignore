@@ -1,3 +1,4 @@
+# Strapi
 .cache/
 .env
 .strapi-updater.json
@@ -5,3 +6,8 @@
 build/
 node_modules/
 public/uploads
+license.txt
+public/
+
+# Server
+start.sh
