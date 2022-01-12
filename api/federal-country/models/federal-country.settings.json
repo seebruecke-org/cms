@@ -10,10 +10,20 @@
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid",
@@ -37,25 +47,40 @@
         "shared-blocks.oembed",
         "shared-blocks.newsletter",
         "shared-blocks.actions"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "country": {
-      "model": "country",
-      "via": "federal_countries"
+      "via": "federal_countries",
+      "model": "country"
     },
     "cities": {
-      "collection": "city",
-      "via": "federal_country"
+      "via": "federal_country",
+      "collection": "city"
     },
     "metadata": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo-smo"
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "demands": {
       "type": "component",
       "repeatable": false,
-      "component": "demands.demands"
+      "component": "demands.demands",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
