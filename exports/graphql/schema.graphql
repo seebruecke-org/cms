@@ -959,16 +959,22 @@ type Menu {
   created_at: DateTime!
   updated_at: DateTime!
   menu: [ComponentMenuMenu]
+  locale: String
+  localizations(sort: String, limit: Int, start: Int, where: JSON): [Menu]
 }
 
 input MenuInput {
   menu: [ComponentMenuMenuInput]
+  localizations: [ID]
+  locale: String
   created_by: ID
   updated_by: ID
 }
 
 input editMenuInput {
   menu: [editComponentMenuMenuInput]
+  localizations: [ID]
+  locale: String
   created_by: ID
   updated_by: ID
 }
@@ -1006,7 +1012,9 @@ type NewsEntry {
   image: ComponentHelperBlocksMedia
   content: [NewsEntryContentDynamicZone]!
   metadata: ComponentSeoSeoSmo
+  locale: String
   published_at: DateTime
+  localizations(sort: String, limit: Int, start: Int, where: JSON): [NewsEntry]
 }
 
 type NewsEntryConnection {
@@ -1030,6 +1038,7 @@ type NewsEntryGroupBy {
   slug: [NewsEntryConnectionSlug]
   image: [NewsEntryConnectionImage]
   metadata: [NewsEntryConnectionMetadata]
+  locale: [NewsEntryConnectionLocale]
   published_at: [NewsEntryConnectionPublished_at]
 }
 
@@ -1078,6 +1087,11 @@ type NewsEntryConnectionMetadata {
   connection: NewsEntryConnection
 }
 
+type NewsEntryConnectionLocale {
+  key: String
+  connection: NewsEntryConnection
+}
+
 type NewsEntryConnectionPublished_at {
   key: DateTime
   connection: NewsEntryConnection
@@ -1091,6 +1105,8 @@ input NewsEntryInput {
   image: ComponentHelperBlocksMediaInput
   content: [NewsEntryContentDynamicZoneInput!]!
   metadata: ComponentSeoSeoSmoInput
+  localizations: [ID]
+  locale: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1104,6 +1120,8 @@ input editNewsEntryInput {
   image: editComponentHelperBlocksMediaInput
   content: [NewsEntryContentDynamicZoneInput!]!
   metadata: editComponentSeoSeoSmoInput
+  localizations: [ID]
+  locale: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1535,16 +1553,22 @@ type Settings {
   created_at: DateTime!
   updated_at: DateTime!
   homepage: Page
+  locale: String
+  localizations(sort: String, limit: Int, start: Int, where: JSON): [Settings]
 }
 
 input SettingInput {
   homepage: ID
+  localizations: [ID]
+  locale: String
   created_by: ID
   updated_by: ID
 }
 
 input editSettingInput {
   homepage: ID
+  localizations: [ID]
+  locale: String
   created_by: ID
   updated_by: ID
 }
@@ -2631,7 +2655,7 @@ input editComponentTeasersSmallItemInput {
   type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionCoordinates | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionLink | ActionConnectionLocation | ActionConnectionMetadata | ActionConnectionGroup | ActionConnectionCampaign | ActionConnectionLocale | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionMetadata | CampaignConnectionSlug | CampaignConnectionLocale | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionLocale | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionMetadata | CountryConnectionLocale | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionMetadata | FederalCountryConnectionDemands | FederalCountryConnectionLocale | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionImage | GroupConnectionMetadata | GroupConnectionLocale | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionType | NewsEntryConnectionPublication_date | NewsEntryConnectionSlug | NewsEntryConnectionImage | NewsEntryConnectionMetadata | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionMetadata | PageConnectionAlgolia_id | PageConnectionCampaign | PageConnectionLocale | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | Redirects | RedirectsConnection | RedirectsAggregator | RedirectsGroupBy | RedirectsConnectionId | RedirectsConnectionCreated_at | RedirectsConnectionUpdated_at | RedirectsConnectionFrom | RedirectsConnectionTo | RedirectsConnectionType | createRedirectPayload | updateRedirectPayload | deleteRedirectPayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionImage | SafeHarbourConnectionSince | SafeHarbourConnectionDemands | SafeHarbourConnectionMetadata | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentActionsFilter | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksMedia | ComponentSharedBlocksNewsletter | ComponentSharedBlocksOembed | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Action | ActionConnection | ActionAggregator | ActionGroupBy | ActionConnectionId | ActionConnectionCreated_at | ActionConnectionUpdated_at | ActionConnectionTitle | ActionConnectionStart | ActionConnectionLocation_detail | ActionConnectionCoordinates | ActionConnectionEnd | ActionConnectionIntro | ActionConnectionSlug | ActionConnectionLink | ActionConnectionLocation | ActionConnectionMetadata | ActionConnectionGroup | ActionConnectionCampaign | ActionConnectionLocale | ActionConnectionPublished_at | createActionPayload | updateActionPayload | deleteActionPayload | Campaign | CampaignConnection | CampaignAggregator | CampaignGroupBy | CampaignConnectionId | CampaignConnectionCreated_at | CampaignConnectionUpdated_at | CampaignConnectionTitle | CampaignConnectionMetadata | CampaignConnectionSlug | CampaignConnectionLocale | CampaignConnectionPublished_at | createCampaignPayload | updateCampaignPayload | deleteCampaignPayload | City | CityConnection | CityAggregator | CityGroupBy | CityConnectionId | CityConnectionCreated_at | CityConnectionUpdated_at | CityConnectionName | CityConnectionSlug | CityConnectionFederal_country | CityConnectionSafe_harbour | CityConnectionGroup | CityConnectionIs_city_state | CityConnectionCoordinates | CityConnectionLocale | CityConnectionPublished_at | createCityPayload | updateCityPayload | deleteCityPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionCreated_at | CountryConnectionUpdated_at | CountryConnectionName | CountryConnectionSlug | CountryConnectionMetadata | CountryConnectionLocale | CountryConnectionPublished_at | createCountryPayload | updateCountryPayload | deleteCountryPayload | FederalCountry | FederalCountryConnection | FederalCountryAggregator | FederalCountryGroupBy | FederalCountryConnectionId | FederalCountryConnectionCreated_at | FederalCountryConnectionUpdated_at | FederalCountryConnectionName | FederalCountryConnectionSlug | FederalCountryConnectionCountry | FederalCountryConnectionMetadata | FederalCountryConnectionDemands | FederalCountryConnectionLocale | FederalCountryConnectionPublished_at | createFederalCountryPayload | updateFederalCountryPayload | deleteFederalCountryPayload | Group | GroupConnection | GroupAggregator | GroupGroupBy | GroupConnectionId | GroupConnectionCreated_at | GroupConnectionUpdated_at | GroupConnectionCity | GroupConnectionImage | GroupConnectionMetadata | GroupConnectionLocale | GroupConnectionPublished_at | createGroupPayload | updateGroupPayload | deleteGroupPayload | Menu | updateMenuPayload | deleteMenuPayload | NewsEntry | NewsEntryConnection | NewsEntryAggregator | NewsEntryGroupBy | NewsEntryConnectionId | NewsEntryConnectionCreated_at | NewsEntryConnectionUpdated_at | NewsEntryConnectionTitle | NewsEntryConnectionType | NewsEntryConnectionPublication_date | NewsEntryConnectionSlug | NewsEntryConnectionImage | NewsEntryConnectionMetadata | NewsEntryConnectionLocale | NewsEntryConnectionPublished_at | createNewsEntryPayload | updateNewsEntryPayload | deleteNewsEntryPayload | Page | PageConnection | PageAggregator | PageGroupBy | PageConnectionId | PageConnectionCreated_at | PageConnectionUpdated_at | PageConnectionTitle | PageConnectionSlug | PageConnectionParent | PageConnectionMetadata | PageConnectionAlgolia_id | PageConnectionCampaign | PageConnectionLocale | PageConnectionPublished_at | createPagePayload | updatePagePayload | deletePagePayload | Redirects | RedirectsConnection | RedirectsAggregator | RedirectsGroupBy | RedirectsConnectionId | RedirectsConnectionCreated_at | RedirectsConnectionUpdated_at | RedirectsConnectionFrom | RedirectsConnectionTo | RedirectsConnectionType | createRedirectPayload | updateRedirectPayload | deleteRedirectPayload | SafeHarbour | SafeHarbourConnection | SafeHarbourAggregator | SafeHarbourGroupBy | SafeHarbourConnectionId | SafeHarbourConnectionCreated_at | SafeHarbourConnectionUpdated_at | SafeHarbourConnectionCity | SafeHarbourConnectionImage | SafeHarbourConnectionSince | SafeHarbourConnectionDemands | SafeHarbourConnectionMetadata | SafeHarbourConnectionPublished_at | createSafeHarbourPayload | updateSafeHarbourPayload | deleteSafeHarbourPayload | Settings | updateSettingPayload | deleteSettingPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAccordionItem | ComponentActionsFilter | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksMedia | ComponentSharedBlocksNewsletter | ComponentSharedBlocksOembed | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem
 
 input InputID {
   id: ID!
@@ -2668,10 +2692,10 @@ type Query {
   group(id: ID!, publicationState: PublicationState): Group
   groups(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState, locale: String): [Group]
   groupsConnection(sort: String, limit: Int, start: Int, where: JSON, locale: String): GroupConnection
-  menu(publicationState: PublicationState): Menu
+  menu(publicationState: PublicationState, locale: String): Menu
   newsEntry(id: ID!, publicationState: PublicationState): NewsEntry
-  newsEntries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [NewsEntry]
-  newsEntriesConnection(sort: String, limit: Int, start: Int, where: JSON): NewsEntryConnection
+  newsEntries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState, locale: String): [NewsEntry]
+  newsEntriesConnection(sort: String, limit: Int, start: Int, where: JSON, locale: String): NewsEntryConnection
   page(id: ID!, publicationState: PublicationState): Page
   pages(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState, locale: String): [Page]
   pagesConnection(sort: String, limit: Int, start: Int, where: JSON, locale: String): PageConnection
@@ -2681,7 +2705,7 @@ type Query {
   safeHarbour(id: ID!, publicationState: PublicationState): SafeHarbour
   safeHarbours(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [SafeHarbour]
   safeHarboursConnection(sort: String, limit: Int, start: Int, where: JSON): SafeHarbourConnection
-  setting(publicationState: PublicationState): Settings
+  setting(publicationState: PublicationState, locale: String): Settings
   files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
@@ -2716,8 +2740,8 @@ type Mutation {
   createGroup(input: createGroupInput): createGroupPayload
   updateGroup(input: updateGroupInput): updateGroupPayload
   deleteGroup(input: deleteGroupInput): deleteGroupPayload
-  updateMenu(input: updateMenuInput): updateMenuPayload
-  deleteMenu: deleteMenuPayload
+  updateMenu(input: updateMenuInput, locale: String): updateMenuPayload
+  deleteMenu(locale: String): deleteMenuPayload
   createNewsEntry(input: createNewsEntryInput): createNewsEntryPayload
   updateNewsEntry(input: updateNewsEntryInput): updateNewsEntryPayload
   deleteNewsEntry(input: deleteNewsEntryInput): deleteNewsEntryPayload
@@ -2730,8 +2754,8 @@ type Mutation {
   createSafeHarbour(input: createSafeHarbourInput): createSafeHarbourPayload
   updateSafeHarbour(input: updateSafeHarbourInput): updateSafeHarbourPayload
   deleteSafeHarbour(input: deleteSafeHarbourInput): deleteSafeHarbourPayload
-  updateSetting(input: updateSettingInput): updateSettingPayload
-  deleteSetting: deleteSettingPayload
+  updateSetting(input: updateSettingInput, locale: String): updateSettingPayload
+  deleteSetting(locale: String): deleteSettingPayload
 
   """Delete one file"""
   deleteFile(input: deleteFileInput): deleteFilePayload
@@ -2759,7 +2783,10 @@ type Mutation {
   createCountryLocalization(input: updateCountryInput!): Country!
   createFederalCountryLocalization(input: updateFederalCountryInput!): FederalCountry!
   createGroupLocalization(input: updateGroupInput!): Group!
+  createMenuLocalization(input: updateMenuInput!): Menu!
+  createNewsEntryLocalization(input: updateNewsEntryInput!): NewsEntry!
   createPageLocalization(input: updatePageInput!): Page!
+  createSettingLocalization(input: updateSettingInput!): Settings!
   upload(refId: ID, ref: String, field: String, source: String, info: FileInfoInput, file: Upload!): UploadFile!
   multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
   updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!

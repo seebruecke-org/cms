@@ -2,12 +2,18 @@
   "kind": "singleType",
   "collectionName": "settings",
   "info": {
-    "name": "settings"
+    "name": "settings",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
   },
   "attributes": {
     "homepage": {
