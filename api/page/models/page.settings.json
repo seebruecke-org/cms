@@ -10,13 +10,28 @@
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "content": {
       "type": "dynamiczone",
@@ -38,7 +53,12 @@
         "shared-blocks.newsletter",
         "shared-blocks.oembed",
         "shared-blocks.fundraisingbox"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "parent": {
       "model": "page"
@@ -46,10 +66,20 @@
     "metadata": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo-smo"
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "algolia_id": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "campaign": {
       "model": "campaign"

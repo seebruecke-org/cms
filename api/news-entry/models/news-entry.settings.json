@@ -10,10 +10,20 @@
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "type": {
       "type": "enumeration",
@@ -21,10 +31,20 @@
         "news",
         "pressrelease"
       ],
-      "default": "news"
+      "default": "news",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "publication_date": {
-      "type": "date"
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "slug": {
       "type": "uid",
@@ -34,7 +54,12 @@
       "type": "component",
       "repeatable": false,
       "component": "helper-blocks.media",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "content": {
       "type": "dynamiczone",
@@ -53,12 +78,22 @@
         "shared-blocks.newsletter",
         "shared-blocks.actions"
       ],
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "metadata": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo-smo"
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

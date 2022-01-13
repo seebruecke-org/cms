@@ -10,10 +10,20 @@
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "federal_countries": {
       "via": "country",
@@ -42,12 +52,22 @@
         "shared-blocks.actions",
         "shared-blocks.teaser-large",
         "shared-blocks.unterbrecher"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "metadata": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo-smo"
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
