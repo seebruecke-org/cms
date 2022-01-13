@@ -10,6 +10,11 @@
     "timestamps": true,
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "city": {
       "via": "safe_harbour",
@@ -27,26 +32,51 @@
         "shared-blocks.teasers-small",
         "shared-blocks.teaser-large",
         "shared-blocks.unterbrecher"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "image": {
       "type": "component",
       "repeatable": false,
-      "component": "helper-blocks.media"
+      "component": "helper-blocks.media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "since": {
-      "type": "date"
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
     },
     "demands": {
       "type": "component",
       "repeatable": false,
       "component": "demands.demands",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "metadata": {
       "type": "component",
       "repeatable": false,
-      "component": "seo.seo-smo"
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
