@@ -29,7 +29,8 @@
       "type": "enumeration",
       "enum": [
         "news",
-        "pressrelease"
+        "pressrelease",
+        "commentary"
       ],
       "default": "news",
       "pluginOptions": {
