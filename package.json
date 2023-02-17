@@ -24,7 +24,6 @@
     "lodash.pick": "^4.4.0",
     "mysql": "^2.18.1",
     "slugify": "^1.5.0",
-    "sqlite3": "^5.0.2",
     "strapi": "3.6.5",
     "strapi-admin": "3.6.5",
     "strapi-connector-bookshelf": "3.6.5",
