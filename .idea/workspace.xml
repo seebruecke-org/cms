@@ -4,136 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab38193-20bf-4b18-a247-08baaafe876b" name="Changes" comment="chore: gitignore">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/action/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/action/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/action/controllers/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/action/controllers/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/action/models/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/action/models/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/action/models/action.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/action/models/action.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/action/services/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/action/services/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/algolia/services/algolia.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/algolia/services/algolia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/campaign/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/campaign/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/campaign/controllers/campaign.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/campaign/controllers/campaign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/campaign/models/campaign.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/campaign/models/campaign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/campaign/models/campaign.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/campaign/models/campaign.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/campaign/services/campaign.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/campaign/services/campaign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/city/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/city/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/city/controllers/city.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/city/controllers/city.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/city/models/city.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/city/models/city.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/city/models/city.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/city/models/city.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/city/services/city.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/city/services/city.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/country/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/country/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/country/controllers/country.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/country/controllers/country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/country/models/country.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/country/models/country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/country/models/country.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/country/models/country.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/country/services/country.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/country/services/country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/federal-country/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/federal-country/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/federal-country/controllers/federal-country.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/federal-country/controllers/federal-country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/federal-country/models/federal-country.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/federal-country/models/federal-country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/federal-country/models/federal-country.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/federal-country/models/federal-country.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/federal-country/services/federal-country.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/federal-country/services/federal-country.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/group/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/group/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/group/controllers/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/group/controllers/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/group/models/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/group/models/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/group/models/group.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/group/models/group.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/group/services/group.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/group/services/group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/menu/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/menu/controllers/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu/controllers/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/menu/models/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu/models/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/menu/models/menu.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu/models/menu.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/menu/services/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/menu/services/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/news-entry/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/news-entry/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/news-entry/controllers/news-entry.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/news-entry/controllers/news-entry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/news-entry/models/news-entry.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/news-entry/models/news-entry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/news-entry/models/news-entry.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/news-entry/models/news-entry.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/news-entry/services/news-entry.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/news-entry/services/news-entry.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/page/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/page/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/page/controllers/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/page/controllers/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/page/models/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/page/models/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/page/models/page.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/page/models/page.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/page/services/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/page/services/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/redirects/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/redirects/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/redirects/controllers/redirects.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/redirects/controllers/redirects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/redirects/models/redirects.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/redirects/models/redirects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/redirects/models/redirects.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/redirects/models/redirects.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/redirects/services/redirects.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/redirects/services/redirects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/safe-harbour/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/safe-harbour/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/safe-harbour/controllers/safe-harbour.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/safe-harbour/controllers/safe-harbour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/safe-harbour/models/safe-harbour.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/safe-harbour/models/safe-harbour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/safe-harbour/models/safe-harbour.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/safe-harbour/models/safe-harbour.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/safe-harbour/services/safe-harbour.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/safe-harbour/services/safe-harbour.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings/controllers/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings/controllers/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings/models/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings/models/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings/models/settings.settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings/models/settings.settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/settings/services/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/settings/services/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/accordion/item.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/accordion/item.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/actions/filter.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/actions/filter.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/demands/demands.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/demands/demands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/helper-blocks/link.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/helper-blocks/link.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/helper-blocks/media.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/helper-blocks/media.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/material/item.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/material/item.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/menu/menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/menu/menu.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/seo/seo-smo.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/seo/seo-smo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/accordion.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/accordion.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/actions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/contact.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/contact.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/fundraisingbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/fundraisingbox.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/heading.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/heading.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/material.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/material.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/media-gallery.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/media-gallery.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/media.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/media.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/newsletter.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/newsletter.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/oembed.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/oembed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/richtext.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/richtext.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/stage-large.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/stage-large.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/stage-medium.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/stage-medium.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/sub-navigation.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/sub-navigation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/teaser-large.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/teaser-large.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/teasers-small.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/teasers-small.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared-blocks/unterbrecher.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared-blocks/unterbrecher.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/teasers-small/item.json" beforeDir="false" afterPath="$PROJECT_DIR$/components/teasers-small/item.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/env/development/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/env/development/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/env/production/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/env/production/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/functions/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/functions/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/functions/cron.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/functions/cron.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/functions/responses/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/functions/responses/404.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exports/graphql/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/exports/graphql/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extensions/users-permissions/config/jwt.js" beforeDir="false" afterPath="$PROJECT_DIR$/extensions/users-permissions/config/jwt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/uk.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/uk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/zh-Hans.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/zh-Hans.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/zh.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/admin/src/translations/zh.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-link/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-link/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/uk.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/uk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/zh-Hans.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/zh-Hans.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/zh.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/admin/src/translations/zh.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/ckeditor-build/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/ckeditor-build/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/config/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/config/routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/field-wysiwyg/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/field-wysiwyg/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="fab38193-20bf-4b18-a247-08baaafe876b" name="Changes" comment="replace config files with v4 reference" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="map" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -345,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675090780388</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="replace config files with v4 reference">
+      <created>1677573595423</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677573595423</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +257,7 @@
     <MESSAGE value="Add commentary as a news category" />
     <MESSAGE value="chore: sqlite3 doesn´t install on m1" />
     <MESSAGE value="chore: gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: gitignore" />
+    <MESSAGE value="replace config files with v4 reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace config files with v4 reference" />
   </component>
 </project>
