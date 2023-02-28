@@ -22,7 +22,6 @@
     "@strapi/plugin-i18n": "4.7.0",
     "@strapi/plugin-users-permissions": "4.7.0",
     "@strapi/strapi": "4.7.0",
-    "algoliasearch": "^4.10.3",
     "css-loader": "^6.7.3",
     "isomorphic-fetch": "^3.0.0",
     "lodash.pick": "^4.4.0",
