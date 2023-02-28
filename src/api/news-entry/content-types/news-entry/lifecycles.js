@@ -12,11 +12,43 @@ const attributes = [
 ];
 
 module.exports = {
-  lifecycles: {
-    async afterCreate(data) {
+  async afterCreate(data) {
+    try {
+      const { objectID } = await strapi.services.algolia.save({
+        ...pick(data, attributes),
+        contentType: 'news-entry',
+      });
+
+      if (objectID) {
+        data.algolia_id = objectID;
+      }
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.log('Could not create entry in algolia', err.message);
+    }
+  },
+
+  async afterUpdate(data) {
+    const { algolia_id } = data;
+
+    if (algolia_id) {
+      const picked = pick(data, attributes);
+      picked.objectID = algolia_id;
+
       try {
+        const { objectID } = await strapi.services.algolia.update(picked);
+
+        if (objectID) {
+          data.algolia_id = objectID;
+        }
+      } catch (err) {
+        console.log('Could not update entry in algolia', err.message);
+      }
+    } else {
+      try {
+        const picked = pick(data, attributes);
         const { objectID } = await strapi.services.algolia.save({
-          ...pick(data, attributes),
+          ...picked,
           contentType: 'news-entry',
         });
 
@@ -26,51 +58,18 @@ module.exports = {
       } catch (err) {
         console.log('Could not create entry in algolia', err.message);
       }
-    },
+    }
+  },
 
-    async afterUpdate(data) {
-      const { algolia_id } = data;
+  async afterDelete(data) {
+    const { algolia_id } = data;
 
+    try {
       if (algolia_id) {
-        const picked = pick(data, attributes);
-        picked.objectID = algolia_id;
-
-        try {
-          const { objectID } = await strapi.services.algolia.update(picked);
-
-          if (objectID) {
-            data.algolia_id = objectID;
-          }
-        } catch (err) {
-          console.log('Could not update entry in algolia', err.message);
-        }
-      } else {
-        try {
-          const picked = pick(data, attributes);
-          const { objectID } = await strapi.services.algolia.save({
-            ...picked,
-            contentType: 'news-entry',
-          });
-
-          if (objectID) {
-            data.algolia_id = objectID;
-          }
-        } catch (err) {
-          console.log('Could not create entry in algolia', err.message);
-        }
+        await strapi.services.algolia.delete([algolia_id]);
       }
-    },
-
-    async afterDelete(data) {
-      const { algolia_id } = data;
-
-      try {
-        if (algolia_id) {
-          await strapi.services.algolia.delete([algolia_id]);
-        }
-      } catch (err) {
-        console.log('Could not delete entry in algolia', err.message);
-      }
-    },
+    } catch (err) {
+      console.log('Could not delete entry in algolia', err.message);
+    }
   },
 };

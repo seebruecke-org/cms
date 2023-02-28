@@ -9,17 +9,15 @@ async function triggerDeployment() {
 }
 
 module.exports = {
-  lifecycles: {
-    async afterCreate() {
-      await triggerDeployment();
-    },
+  async afterCreate() {
+    await triggerDeployment();
+  },
 
-    async afterUpdate() {
-      await triggerDeployment();
-    },
+  async afterUpdate() {
+    await triggerDeployment();
+  },
 
-    async afterDelete() {
-      await triggerDeployment();
-    },
+  async afterDelete() {
+    await triggerDeployment();
   },
 };

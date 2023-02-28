@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab38193-20bf-4b18-a247-08baaafe876b" name="Changes" comment="replace config files with v4 reference">
+    <list default="true" id="fab38193-20bf-4b18-a247-08baaafe876b" name="Changes" comment="Database conf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/action/controllers/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/action/controllers/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/action/routes/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/action/routes/action.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +189,7 @@
       <workItem from="1676661012328" duration="395000" />
       <workItem from="1677574811676" duration="510000" />
       <workItem from="1677576290034" duration="2355000" />
+      <workItem from="1677578676565" duration="1437000" />
     </task>
     <task id="LOCAL-00001" summary="local database is mysql">
       <created>1668448019176</created>
@@ -244,7 +240,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677574051311</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update packages">
+      <created>1677578984595</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677578984595</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Database conf">
+      <created>1677578998059</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677578998059</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +289,9 @@
     <MESSAGE value="chore: sqlite3 doesn´t install on m1" />
     <MESSAGE value="chore: gitignore" />
     <MESSAGE value="replace config files with v4 reference" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace config files with v4 reference" />
+    <MESSAGE value="update packages" />
+    <MESSAGE value="Database conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database conf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -287,10 +299,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/node_modules/@strapi/strapi/lib/core/domain/content-type/index.js</url>
           <line>18</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>
