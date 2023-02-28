@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_blocks_oembed",
+  "info": {
+    "icon": "code",
+    "displayName": "OEmbed (Twitter, Youtube ...)"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

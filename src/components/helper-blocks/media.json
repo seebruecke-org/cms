@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_helper_blocks_media",
+  "info": {
+    "icon": "camera-retro",
+    "displayName": "Media"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": false,
+      "required": true
+    },
+    "caption": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}

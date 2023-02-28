@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/safe-harbour",
+      "handler": "safe-harbour.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/safe-harbour/count",
+      "handler": "safe-harbour.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/safe-harbour/:id",
+      "handler": "safe-harbour.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/safe-harbour",
+      "handler": "safe-harbour.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/safe-harbour/:id",
+      "handler": "safe-harbour.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/safe-harbour/:id",
+      "handler": "safe-harbour.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

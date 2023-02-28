@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "safe_harbours",
+  "info": {
+    "singularName": "safe-harbour",
+    "pluralName": "safe-harbours",
+    "displayName": "Safe-harbour",
+    "name": "safe-harbour"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city",
+      "inversedBy": "safe_harbour"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.richtext",
+        "shared-blocks.contact",
+        "shared-blocks.accordion",
+        "shared-blocks.material",
+        "shared-blocks.teasers-small",
+        "shared-blocks.teaser-large",
+        "shared-blocks.unterbrecher"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "since": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "demands": {
+      "type": "component",
+      "repeatable": false,
+      "component": "demands.demands",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

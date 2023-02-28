@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_teaser_small_items",
+  "info": {
+    "icon": "hashtag",
+    "description": "",
+    "displayName": "item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "link",
+      "required": true,
+      "columnType": "longtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "internal",
+        "campaign",
+        "action"
+      ],
+      "default": "internal",
+      "required": true
+    }
+  }
+}

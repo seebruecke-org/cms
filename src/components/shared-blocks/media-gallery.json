@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_blocks_media_gallery",
+  "info": {
+    "icon": "images",
+    "displayName": "Media Gallery"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "helper-blocks.media",
+      "required": true
+    }
+  }
+}

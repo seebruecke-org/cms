@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_blocks_sub_navigation",
+  "info": {
+    "name": "Sub Navigation",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "helper-blocks.link"
+    }
+  }
+}

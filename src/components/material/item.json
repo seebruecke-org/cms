@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_material_item",
+  "info": {
+    "icon": "receipt",
+    "description": "",
+    "displayName": "Item"
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "type": "media",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "external_link": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

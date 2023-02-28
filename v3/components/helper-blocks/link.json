@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_helper_blocks_link",
+  "info": {
+    "name": "Link",
+    "icon": "arrow-right"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "link",
+      "required": true,
+      "columnType": "longtext"
+    }
+  }
+}

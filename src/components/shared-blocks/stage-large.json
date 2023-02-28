@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_blocks_stage_large",
+  "info": {
+    "icon": "chalkboard-teacher",
+    "description": "",
+    "displayName": "Stage (Large)"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.link",
+      "required": false
+    },
+    "subnavigation": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "helper-blocks.link"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-blocks.heading"
+    },
+    "intro": {
+      "type": "richtext"
+    }
+  }
+}

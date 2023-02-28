@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_shared_blocks_unterbrecher",
+  "info": {
+    "icon": "clone",
+    "description": "",
+    "displayName": "Unterbrecher"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-blocks.heading",
+      "required": true
+    },
+    "intro": {
+      "type": "richtext"
+    },
+    "orientation_reversed": {
+      "type": "boolean",
+      "default": false
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.link",
+      "required": false
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "small",
+        "large"
+      ],
+      "default": "small"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "internal",
+        "campaign",
+        "action"
+      ],
+      "default": "internal",
+      "required": true
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media"
+    }
+  }
+}

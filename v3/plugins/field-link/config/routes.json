@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/suggestions",
+      "handler": "search.pathSuggest",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

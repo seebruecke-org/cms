@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_blocks_richtext",
+  "info": {
+    "name": "Richtext",
+    "icon": "terminal"
+  },
+  "options": {},
+  "attributes": {
+    "richtext": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

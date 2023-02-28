@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_blocks_newsletter",
+  "info": {
+    "icon": "comment",
+    "displayName": "Newsletter"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "richtext"
+    }
+  }
+}
