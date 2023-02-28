@@ -1,8 +1,14 @@
 module.exports = [
+  {
+    name: 'strapi::compression',
+    config: {
+      br: false,
+      gzip: true,
+    },
+  },
   'strapi::errors',
   'strapi::security',
   'strapi::cors',
-  'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
