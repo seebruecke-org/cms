@@ -4,7 +4,102 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fab38193-20bf-4b18-a247-08baaafe876b" name="Changes" comment="replace config files with v4 reference" />
+    <list default="true" id="fab38193-20bf-4b18-a247-08baaafe876b" name="Changes" comment="replace config files with v4 reference">
+      <change beforePath="$PROJECT_DIR$/api/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/action/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/action/controllers/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/action/models/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/action/models/action.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/action/services/action.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/algolia/services/algolia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/campaign/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/campaign/controllers/campaign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/campaign/models/campaign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/campaign/models/campaign.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/campaign/services/campaign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/city/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/city/controllers/city.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/city/models/city.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/city/models/city.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/city/services/city.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/country/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/country/controllers/country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/country/models/country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/country/models/country.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/country/services/country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/federal-country/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/federal-country/controllers/federal-country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/federal-country/models/federal-country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/federal-country/models/federal-country.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/federal-country/services/federal-country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/group/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/group/controllers/group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/group/models/group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/group/models/group.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/group/services/group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu/controllers/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu/models/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu/models/menu.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/menu/services/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/news-entry/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/news-entry/controllers/news-entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/news-entry/models/news-entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/news-entry/models/news-entry.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/news-entry/services/news-entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/page/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/page/controllers/page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/page/models/page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/page/models/page.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/page/services/page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/redirects/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/redirects/controllers/redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/redirects/models/redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/redirects/models/redirects.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/redirects/services/redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/safe-harbour/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/safe-harbour/controllers/safe-harbour.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/safe-harbour/models/safe-harbour.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/safe-harbour/models/safe-harbour.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/safe-harbour/services/safe-harbour.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings/config/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings/controllers/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings/models/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings/models/settings.settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/settings/services/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/accordion/item.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/actions/filter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/demands/demands.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/helper-blocks/link.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/helper-blocks/media.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/material/item.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/menu/menu.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/seo/seo-smo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/accordion.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/actions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/contact.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/fundraisingbox.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/heading.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/material.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/media-gallery.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/media.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/newsletter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/oembed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/richtext.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/stage-large.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/stage-medium.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/sub-navigation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/teaser-large.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/teasers-small.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/shared-blocks/unterbrecher.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/teasers-small/item.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extensions/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extensions/users-permissions/config/jwt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +157,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="dir" />
@@ -223,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677573595423</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="replace config files with v4 reference">
+      <created>1677574051311</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677574051311</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
