@@ -1,15 +1,28 @@
 {
-  "collectionName": "components_helper_blocks_link",
+  "collectionName": "components_helper_blocks_links",
   "info": {
+    "displayName": "Link",
     "icon": "arrow-right",
-    "displayName": "Link"
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "link": {
-      "type": "link",
-      "required": true,
-      "columnType": "longtext"
+    "Url": {
+      "type": "string",
+      "default": "Address",
+      "required": true
+    },
+    "Label": {
+      "type": "string",
+      "default": "Label",
+      "required": true
+    },
+    "Locale": {
+      "type": "enumeration",
+      "enum": [
+        "De",
+        "En"
+      ]
     }
   }
 }
