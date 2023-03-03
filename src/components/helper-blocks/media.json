@@ -15,8 +15,12 @@
       "required": true
     },
     "caption": {
-      "type": "richtext",
-      "required": false
+      "type": "customField",
+      "required": false,
+      "options": {
+        "preset": "markdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

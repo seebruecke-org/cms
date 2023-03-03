@@ -18,7 +18,11 @@
       "required": false
     },
     "description": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "markdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "external_link": {
       "type": "string"
