@@ -8,8 +8,7 @@
   "options": {},
   "attributes": {
     "Url": {
-      "type": "string",
-
+      "type": "string"
     },
     "Label": {
       "type": "string",
