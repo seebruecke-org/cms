@@ -9,17 +9,16 @@
   "attributes": {
     "Url": {
       "type": "string",
-      "default": "Address",
-      "required": true
+
     },
     "Label": {
       "type": "string",
-      "default": "Label",
       "required": true
     },
     "Locale": {
       "type": "enumeration",
       "enum": [
+        "Context",
         "De",
         "En"
       ]
