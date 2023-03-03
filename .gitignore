@@ -8,6 +8,7 @@ node_modules/
 public/uploads
 license.txt
 public/
+.idea
 
 # Server
 start.sh
