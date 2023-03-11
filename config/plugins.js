@@ -1,1 +1,7 @@
-module.exports = ({ env }) => ({});
+module.exports = {
+  graphql: {
+    config: {
+      defaultLimit: 1000,
+    },
+  },
+};

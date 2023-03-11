@@ -12,9 +12,9 @@
       "required": true
     },
     "link": {
-      "type": "link",
+      "type": "component",
       "required": true,
-      "columnType": "longtext"
+      "component": "helper-blocks.link"
     },
     "type": {
       "type": "enumeration",

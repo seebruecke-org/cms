@@ -7,14 +7,15 @@
   },
   "options": {},
   "attributes": {
-    "Url": {
-      "type": "string"
-    },
-    "Label": {
+    "url": {
       "type": "string",
       "required": true
     },
-    "Locale": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "locale": {
       "type": "enumeration",
       "enum": [
         "Context",
