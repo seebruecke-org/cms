@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_blocks_fundraisingbox",
+  "info": {
+    "icon": "charging-station",
+    "displayName": "Fundraisingbox"
+  },
+  "options": {},
+  "attributes": {
+    "script_url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

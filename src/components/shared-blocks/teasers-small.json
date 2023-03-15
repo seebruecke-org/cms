@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_blocks_teasers_small",
+  "info": {
+    "icon": "grip-horizontal",
+    "description": "",
+    "displayName": "Teasers (Small)"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "teasers-small.item",
+      "min": 1,
+      "max": 9
+    }
+  }
+}

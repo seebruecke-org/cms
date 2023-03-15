@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_blocks_richtext",
+  "info": {
+    "icon": "terminal",
+    "displayName": "Richtext",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "richtext": {
+      "type": "customField",
+      "required": true,
+      "options": {
+        "preset": "markdown"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

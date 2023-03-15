@@ -18,24 +18,18 @@
     "eslint-plugin-react-hooks": "^4.2.0"
   },
   "dependencies": {
-    "algoliasearch": "^4.10.3",
+    "@ckeditor/ckeditor5-markdown-gfm": "^36.0.1",
+    "@_sh/strapi-plugin-ckeditor": "^2.0.3",
+    "@strapi/plugin-graphql": "4.7.0",
+    "@strapi/plugin-i18n": "4.7.0",
+    "@strapi/plugin-users-permissions": "4.7.0",
+    "@strapi/strapi": "4.7.0",
+    "css-loader": "^6.7.3",
     "isomorphic-fetch": "^3.0.0",
-    "knex": "^0.95.1",
     "lodash.pick": "^4.4.0",
     "mysql": "^2.18.1",
     "slugify": "^1.5.0",
-    "sqlite3": "^5.0.2",
-    "strapi": "3.6.5",
-    "strapi-admin": "3.6.5",
-    "strapi-connector-bookshelf": "3.6.5",
-    "strapi-plugin-content-manager": "3.6.5",
-    "strapi-plugin-content-type-builder": "3.6.5",
-    "strapi-plugin-email": "3.6.5",
-    "strapi-plugin-graphql": "3.6.5",
-    "strapi-plugin-i18n": "^3.6.5",
-    "strapi-plugin-upload": "3.6.5",
-    "strapi-plugin-users-permissions": "3.6.5",
-    "strapi-utils": "3.6.5"
+    "style-loader": "^3.3.1"
   },
   "author": {
     "name": "A Strapi developer"
@@ -44,8 +38,8 @@
     "uuid": "26ad6863-1bc1-4ebd-84ae-35c677c448c4"
   },
   "engines": {
-    "node": ">=10.16.0 <=14.x.x",
-    "npm": ">=6.0.0"
+    "node": ">=18.x.x",
+    "npm": ">=9.0.0"
   },
   "license": "MIT"
 }

@@ -994,6 +994,7 @@ type deleteMenuPayload {
 enum ENUM_NEWSENTRY_TYPE {
   news
   pressrelease
+  commentary
 }
 
 union NewsEntryContentDynamicZone = ComponentSharedBlocksContact | ComponentSharedBlocksHeading | ComponentSharedBlocksMedia | ComponentSharedBlocksMaterial | ComponentSharedBlocksAccordion | ComponentSharedBlocksRichtext | ComponentSharedBlocksUnterbrecher | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksOembed | ComponentSharedBlocksNewsletter | ComponentSharedBlocksActions
@@ -1719,7 +1720,8 @@ type UploadFileConnectionName {
   connection: UploadFileConnection
 }
 
-type UploadFileConnectionAlternativeText {
+type
+UploadFileConnectionAlternativeText {
   key: String
   connection: UploadFileConnection
 }

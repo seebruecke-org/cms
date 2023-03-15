@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_blocks_accordion",
+  "info": {
+    "icon": "arrow-circle-right",
+    "displayName": "Accordion"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "accordion.item"
+    }
+  }
+}

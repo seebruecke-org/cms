@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_seo_smo",
+  "info": {
+    "icon": "theater-masks",
+    "displayName": "SEO/ SMO"
+  },
+  "options": {},
+  "attributes": {
+    "twitter_title": {
+      "type": "string"
+    },
+    "facebook_title": {
+      "type": "string"
+    },
+    "twitter_description": {
+      "type": "string"
+    },
+    "facebook_description": {
+      "type": "string"
+    },
+    "twitter_image": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "facebook_image": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 300
+    }
+  }
+}

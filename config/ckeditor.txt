@@ -1,0 +1,65 @@
+globalThis.CKEditorConfig = {
+    configs:{
+        markdown:{
+            field: {
+                key: "markdown",
+                value: "markdown",
+                metadatas: {
+                  intlLabel: {
+                    id: "ckeditor.preset.markdown.label",
+                    defaultMessage: "Markdown version",
+                  },
+                },
+            },
+            editorConfig:{
+                placeholder: 'Markdown editor',
+                plugins: [
+                    CKEditor5.essentials.Essentials,
+                    CKEditor5.autoformat.Autoformat,
+                    CKEditor5.blockQuote.BlockQuote,
+                    CKEditor5.basicStyles.Bold,
+                    CKEditor5.heading.Heading,
+                    CKEditor5.indent.Indent,
+                    CKEditor5.basicStyles.Italic,
+                    CKEditor5.link.Link,
+                    CKEditor5.list.List,
+                    CKEditor5.mediaEmbed.MediaEmbed,
+                    CKEditor5.paragraph.Paragraph,
+                    CKEditor5.table.Table,
+                    CKEditor5.table.TableToolbar,
+                    CKEditor5.sourceEditing.SourceEditing,
+                    CKEditor5.strapiPlugins.StrapiMediaLib,
+                    CKEditor5.strapiPlugins.StrapiUploadAdapter,
+                    CKEditor5.markdownGfm.Markdown,
+                    CKEditor5.list.TodoList,
+                    CKEditor5.basicStyles.Strikethrough,
+                    CKEditor5.horizontalLine.HorizontalLine
+                ],
+                toolbar: {
+                    items: [
+                        'heading',
+                        '|',
+                        'bold',
+                        'italic',
+                        'strikethrough',
+                        'link',
+                        '|',
+                        'bulletedList',
+                        'numberedList',
+                        'todoList',
+                        '|',
+                        'blockQuote',
+                        'horizontalLine',
+                        '|',
+                        'outdent',
+                        'indent',
+                        '|',
+                        'undo',
+                        'redo'
+                    ],
+                    shouldNotGroupWhenFull: true
+                },
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "singularName": "group",
+    "pluralName": "groups",
+    "displayName": "Group",
+    "name": "group"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city",
+      "inversedBy": "group"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-blocks.heading",
+        "shared-blocks.media",
+        "shared-blocks.richtext",
+        "shared-blocks.contact",
+        "shared-blocks.accordion",
+        "shared-blocks.material",
+        "shared-blocks.unterbrecher",
+        "shared-blocks.teaser-large",
+        "shared-blocks.teasers-small",
+        "shared-blocks.oembed",
+        "shared-blocks.actions",
+        "shared-blocks.media-gallery"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-smo",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "actions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::action.action",
+      "mappedBy": "group"
+    }
+  }
+}

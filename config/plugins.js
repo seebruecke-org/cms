@@ -1,5 +1,7 @@
 module.exports = {
   graphql: {
-    amountLimit: 1000,
+    config: {
+      defaultLimit: 1000,
+    },
   },
 };

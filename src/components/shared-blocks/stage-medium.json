@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_blocks_stage_medium",
+  "info": {
+    "icon": "chalkboard",
+    "description": "",
+    "displayName": "Stage (Medium)"
+  },
+  "options": {},
+  "attributes": {
+    "intro": {
+      "type": "text"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "helper-blocks.media"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "kicker": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

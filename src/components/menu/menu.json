@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_menu_menu",
+  "info": {
+    "icon": "ellipsis-h",
+    "description": "",
+    "displayName": "Menu"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "helper-blocks.link"
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "header_meta",
+        "header_main",
+        "footer_take_part",
+        "footer_about",
+        "footer_meta"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
