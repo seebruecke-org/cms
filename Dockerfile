@@ -1,18 +1,15 @@
-FROM node:14.17.6-alpine as build
+FROM node:18.15.0-alpine as build
 ENV NODE_ENV=production
 
 WORKDIR /usr/src/app
 COPY . .
 
-RUN cd plugins/field-link && npm install && \
-  cd ../field-wysiwyg && npm install && npm run build && \
-  cd ../.. && npm install && npm i semver && \
-  NODE_OPTIONS=--max_old_space_size=4096 npm run build -- --clean && \
-#  npm prune --production && \
+RUN npm install && npm i semver && \
+  NODE_OPTIONS=--max_old_space_size=4096 npm run build && \
   mkdir -p /usr/src/app/public/uploads
 
 
-FROM node:14.17.6-alpine
+FROM node:18.15.0-alpine
 ENV NODE_ENV=production
 
 WORKDIR /usr/src/app
