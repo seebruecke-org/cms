@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_blocks_embed",
+  "info": {
+    "icon": "code",
+    "displayName": "Embed",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "code": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

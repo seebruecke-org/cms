@@ -43,7 +43,7 @@
         "shared-blocks.teasers-small",
         "shared-blocks.media-gallery",
         "shared-blocks.newsletter",
-        "shared-blocks.oembed",
+        "shared-blocks.embed",
         "shared-blocks.actions"
       ],
       "pluginOptions": {

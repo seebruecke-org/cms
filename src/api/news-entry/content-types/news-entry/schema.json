@@ -77,7 +77,7 @@
         "shared-blocks.teaser-large",
         "shared-blocks.teasers-small",
         "shared-blocks.media-gallery",
-        "shared-blocks.oembed",
+        "shared-blocks.embed",
         "shared-blocks.newsletter",
         "shared-blocks.actions"
       ],

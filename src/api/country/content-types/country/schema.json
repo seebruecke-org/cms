@@ -49,7 +49,7 @@
         "shared-blocks.accordion",
         "shared-blocks.media-gallery",
         "shared-blocks.richtext",
-        "shared-blocks.oembed",
+        "shared-blocks.embed",
         "shared-blocks.stage-large",
         "shared-blocks.newsletter",
         "shared-blocks.teasers-small",

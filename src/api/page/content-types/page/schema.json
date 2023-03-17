@@ -53,7 +53,7 @@
         "shared-blocks.actions",
         "shared-blocks.media-gallery",
         "shared-blocks.newsletter",
-        "shared-blocks.oembed",
+        "shared-blocks.embed",
         "shared-blocks.fundraisingbox"
       ],
       "pluginOptions": {
