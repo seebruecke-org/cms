@@ -21,7 +21,7 @@
     "subnavigation": {
       "type": "component",
       "repeatable": true,
-      "required": true,
+      "required": false,
       "component": "helper-blocks.link"
     },
     "heading": {
