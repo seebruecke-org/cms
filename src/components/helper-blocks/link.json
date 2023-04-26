@@ -18,9 +18,9 @@
     "locale": {
       "type": "enumeration",
       "enum": [
-        "Context",
-        "De",
-        "En"
+        "context",
+        "de",
+        "en"
       ]
     }
   }
