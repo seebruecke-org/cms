@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "EmbedData": {
+    "embed_data": {
       "type": "customField",
       "customField": "plugin::oembed.oembed"
     }
