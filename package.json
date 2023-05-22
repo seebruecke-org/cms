@@ -30,7 +30,7 @@
     "mysql": "^2.18.1",
     "slugify": "^1.5.0",
     "strapi-plugin-duplicate-button": "^1.1.7",
-    "strapi-plugin-oembed": "file:../strapi-plugin-oembed-extended",
+    "strapi-plugin-oembed-extended": "^2.0.0",
     "style-loader": "^3.3.1",
     "util": "^0.12.5"
   },
