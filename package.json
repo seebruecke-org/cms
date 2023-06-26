@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^2.0.3",
-    "@7azin/strapi-plugin-oembed": "^2.0.3",
+    "@7azin/strapi-plugin-oembed": "^2.0.4",
     "@ckeditor/ckeditor5-markdown-gfm": "^36.0.1",
     "@strapi/plugin-graphql": "4.10.5",
     "@strapi/plugin-i18n": "4.10.5",
