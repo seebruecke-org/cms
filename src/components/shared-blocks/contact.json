@@ -24,6 +24,9 @@
     },
     "youtube": {
       "type": "string"
+    },
+    "mastodon": {
+      "type": "string"
     }
   }
 }
