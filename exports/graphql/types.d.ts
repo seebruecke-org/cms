@@ -471,11 +471,13 @@ export interface NexusGenInputs {
   }
   ComponentSharedBlocksTeasersSmallFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentSharedBlocksTeasersSmallFiltersInput'] | null> | null; // [ComponentSharedBlocksTeasersSmallFiltersInput]
+    columns?: NexusGenInputs['IntFilterInput'] | null; // IntFilterInput
     items?: NexusGenInputs['ComponentTeasersSmallItemFiltersInput'] | null; // ComponentTeasersSmallItemFiltersInput
     not?: NexusGenInputs['ComponentSharedBlocksTeasersSmallFiltersInput'] | null; // ComponentSharedBlocksTeasersSmallFiltersInput
     or?: Array<NexusGenInputs['ComponentSharedBlocksTeasersSmallFiltersInput'] | null> | null; // [ComponentSharedBlocksTeasersSmallFiltersInput]
   }
   ComponentSharedBlocksTeasersSmallInput: { // input type
+    columns?: number | null; // Int
     id?: string | null; // ID
     items?: Array<NexusGenInputs['ComponentTeasersSmallItemInput'] | null> | null; // [ComponentTeasersSmallItemInput]
   }
@@ -506,12 +508,14 @@ export interface NexusGenInputs {
     link?: NexusGenInputs['ComponentHelperBlocksLinkFiltersInput'] | null; // ComponentHelperBlocksLinkFiltersInput
     not?: NexusGenInputs['ComponentTeasersSmallItemFiltersInput'] | null; // ComponentTeasersSmallItemFiltersInput
     or?: Array<NexusGenInputs['ComponentTeasersSmallItemFiltersInput'] | null> | null; // [ComponentTeasersSmallItemFiltersInput]
+    text?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     title?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     type?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
   }
   ComponentTeasersSmallItemInput: { // input type
     id?: string | null; // ID
     link?: NexusGenInputs['ComponentHelperBlocksLinkInput'] | null; // ComponentHelperBlocksLinkInput
+    text?: string | null; // String
     title?: string | null; // String
     type?: NexusGenEnums['ENUM_COMPONENTTEASERSSMALLITEM_TYPE'] | null; // ENUM_COMPONENTTEASERSSMALLITEM_TYPE
   }
@@ -1296,6 +1300,7 @@ export interface NexusGenObjects {
     type: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE']; // ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE!
   }
   ComponentSharedBlocksTeasersSmall: { // root type
+    columns?: number | null; // Int
     id: string; // ID!
   }
   ComponentSharedBlocksUnterbrecher: { // root type
@@ -1307,6 +1312,7 @@ export interface NexusGenObjects {
   }
   ComponentTeasersSmallItem: { // root type
     id: string; // ID!
+    text?: string | null; // String
     title: string; // String!
     type: NexusGenEnums['ENUM_COMPONENTTEASERSSMALLITEM_TYPE']; // ENUM_COMPONENTTEASERSSMALLITEM_TYPE!
   }
@@ -1790,6 +1796,7 @@ export interface NexusGenFieldTypes {
     type: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE']; // ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE!
   }
   ComponentSharedBlocksTeasersSmall: { // field return type
+    columns: number | null; // Int
     id: string; // ID!
     items: Array<NexusGenRootTypes['ComponentTeasersSmallItem'] | null> | null; // [ComponentTeasersSmallItem]
   }
@@ -1805,7 +1812,8 @@ export interface NexusGenFieldTypes {
   }
   ComponentTeasersSmallItem: { // field return type
     id: string; // ID!
-    link: NexusGenRootTypes['ComponentHelperBlocksLink']; // ComponentHelperBlocksLink!
+    link: NexusGenRootTypes['ComponentHelperBlocksLink'] | null; // ComponentHelperBlocksLink
+    text: string | null; // String
     title: string; // String!
     type: NexusGenEnums['ENUM_COMPONENTTEASERSSMALLITEM_TYPE']; // ENUM_COMPONENTTEASERSSMALLITEM_TYPE!
   }
@@ -2568,6 +2576,7 @@ export interface NexusGenFieldTypeNames {
     type: 'ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE'
   }
   ComponentSharedBlocksTeasersSmall: { // field return type name
+    columns: 'Int'
     id: 'ID'
     items: 'ComponentTeasersSmallItem'
   }
@@ -2584,6 +2593,7 @@ export interface NexusGenFieldTypeNames {
   ComponentTeasersSmallItem: { // field return type name
     id: 'ID'
     link: 'ComponentHelperBlocksLink'
+    text: 'String'
     title: 'String'
     type: 'ENUM_COMPONENTTEASERSSMALLITEM_TYPE'
   }

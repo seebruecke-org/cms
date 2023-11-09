@@ -795,18 +795,21 @@ input ComponentSharedBlocksTeaserLargeInput {
 }
 
 type ComponentSharedBlocksTeasersSmall {
+  columns: Int
   id: ID!
   items(filters: ComponentTeasersSmallItemFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentTeasersSmallItem]
 }
 
 input ComponentSharedBlocksTeasersSmallFiltersInput {
   and: [ComponentSharedBlocksTeasersSmallFiltersInput]
+  columns: IntFilterInput
   items: ComponentTeasersSmallItemFiltersInput
   not: ComponentSharedBlocksTeasersSmallFiltersInput
   or: [ComponentSharedBlocksTeasersSmallFiltersInput]
 }
 
 input ComponentSharedBlocksTeasersSmallInput {
+  columns: Int
   id: ID
   items: [ComponentTeasersSmallItemInput]
 }
@@ -848,7 +851,8 @@ input ComponentSharedBlocksUnterbrecherInput {
 
 type ComponentTeasersSmallItem {
   id: ID!
-  link: ComponentHelperBlocksLink!
+  link: ComponentHelperBlocksLink
+  text: String
   title: String!
   type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE!
 }
@@ -858,6 +862,7 @@ input ComponentTeasersSmallItemFiltersInput {
   link: ComponentHelperBlocksLinkFiltersInput
   not: ComponentTeasersSmallItemFiltersInput
   or: [ComponentTeasersSmallItemFiltersInput]
+  text: StringFilterInput
   title: StringFilterInput
   type: StringFilterInput
 }
@@ -865,6 +870,7 @@ input ComponentTeasersSmallItemFiltersInput {
 input ComponentTeasersSmallItemInput {
   id: ID
   link: ComponentHelperBlocksLinkInput
+  text: String
   title: String
   type: ENUM_COMPONENTTEASERSSMALLITEM_TYPE
 }

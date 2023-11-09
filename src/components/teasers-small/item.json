@@ -13,8 +13,13 @@
     },
     "link": {
       "type": "component",
-      "required": true,
-      "component": "helper-blocks.link"
+      "required": false,
+      "component": "helper-blocks.link",
+      "repeatable": false
+    },
+    "text": {
+      "type": "text",
+      "required": false
     },
     "type": {
       "type": "enumeration",
