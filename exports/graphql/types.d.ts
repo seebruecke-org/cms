@@ -430,6 +430,7 @@ export interface NexusGenInputs {
     image?: NexusGenInputs['ComponentHelperBlocksMediaFiltersInput'] | null; // ComponentHelperBlocksMediaFiltersInput
     intro?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     kicker?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    layout?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     not?: NexusGenInputs['ComponentSharedBlocksStageMediumFiltersInput'] | null; // ComponentSharedBlocksStageMediumFiltersInput
     or?: Array<NexusGenInputs['ComponentSharedBlocksStageMediumFiltersInput'] | null> | null; // [ComponentSharedBlocksStageMediumFiltersInput]
     title?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
@@ -439,6 +440,7 @@ export interface NexusGenInputs {
     image?: NexusGenInputs['ComponentHelperBlocksMediaInput'] | null; // ComponentHelperBlocksMediaInput
     intro?: string | null; // String
     kicker?: string | null; // String
+    layout?: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT'] | null; // ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT
     title?: string | null; // String
   }
   ComponentSharedBlocksSubNavigationFiltersInput: { // input type
@@ -1083,6 +1085,7 @@ export interface NexusGenEnums {
   ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE: "context" | "de" | "en"
   ENUM_COMPONENTMENUMENU_LOCATION: "footer_about" | "footer_meta" | "footer_take_part" | "header_main" | "header_meta"
   ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL: "h1" | "h2" | "h3" | "h4"
+  ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT: "Cover Image" | "Thumbnail Image"
   ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE: "action" | "campaign" | "general" | "internal"
   ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE: "large" | "small"
   ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE: "action" | "campaign" | "internal"
@@ -1280,6 +1283,7 @@ export interface NexusGenObjects {
     id: string; // ID!
     intro?: string | null; // String
     kicker?: string | null; // String
+    layout: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT']; // ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT!
     title: string; // String!
   }
   ComponentSharedBlocksSubNavigation: { // root type
@@ -1771,6 +1775,7 @@ export interface NexusGenFieldTypes {
     image: NexusGenRootTypes['ComponentHelperBlocksMedia'] | null; // ComponentHelperBlocksMedia
     intro: string | null; // String
     kicker: string | null; // String
+    layout: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT']; // ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT!
     title: string; // String!
   }
   ComponentSharedBlocksSubNavigation: { // field return type
@@ -2548,6 +2553,7 @@ export interface NexusGenFieldTypeNames {
     image: 'ComponentHelperBlocksMedia'
     intro: 'String'
     kicker: 'String'
+    layout: 'ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT'
     title: 'String'
   }
   ComponentSharedBlocksSubNavigation: { // field return type name

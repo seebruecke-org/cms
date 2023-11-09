@@ -727,6 +727,7 @@ type ComponentSharedBlocksStageMedium {
   image: ComponentHelperBlocksMedia
   intro: String
   kicker: String
+  layout: ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT!
   title: String!
 }
 
@@ -735,6 +736,7 @@ input ComponentSharedBlocksStageMediumFiltersInput {
   image: ComponentHelperBlocksMediaFiltersInput
   intro: StringFilterInput
   kicker: StringFilterInput
+  layout: StringFilterInput
   not: ComponentSharedBlocksStageMediumFiltersInput
   or: [ComponentSharedBlocksStageMediumFiltersInput]
   title: StringFilterInput
@@ -745,6 +747,7 @@ input ComponentSharedBlocksStageMediumInput {
   image: ComponentHelperBlocksMediaInput
   intro: String
   kicker: String
+  layout: ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT
   title: String
 }
 
@@ -1014,6 +1017,11 @@ enum ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL {
   h2
   h3
   h4
+}
+
+enum ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT {
+  Cover_Image
+  Thumbnail_Image
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE {
