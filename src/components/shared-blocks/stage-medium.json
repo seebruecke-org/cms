@@ -22,6 +22,15 @@
     "kicker": {
       "type": "string",
       "required": false
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "Cover Image",
+        "Thumbnail Image"
+      ],
+      "default": "Cover Image",
+      "required": true
     }
   }
 }
