@@ -5,11 +5,10 @@
     "singularName": "menu",
     "pluralName": "menus",
     "displayName": "Menu",
-    "name": "menu"
+    "name": "menu",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": false
   },
   "pluginOptions": {

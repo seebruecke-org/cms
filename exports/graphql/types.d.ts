@@ -374,12 +374,14 @@ export interface NexusGenInputs {
   ComponentSharedBlocksMediaGalleryFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentSharedBlocksMediaGalleryFiltersInput'] | null> | null; // [ComponentSharedBlocksMediaGalleryFiltersInput]
     items?: NexusGenInputs['ComponentHelperBlocksMediaFiltersInput'] | null; // ComponentHelperBlocksMediaFiltersInput
+    layout?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     not?: NexusGenInputs['ComponentSharedBlocksMediaGalleryFiltersInput'] | null; // ComponentSharedBlocksMediaGalleryFiltersInput
     or?: Array<NexusGenInputs['ComponentSharedBlocksMediaGalleryFiltersInput'] | null> | null; // [ComponentSharedBlocksMediaGalleryFiltersInput]
   }
   ComponentSharedBlocksMediaGalleryInput: { // input type
     id?: string | null; // ID
     items?: Array<NexusGenInputs['ComponentHelperBlocksMediaInput'] | null> | null; // [ComponentHelperBlocksMediaInput]
+    layout?: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT'] | null; // ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT
   }
   ComponentSharedBlocksMediaInput: { // input type
     id?: string | null; // ID
@@ -1087,8 +1089,9 @@ export interface NexusGenEnums {
   ENUM_COMPONENTACTIONSFILTER_CONNECT_VIA: "and" | "or"
   ENUM_COMPONENTACTIONSFILTER_KEY: "campaign" | "group" | "location"
   ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE: "context" | "de" | "en"
-  ENUM_COMPONENTMENUMENU_LOCATION: "footer_about" | "footer_meta" | "footer_take_part" | "header_main" | "header_meta"
+  ENUM_COMPONENTMENUMENU_LOCATION: "donation" | "footer_about" | "footer_meta" | "footer_take_part" | "header_main" | "header_meta"
   ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL: "h1" | "h2" | "h3" | "h4"
+  ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT: "Carousel" | "Compact"
   ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT: "Cover Image" | "Thumbnail Image"
   ENUM_COMPONENTSHAREDBLOCKSTEASERLARGE_TYPE: "action" | "campaign" | "general" | "internal"
   ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_SIZE: "large" | "small"
@@ -1269,6 +1272,7 @@ export interface NexusGenObjects {
   }
   ComponentSharedBlocksMediaGallery: { // root type
     id: string; // ID!
+    layout: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT']; // ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT!
   }
   ComponentSharedBlocksNewsletter: { // root type
     id: string; // ID!
@@ -1758,6 +1762,7 @@ export interface NexusGenFieldTypes {
   ComponentSharedBlocksMediaGallery: { // field return type
     id: string; // ID!
     items: Array<NexusGenRootTypes['ComponentHelperBlocksMedia'] | null>; // [ComponentHelperBlocksMedia]!
+    layout: NexusGenEnums['ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT']; // ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT!
   }
   ComponentSharedBlocksNewsletter: { // field return type
     id: string; // ID!
@@ -2538,6 +2543,7 @@ export interface NexusGenFieldTypeNames {
   ComponentSharedBlocksMediaGallery: { // field return type name
     id: 'ID'
     items: 'ComponentHelperBlocksMedia'
+    layout: 'ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT'
   }
   ComponentSharedBlocksNewsletter: { // field return type name
     id: 'ID'

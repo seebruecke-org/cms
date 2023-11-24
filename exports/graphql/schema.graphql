@@ -637,11 +637,13 @@ input ComponentSharedBlocksMediaFiltersInput {
 type ComponentSharedBlocksMediaGallery {
   id: ID!
   items(filters: ComponentHelperBlocksMediaFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentHelperBlocksMedia]!
+  layout: ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT!
 }
 
 input ComponentSharedBlocksMediaGalleryFiltersInput {
   and: [ComponentSharedBlocksMediaGalleryFiltersInput]
   items: ComponentHelperBlocksMediaFiltersInput
+  layout: StringFilterInput
   not: ComponentSharedBlocksMediaGalleryFiltersInput
   or: [ComponentSharedBlocksMediaGalleryFiltersInput]
 }
@@ -649,6 +651,7 @@ input ComponentSharedBlocksMediaGalleryFiltersInput {
 input ComponentSharedBlocksMediaGalleryInput {
   id: ID
   items: [ComponentHelperBlocksMediaInput]
+  layout: ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT
 }
 
 input ComponentSharedBlocksMediaInput {
@@ -1011,6 +1014,7 @@ enum ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE {
 }
 
 enum ENUM_COMPONENTMENUMENU_LOCATION {
+  donation
   footer_about
   footer_meta
   footer_take_part
@@ -1023,6 +1027,11 @@ enum ENUM_COMPONENTSHAREDBLOCKSHEADING_LEVEL {
   h2
   h3
   h4
+}
+
+enum ENUM_COMPONENTSHAREDBLOCKSMEDIAGALLERY_LAYOUT {
+  Carousel
+  Compact
 }
 
 enum ENUM_COMPONENTSHAREDBLOCKSSTAGEMEDIUM_LAYOUT {
