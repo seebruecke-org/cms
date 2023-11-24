@@ -8,7 +8,7 @@
   "options": {},
   "attributes": {
     "intro": {
-      "type": "text"
+      "type": "richtext"
     },
     "image": {
       "type": "component",
