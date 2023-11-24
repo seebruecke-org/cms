@@ -2,7 +2,8 @@
   "collectionName": "components_shared_blocks_media_gallery",
   "info": {
     "icon": "images",
-    "displayName": "Media Gallery"
+    "displayName": "Media Gallery",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,6 +11,15 @@
       "type": "component",
       "repeatable": true,
       "component": "helper-blocks.media",
+      "required": true
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "Carousel",
+        "Compact"
+      ],
+      "default": "Carousel",
       "required": true
     }
   }
