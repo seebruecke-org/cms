@@ -299,6 +299,7 @@ export interface NexusGenInputs {
   }
   ComponentSharedBlocksContactFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentSharedBlocksContactFiltersInput'] | null> | null; // [ComponentSharedBlocksContactFiltersInput]
+    bluesky?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     email?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     facebook?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     instagram?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
@@ -310,6 +311,7 @@ export interface NexusGenInputs {
     youtube?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
   }
   ComponentSharedBlocksContactInput: { // input type
+    bluesky?: string | null; // String
     email?: string | null; // String
     facebook?: string | null; // String
     id?: string | null; // ID
@@ -1240,6 +1242,7 @@ export interface NexusGenObjects {
     show_map: boolean; // Boolean!
   }
   ComponentSharedBlocksContact: { // root type
+    bluesky?: string | null; // String
     email?: string | null; // String
     facebook?: string | null; // String
     id: string; // ID!
@@ -1727,6 +1730,7 @@ export interface NexusGenFieldTypes {
     show_map: boolean; // Boolean!
   }
   ComponentSharedBlocksContact: { // field return type
+    bluesky: string | null; // String
     email: string | null; // String
     facebook: string | null; // String
     id: string; // ID!
@@ -2508,6 +2512,7 @@ export interface NexusGenFieldTypeNames {
     show_map: 'Boolean'
   }
   ComponentSharedBlocksContact: { // field return type name
+    bluesky: 'String'
     email: 'String'
     facebook: 'String'
     id: 'ID'

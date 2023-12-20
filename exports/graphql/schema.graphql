@@ -511,6 +511,7 @@ input ComponentSharedBlocksActionsInput {
 }
 
 type ComponentSharedBlocksContact {
+  bluesky: String
   email: String
   facebook: String
   id: ID!
@@ -523,6 +524,7 @@ type ComponentSharedBlocksContact {
 
 input ComponentSharedBlocksContactFiltersInput {
   and: [ComponentSharedBlocksContactFiltersInput]
+  bluesky: StringFilterInput
   email: StringFilterInput
   facebook: StringFilterInput
   instagram: StringFilterInput
@@ -535,6 +537,7 @@ input ComponentSharedBlocksContactFiltersInput {
 }
 
 input ComponentSharedBlocksContactInput {
+  bluesky: String
   email: String
   facebook: String
   id: ID
