@@ -347,7 +347,7 @@ input ComponentDemandsDemandsInput {
 type ComponentHelperBlocksLink {
   id: ID!
   label: String!
-  locale: ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE
+  locale: ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE!
   url: String!
 }
 

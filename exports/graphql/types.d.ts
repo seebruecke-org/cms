@@ -1207,7 +1207,7 @@ export interface NexusGenObjects {
   ComponentHelperBlocksLink: { // root type
     id: string; // ID!
     label: string; // String!
-    locale?: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE'] | null; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE
+    locale: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE']; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE!
     url: string; // String!
   }
   ComponentHelperBlocksMedia: { // root type
@@ -1687,7 +1687,7 @@ export interface NexusGenFieldTypes {
   ComponentHelperBlocksLink: { // field return type
     id: string; // ID!
     label: string; // String!
-    locale: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE'] | null; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE
+    locale: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE']; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE!
     url: string; // String!
   }
   ComponentHelperBlocksMedia: { // field return type
