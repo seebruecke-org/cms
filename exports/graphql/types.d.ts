@@ -222,6 +222,20 @@ export interface NexusGenInputs {
     id?: string | null; // ID
     media?: string | null; // ID
   }
+  ComponentLocationsLocationFiltersInput: { // input type
+    Coordinates?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    Name?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    Url?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    and?: Array<NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null> | null; // [ComponentLocationsLocationFiltersInput]
+    not?: NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null; // ComponentLocationsLocationFiltersInput
+    or?: Array<NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null> | null; // [ComponentLocationsLocationFiltersInput]
+  }
+  ComponentLocationsLocationInput: { // input type
+    Coordinates?: string | null; // String
+    Name?: string | null; // String
+    Url?: string | null; // String
+    id?: string | null; // ID
+  }
   ComponentMaterialItemFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentMaterialItemFiltersInput'] | null> | null; // [ComponentMaterialItemFiltersInput]
     description?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
@@ -776,6 +790,24 @@ export interface NexusGenInputs {
     or?: Array<NexusGenScalars['Long'] | null> | null; // [Long]
     startsWith?: NexusGenScalars['Long'] | null; // Long
   }
+  MapFiltersInput: { // input type
+    and?: Array<NexusGenInputs['MapFiltersInput'] | null> | null; // [MapFiltersInput]
+    createdAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
+    id?: NexusGenInputs['IDFilterInput'] | null; // IDFilterInput
+    location?: NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null; // ComponentLocationsLocationFiltersInput
+    name?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    not?: NexusGenInputs['MapFiltersInput'] | null; // MapFiltersInput
+    or?: Array<NexusGenInputs['MapFiltersInput'] | null> | null; // [MapFiltersInput]
+    publishedAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
+    slug?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
+    updatedAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
+  }
+  MapInput: { // input type
+    location?: Array<NexusGenInputs['ComponentLocationsLocationInput'] | null> | null; // [ComponentLocationsLocationInput]
+    name?: string | null; // String
+    publishedAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    slug?: string | null; // String
+  }
   MenuFiltersInput: { // input type
     and?: Array<NexusGenInputs['MenuFiltersInput'] | null> | null; // [MenuFiltersInput]
     createdAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
@@ -1214,6 +1246,12 @@ export interface NexusGenObjects {
     caption?: string | null; // String
     id: string; // ID!
   }
+  ComponentLocationsLocation: { // root type
+    Coordinates?: string | null; // String
+    Name?: string | null; // String
+    Url?: string | null; // String
+    id: string; // ID!
+  }
   ComponentMaterialItem: { // root type
     description?: string | null; // String
     external_link?: string | null; // String
@@ -1370,6 +1408,17 @@ export interface NexusGenObjects {
   I18NLocaleEntityResponse: {};
   I18NLocaleEntityResponseCollection: {};
   I18NLocaleRelationResponseCollection: {};
+  Map: { // root type
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    name: string; // String!
+    publishedAt?: NexusGenScalars['DateTime'] | null; // DateTime
+    slug: string; // String!
+    updatedAt?: NexusGenScalars['DateTime'] | null; // DateTime
+  }
+  MapEntity: {};
+  MapEntityResponse: {};
+  MapEntityResponseCollection: {};
+  MapRelationResponseCollection: {};
   Menu: { // root type
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     locale?: string | null; // String
@@ -1552,7 +1601,7 @@ export interface NexusGenUnions {
   CampaignContentDynamicZone: NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksStageLarge'] | NexusGenRootTypes['ComponentSharedBlocksStageMedium'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['Error'];
   CountryContentDynamicZone: NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksStageLarge'] | NexusGenRootTypes['ComponentSharedBlocksStageMedium'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['Error'];
   FederalCountryContentDynamicZone: NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksStageLarge'] | NexusGenRootTypes['ComponentSharedBlocksStageMedium'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['Error'];
-  GenericMorph: NexusGenRootTypes['Action'] | NexusGenRootTypes['Campaign'] | NexusGenRootTypes['City'] | NexusGenRootTypes['ComponentAccordionItem'] | NexusGenRootTypes['ComponentActionsFilter'] | NexusGenRootTypes['ComponentDemandsDemands'] | NexusGenRootTypes['ComponentHelperBlocksLink'] | NexusGenRootTypes['ComponentHelperBlocksMedia'] | NexusGenRootTypes['ComponentMaterialItem'] | NexusGenRootTypes['ComponentMenuMenu'] | NexusGenRootTypes['ComponentSeoSeoSmo'] | NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksFundraisingbox'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksStageLarge'] | NexusGenRootTypes['ComponentSharedBlocksStageMedium'] | NexusGenRootTypes['ComponentSharedBlocksSubNavigation'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['ComponentTeasersSmallItem'] | NexusGenRootTypes['Country'] | NexusGenRootTypes['FederalCountry'] | NexusGenRootTypes['Group'] | NexusGenRootTypes['I18NLocale'] | NexusGenRootTypes['Menu'] | NexusGenRootTypes['NewsEntry'] | NexusGenRootTypes['Page'] | NexusGenRootTypes['Redirect'] | NexusGenRootTypes['SafeHarbour'] | NexusGenRootTypes['Setting'] | NexusGenRootTypes['UploadFile'] | NexusGenRootTypes['UploadFolder'] | NexusGenRootTypes['UsersPermissionsPermission'] | NexusGenRootTypes['UsersPermissionsRole'] | NexusGenRootTypes['UsersPermissionsUser'];
+  GenericMorph: NexusGenRootTypes['Action'] | NexusGenRootTypes['Campaign'] | NexusGenRootTypes['City'] | NexusGenRootTypes['ComponentAccordionItem'] | NexusGenRootTypes['ComponentActionsFilter'] | NexusGenRootTypes['ComponentDemandsDemands'] | NexusGenRootTypes['ComponentHelperBlocksLink'] | NexusGenRootTypes['ComponentHelperBlocksMedia'] | NexusGenRootTypes['ComponentLocationsLocation'] | NexusGenRootTypes['ComponentMaterialItem'] | NexusGenRootTypes['ComponentMenuMenu'] | NexusGenRootTypes['ComponentSeoSeoSmo'] | NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksFundraisingbox'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksStageLarge'] | NexusGenRootTypes['ComponentSharedBlocksStageMedium'] | NexusGenRootTypes['ComponentSharedBlocksSubNavigation'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['ComponentTeasersSmallItem'] | NexusGenRootTypes['Country'] | NexusGenRootTypes['FederalCountry'] | NexusGenRootTypes['Group'] | NexusGenRootTypes['I18NLocale'] | NexusGenRootTypes['Map'] | NexusGenRootTypes['Menu'] | NexusGenRootTypes['NewsEntry'] | NexusGenRootTypes['Page'] | NexusGenRootTypes['Redirect'] | NexusGenRootTypes['SafeHarbour'] | NexusGenRootTypes['Setting'] | NexusGenRootTypes['UploadFile'] | NexusGenRootTypes['UploadFolder'] | NexusGenRootTypes['UsersPermissionsPermission'] | NexusGenRootTypes['UsersPermissionsRole'] | NexusGenRootTypes['UsersPermissionsUser'];
   GroupContentDynamicZone: NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['Error'];
   NewsEntryContentDynamicZone: NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['Error'];
   PageContentDynamicZone: NexusGenRootTypes['ComponentSharedBlocksAccordion'] | NexusGenRootTypes['ComponentSharedBlocksActions'] | NexusGenRootTypes['ComponentSharedBlocksContact'] | NexusGenRootTypes['ComponentSharedBlocksEmbed'] | NexusGenRootTypes['ComponentSharedBlocksFundraisingbox'] | NexusGenRootTypes['ComponentSharedBlocksHeading'] | NexusGenRootTypes['ComponentSharedBlocksMaterial'] | NexusGenRootTypes['ComponentSharedBlocksMedia'] | NexusGenRootTypes['ComponentSharedBlocksMediaGallery'] | NexusGenRootTypes['ComponentSharedBlocksNewsletter'] | NexusGenRootTypes['ComponentSharedBlocksRichtext'] | NexusGenRootTypes['ComponentSharedBlocksStageLarge'] | NexusGenRootTypes['ComponentSharedBlocksStageMedium'] | NexusGenRootTypes['ComponentSharedBlocksSubNavigation'] | NexusGenRootTypes['ComponentSharedBlocksTeaserLarge'] | NexusGenRootTypes['ComponentSharedBlocksTeasersSmall'] | NexusGenRootTypes['ComponentSharedBlocksUnterbrecher'] | NexusGenRootTypes['Error'];
@@ -1694,6 +1743,12 @@ export interface NexusGenFieldTypes {
     caption: string | null; // String
     id: string; // ID!
     media: NexusGenRootTypes['UploadFileEntityResponse']; // UploadFileEntityResponse!
+  }
+  ComponentLocationsLocation: { // field return type
+    Coordinates: string | null; // String
+    Name: string | null; // String
+    Url: string | null; // String
+    id: string; // ID!
   }
   ComponentMaterialItem: { // field return type
     description: string | null; // String
@@ -1930,6 +1985,28 @@ export interface NexusGenFieldTypes {
   I18NLocaleRelationResponseCollection: { // field return type
     data: NexusGenRootTypes['I18NLocaleEntity'][]; // [I18NLocaleEntity!]!
   }
+  Map: { // field return type
+    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
+    location: Array<NexusGenRootTypes['ComponentLocationsLocation'] | null> | null; // [ComponentLocationsLocation]
+    name: string; // String!
+    publishedAt: NexusGenScalars['DateTime'] | null; // DateTime
+    slug: string; // String!
+    updatedAt: NexusGenScalars['DateTime'] | null; // DateTime
+  }
+  MapEntity: { // field return type
+    attributes: NexusGenRootTypes['Map'] | null; // Map
+    id: string | null; // ID
+  }
+  MapEntityResponse: { // field return type
+    data: NexusGenRootTypes['MapEntity'] | null; // MapEntity
+  }
+  MapEntityResponseCollection: { // field return type
+    data: NexusGenRootTypes['MapEntity'][]; // [MapEntity!]!
+    meta: NexusGenRootTypes['ResponseCollectionMeta']; // ResponseCollectionMeta!
+  }
+  MapRelationResponseCollection: { // field return type
+    data: NexusGenRootTypes['MapEntity'][]; // [MapEntity!]!
+  }
   Menu: { // field return type
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     locale: string | null; // String
@@ -1965,6 +2042,7 @@ export interface NexusGenFieldTypes {
     createFederalCountryLocalization: NexusGenRootTypes['FederalCountryEntityResponse'] | null; // FederalCountryEntityResponse
     createGroup: NexusGenRootTypes['GroupEntityResponse'] | null; // GroupEntityResponse
     createGroupLocalization: NexusGenRootTypes['GroupEntityResponse'] | null; // GroupEntityResponse
+    createMap: NexusGenRootTypes['MapEntityResponse'] | null; // MapEntityResponse
     createMenuLocalization: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     createNewsEntry: NexusGenRootTypes['NewsEntryEntityResponse'] | null; // NewsEntryEntityResponse
     createNewsEntryLocalization: NexusGenRootTypes['NewsEntryEntityResponse'] | null; // NewsEntryEntityResponse
@@ -1984,6 +2062,7 @@ export interface NexusGenFieldTypes {
     deleteCountry: NexusGenRootTypes['CountryEntityResponse'] | null; // CountryEntityResponse
     deleteFederalCountry: NexusGenRootTypes['FederalCountryEntityResponse'] | null; // FederalCountryEntityResponse
     deleteGroup: NexusGenRootTypes['GroupEntityResponse'] | null; // GroupEntityResponse
+    deleteMap: NexusGenRootTypes['MapEntityResponse'] | null; // MapEntityResponse
     deleteMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     deleteNewsEntry: NexusGenRootTypes['NewsEntryEntityResponse'] | null; // NewsEntryEntityResponse
     deletePage: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
@@ -2008,6 +2087,7 @@ export interface NexusGenFieldTypes {
     updateFederalCountry: NexusGenRootTypes['FederalCountryEntityResponse'] | null; // FederalCountryEntityResponse
     updateFileInfo: NexusGenRootTypes['UploadFileEntityResponse']; // UploadFileEntityResponse!
     updateGroup: NexusGenRootTypes['GroupEntityResponse'] | null; // GroupEntityResponse
+    updateMap: NexusGenRootTypes['MapEntityResponse'] | null; // MapEntityResponse
     updateMenu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     updateNewsEntry: NexusGenRootTypes['NewsEntryEntityResponse'] | null; // NewsEntryEntityResponse
     updatePage: NexusGenRootTypes['PageEntityResponse'] | null; // PageEntityResponse
@@ -2097,6 +2177,8 @@ export interface NexusGenFieldTypes {
     groups: NexusGenRootTypes['GroupEntityResponseCollection'] | null; // GroupEntityResponseCollection
     i18NLocale: NexusGenRootTypes['I18NLocaleEntityResponse'] | null; // I18NLocaleEntityResponse
     i18NLocales: NexusGenRootTypes['I18NLocaleEntityResponseCollection'] | null; // I18NLocaleEntityResponseCollection
+    map: NexusGenRootTypes['MapEntityResponse'] | null; // MapEntityResponse
+    maps: NexusGenRootTypes['MapEntityResponseCollection'] | null; // MapEntityResponseCollection
     me: NexusGenRootTypes['UsersPermissionsMe'] | null; // UsersPermissionsMe
     menu: NexusGenRootTypes['MenuEntityResponse'] | null; // MenuEntityResponse
     newsEntries: NexusGenRootTypes['NewsEntryEntityResponseCollection'] | null; // NewsEntryEntityResponseCollection
@@ -2477,6 +2559,12 @@ export interface NexusGenFieldTypeNames {
     id: 'ID'
     media: 'UploadFileEntityResponse'
   }
+  ComponentLocationsLocation: { // field return type name
+    Coordinates: 'String'
+    Name: 'String'
+    Url: 'String'
+    id: 'ID'
+  }
   ComponentMaterialItem: { // field return type name
     description: 'String'
     external_link: 'String'
@@ -2712,6 +2800,28 @@ export interface NexusGenFieldTypeNames {
   I18NLocaleRelationResponseCollection: { // field return type name
     data: 'I18NLocaleEntity'
   }
+  Map: { // field return type name
+    createdAt: 'DateTime'
+    location: 'ComponentLocationsLocation'
+    name: 'String'
+    publishedAt: 'DateTime'
+    slug: 'String'
+    updatedAt: 'DateTime'
+  }
+  MapEntity: { // field return type name
+    attributes: 'Map'
+    id: 'ID'
+  }
+  MapEntityResponse: { // field return type name
+    data: 'MapEntity'
+  }
+  MapEntityResponseCollection: { // field return type name
+    data: 'MapEntity'
+    meta: 'ResponseCollectionMeta'
+  }
+  MapRelationResponseCollection: { // field return type name
+    data: 'MapEntity'
+  }
   Menu: { // field return type name
     createdAt: 'DateTime'
     locale: 'String'
@@ -2747,6 +2857,7 @@ export interface NexusGenFieldTypeNames {
     createFederalCountryLocalization: 'FederalCountryEntityResponse'
     createGroup: 'GroupEntityResponse'
     createGroupLocalization: 'GroupEntityResponse'
+    createMap: 'MapEntityResponse'
     createMenuLocalization: 'MenuEntityResponse'
     createNewsEntry: 'NewsEntryEntityResponse'
     createNewsEntryLocalization: 'NewsEntryEntityResponse'
@@ -2766,6 +2877,7 @@ export interface NexusGenFieldTypeNames {
     deleteCountry: 'CountryEntityResponse'
     deleteFederalCountry: 'FederalCountryEntityResponse'
     deleteGroup: 'GroupEntityResponse'
+    deleteMap: 'MapEntityResponse'
     deleteMenu: 'MenuEntityResponse'
     deleteNewsEntry: 'NewsEntryEntityResponse'
     deletePage: 'PageEntityResponse'
@@ -2790,6 +2902,7 @@ export interface NexusGenFieldTypeNames {
     updateFederalCountry: 'FederalCountryEntityResponse'
     updateFileInfo: 'UploadFileEntityResponse'
     updateGroup: 'GroupEntityResponse'
+    updateMap: 'MapEntityResponse'
     updateMenu: 'MenuEntityResponse'
     updateNewsEntry: 'NewsEntryEntityResponse'
     updatePage: 'PageEntityResponse'
@@ -2879,6 +2992,8 @@ export interface NexusGenFieldTypeNames {
     groups: 'GroupEntityResponseCollection'
     i18NLocale: 'I18NLocaleEntityResponse'
     i18NLocales: 'I18NLocaleEntityResponseCollection'
+    map: 'MapEntityResponse'
+    maps: 'MapEntityResponseCollection'
     me: 'UsersPermissionsMe'
     menu: 'MenuEntityResponse'
     newsEntries: 'NewsEntryEntityResponseCollection'
@@ -3256,6 +3371,13 @@ export interface NexusGenArgTypes {
       sort: Array<string | null> | null; // [String]
     }
   }
+  Map: {
+    location: { // args
+      filters?: NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null; // ComponentLocationsLocationFiltersInput
+      pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
+      sort: Array<string | null> | null; // [String]
+    }
+  }
   Menu: {
     menu: { // args
       filters?: NexusGenInputs['ComponentMenuMenuFiltersInput'] | null; // ComponentMenuMenuFiltersInput
@@ -3322,6 +3444,9 @@ export interface NexusGenArgTypes {
       data?: NexusGenInputs['GroupInput'] | null; // GroupInput
       id?: string | null; // ID
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
+    }
+    createMap: { // args
+      data: NexusGenInputs['MapInput']; // MapInput!
     }
     createMenuLocalization: { // args
       data?: NexusGenInputs['MenuInput'] | null; // MenuInput
@@ -3398,6 +3523,9 @@ export interface NexusGenArgTypes {
     deleteGroup: { // args
       id: string; // ID!
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
+    }
+    deleteMap: { // args
+      id: string; // ID!
     }
     deleteMenu: { // args
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
@@ -3491,6 +3619,10 @@ export interface NexusGenArgTypes {
       data: NexusGenInputs['GroupInput']; // GroupInput!
       id: string; // ID!
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
+    }
+    updateMap: { // args
+      data: NexusGenInputs['MapInput']; // MapInput!
+      id: string; // ID!
     }
     updateMenu: { // args
       data: NexusGenInputs['MenuInput']; // MenuInput!
@@ -3634,6 +3766,15 @@ export interface NexusGenArgTypes {
       pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
       sort: Array<string | null> | null; // [String]
     }
+    map: { // args
+      id?: string | null; // ID
+    }
+    maps: { // args
+      filters?: NexusGenInputs['MapFiltersInput'] | null; // MapFiltersInput
+      pagination: NexusGenInputs['PaginationArg'] | null; // PaginationArg
+      publicationState: NexusGenEnums['PublicationState'] | null; // PublicationState
+      sort: Array<string | null> | null; // [String]
+    }
     menu: { // args
       locale?: NexusGenScalars['I18NLocaleCode'] | null; // I18NLocaleCode
     }
@@ -3753,7 +3894,7 @@ export interface NexusGenAbstractTypeMembers {
   CampaignContentDynamicZone: "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksStageLarge" | "ComponentSharedBlocksStageMedium" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "Error"
   CountryContentDynamicZone: "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksStageLarge" | "ComponentSharedBlocksStageMedium" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "Error"
   FederalCountryContentDynamicZone: "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksStageLarge" | "ComponentSharedBlocksStageMedium" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "Error"
-  GenericMorph: "Action" | "Campaign" | "City" | "ComponentAccordionItem" | "ComponentActionsFilter" | "ComponentDemandsDemands" | "ComponentHelperBlocksLink" | "ComponentHelperBlocksMedia" | "ComponentMaterialItem" | "ComponentMenuMenu" | "ComponentSeoSeoSmo" | "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksFundraisingbox" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksStageLarge" | "ComponentSharedBlocksStageMedium" | "ComponentSharedBlocksSubNavigation" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "ComponentTeasersSmallItem" | "Country" | "FederalCountry" | "Group" | "I18NLocale" | "Menu" | "NewsEntry" | "Page" | "Redirect" | "SafeHarbour" | "Setting" | "UploadFile" | "UploadFolder" | "UsersPermissionsPermission" | "UsersPermissionsRole" | "UsersPermissionsUser"
+  GenericMorph: "Action" | "Campaign" | "City" | "ComponentAccordionItem" | "ComponentActionsFilter" | "ComponentDemandsDemands" | "ComponentHelperBlocksLink" | "ComponentHelperBlocksMedia" | "ComponentLocationsLocation" | "ComponentMaterialItem" | "ComponentMenuMenu" | "ComponentSeoSeoSmo" | "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksFundraisingbox" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksStageLarge" | "ComponentSharedBlocksStageMedium" | "ComponentSharedBlocksSubNavigation" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "ComponentTeasersSmallItem" | "Country" | "FederalCountry" | "Group" | "I18NLocale" | "Map" | "Menu" | "NewsEntry" | "Page" | "Redirect" | "SafeHarbour" | "Setting" | "UploadFile" | "UploadFolder" | "UsersPermissionsPermission" | "UsersPermissionsRole" | "UsersPermissionsUser"
   GroupContentDynamicZone: "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "Error"
   NewsEntryContentDynamicZone: "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "Error"
   PageContentDynamicZone: "ComponentSharedBlocksAccordion" | "ComponentSharedBlocksActions" | "ComponentSharedBlocksContact" | "ComponentSharedBlocksEmbed" | "ComponentSharedBlocksFundraisingbox" | "ComponentSharedBlocksHeading" | "ComponentSharedBlocksMaterial" | "ComponentSharedBlocksMedia" | "ComponentSharedBlocksMediaGallery" | "ComponentSharedBlocksNewsletter" | "ComponentSharedBlocksRichtext" | "ComponentSharedBlocksStageLarge" | "ComponentSharedBlocksStageMedium" | "ComponentSharedBlocksSubNavigation" | "ComponentSharedBlocksTeaserLarge" | "ComponentSharedBlocksTeasersSmall" | "ComponentSharedBlocksUnterbrecher" | "Error"

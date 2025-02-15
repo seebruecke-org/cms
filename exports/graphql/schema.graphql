@@ -386,6 +386,29 @@ input ComponentHelperBlocksMediaInput {
   media: ID
 }
 
+type ComponentLocationsLocation {
+  Coordinates: String
+  Name: String
+  Url: String
+  id: ID!
+}
+
+input ComponentLocationsLocationFiltersInput {
+  Coordinates: StringFilterInput
+  Name: StringFilterInput
+  Url: StringFilterInput
+  and: [ComponentLocationsLocationFiltersInput]
+  not: ComponentLocationsLocationFiltersInput
+  or: [ComponentLocationsLocationFiltersInput]
+}
+
+input ComponentLocationsLocationInput {
+  Coordinates: String
+  Name: String
+  Url: String
+  id: ID
+}
+
 type ComponentMaterialItem {
   description: String
   external_link: String
@@ -1178,7 +1201,7 @@ input FloatFilterInput {
   startsWith: Float
 }
 
-union GenericMorph = Action | Campaign | City | ComponentAccordionItem | ComponentActionsFilter | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksEmbed | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMedia | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksNewsletter | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem | Country | FederalCountry | Group | I18NLocale | Menu | NewsEntry | Page | Redirect | SafeHarbour | Setting | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union GenericMorph = Action | Campaign | City | ComponentAccordionItem | ComponentActionsFilter | ComponentDemandsDemands | ComponentHelperBlocksLink | ComponentHelperBlocksMedia | ComponentLocationsLocation | ComponentMaterialItem | ComponentMenuMenu | ComponentSeoSeoSmo | ComponentSharedBlocksAccordion | ComponentSharedBlocksActions | ComponentSharedBlocksContact | ComponentSharedBlocksEmbed | ComponentSharedBlocksFundraisingbox | ComponentSharedBlocksHeading | ComponentSharedBlocksMaterial | ComponentSharedBlocksMedia | ComponentSharedBlocksMediaGallery | ComponentSharedBlocksNewsletter | ComponentSharedBlocksRichtext | ComponentSharedBlocksStageLarge | ComponentSharedBlocksStageMedium | ComponentSharedBlocksSubNavigation | ComponentSharedBlocksTeaserLarge | ComponentSharedBlocksTeasersSmall | ComponentSharedBlocksUnterbrecher | ComponentTeasersSmallItem | Country | FederalCountry | Group | I18NLocale | Map | Menu | NewsEntry | Page | Redirect | SafeHarbour | Setting | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Group {
   actions(filters: ActionFiltersInput, pagination: PaginationArg = {}, publicationState: PublicationState = LIVE, sort: [String] = []): ActionRelationResponseCollection
@@ -1390,6 +1413,53 @@ input LongFilterInput {
   startsWith: Long
 }
 
+type Map {
+  createdAt: DateTime
+  location(filters: ComponentLocationsLocationFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentLocationsLocation]
+  name: String!
+  publishedAt: DateTime
+  slug: String!
+  updatedAt: DateTime
+}
+
+type MapEntity {
+  attributes: Map
+  id: ID
+}
+
+type MapEntityResponse {
+  data: MapEntity
+}
+
+type MapEntityResponseCollection {
+  data: [MapEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+input MapFiltersInput {
+  and: [MapFiltersInput]
+  createdAt: DateTimeFilterInput
+  id: IDFilterInput
+  location: ComponentLocationsLocationFiltersInput
+  name: StringFilterInput
+  not: MapFiltersInput
+  or: [MapFiltersInput]
+  publishedAt: DateTimeFilterInput
+  slug: StringFilterInput
+  updatedAt: DateTimeFilterInput
+}
+
+input MapInput {
+  location: [ComponentLocationsLocationInput]
+  name: String
+  publishedAt: DateTime
+  slug: String
+}
+
+type MapRelationResponseCollection {
+  data: [MapEntity!]!
+}
+
 type Menu {
   createdAt: DateTime
   locale: String
@@ -1446,6 +1516,7 @@ type Mutation {
   createFederalCountryLocalization(data: FederalCountryInput, id: ID, locale: I18NLocaleCode): FederalCountryEntityResponse
   createGroup(data: GroupInput!, locale: I18NLocaleCode): GroupEntityResponse
   createGroupLocalization(data: GroupInput, id: ID, locale: I18NLocaleCode): GroupEntityResponse
+  createMap(data: MapInput!): MapEntityResponse
   createMenuLocalization(data: MenuInput, id: ID, locale: I18NLocaleCode): MenuEntityResponse
   createNewsEntry(data: NewsEntryInput!, locale: I18NLocaleCode): NewsEntryEntityResponse
   createNewsEntryLocalization(data: NewsEntryInput, id: ID, locale: I18NLocaleCode): NewsEntryEntityResponse
@@ -1469,6 +1540,7 @@ type Mutation {
   deleteCountry(id: ID!, locale: I18NLocaleCode): CountryEntityResponse
   deleteFederalCountry(id: ID!, locale: I18NLocaleCode): FederalCountryEntityResponse
   deleteGroup(id: ID!, locale: I18NLocaleCode): GroupEntityResponse
+  deleteMap(id: ID!): MapEntityResponse
   deleteMenu(locale: I18NLocaleCode): MenuEntityResponse
   deleteNewsEntry(id: ID!, locale: I18NLocaleCode): NewsEntryEntityResponse
   deletePage(id: ID!, locale: I18NLocaleCode): PageEntityResponse
@@ -1507,6 +1579,7 @@ type Mutation {
   updateFederalCountry(data: FederalCountryInput!, id: ID!, locale: I18NLocaleCode): FederalCountryEntityResponse
   updateFileInfo(id: ID!, info: FileInfoInput): UploadFileEntityResponse!
   updateGroup(data: GroupInput!, id: ID!, locale: I18NLocaleCode): GroupEntityResponse
+  updateMap(data: MapInput!, id: ID!): MapEntityResponse
   updateMenu(data: MenuInput!, locale: I18NLocaleCode): MenuEntityResponse
   updateNewsEntry(data: NewsEntryInput!, id: ID!, locale: I18NLocaleCode): NewsEntryEntityResponse
   updatePage(data: PageInput!, id: ID!, locale: I18NLocaleCode): PageEntityResponse
@@ -1690,6 +1763,8 @@ type Query {
   groups(filters: GroupFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, publicationState: PublicationState = LIVE, sort: [String] = []): GroupEntityResponseCollection
   i18NLocale(id: ID): I18NLocaleEntityResponse
   i18NLocales(filters: I18NLocaleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): I18NLocaleEntityResponseCollection
+  map(id: ID): MapEntityResponse
+  maps(filters: MapFiltersInput, pagination: PaginationArg = {}, publicationState: PublicationState = LIVE, sort: [String] = []): MapEntityResponseCollection
   me: UsersPermissionsMe
   menu(locale: I18NLocaleCode): MenuEntityResponse
   newsEntries(filters: NewsEntryFiltersInput, locale: I18NLocaleCode, pagination: PaginationArg = {}, publicationState: PublicationState = LIVE, sort: [String] = []): NewsEntryEntityResponseCollection

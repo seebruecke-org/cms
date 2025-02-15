@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_locations_locations",
+  "info": {
+    "displayName": "Location",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Coordinates": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    }
+  }
+}
