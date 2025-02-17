@@ -227,6 +227,7 @@ export interface NexusGenInputs {
     Name?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     Url?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     and?: Array<NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null> | null; // [ComponentLocationsLocationFiltersInput]
+    federal_country?: NexusGenInputs['FederalCountryFiltersInput'] | null; // FederalCountryFiltersInput
     not?: NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null; // ComponentLocationsLocationFiltersInput
     or?: Array<NexusGenInputs['ComponentLocationsLocationFiltersInput'] | null> | null; // [ComponentLocationsLocationFiltersInput]
   }
@@ -234,6 +235,7 @@ export interface NexusGenInputs {
     Coordinates?: string | null; // String
     Name?: string | null; // String
     Url?: string | null; // String
+    federal_country?: string | null; // ID
     id?: string | null; // ID
   }
   ComponentMaterialItemFiltersInput: { // input type
@@ -1748,6 +1750,7 @@ export interface NexusGenFieldTypes {
     Coordinates: string | null; // String
     Name: string | null; // String
     Url: string | null; // String
+    federal_country: NexusGenRootTypes['FederalCountryEntityResponse'] | null; // FederalCountryEntityResponse
     id: string; // ID!
   }
   ComponentMaterialItem: { // field return type
@@ -2563,6 +2566,7 @@ export interface NexusGenFieldTypeNames {
     Coordinates: 'String'
     Name: 'String'
     Url: 'String'
+    federal_country: 'FederalCountryEntityResponse'
     id: 'ID'
   }
   ComponentMaterialItem: { // field return type name

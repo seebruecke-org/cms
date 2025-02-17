@@ -390,6 +390,7 @@ type ComponentLocationsLocation {
   Coordinates: String
   Name: String
   Url: String
+  federal_country: FederalCountryEntityResponse
   id: ID!
 }
 
@@ -398,6 +399,7 @@ input ComponentLocationsLocationFiltersInput {
   Name: StringFilterInput
   Url: StringFilterInput
   and: [ComponentLocationsLocationFiltersInput]
+  federal_country: FederalCountryFiltersInput
   not: ComponentLocationsLocationFiltersInput
   or: [ComponentLocationsLocationFiltersInput]
 }
@@ -406,6 +408,7 @@ input ComponentLocationsLocationInput {
   Coordinates: String
   Name: String
   Url: String
+  federal_country: ID
   id: ID
 }
 
