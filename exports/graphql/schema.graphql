@@ -9,6 +9,8 @@ type Action {
   createdAt: DateTime
   end: DateTime
   group: GroupEntityResponse
+  hide_end_time: Boolean
+  hide_start_time: Boolean
   intro: String
   link: String
   locale: String
@@ -48,6 +50,8 @@ input ActionFiltersInput {
   createdAt: DateTimeFilterInput
   end: DateTimeFilterInput
   group: GroupFiltersInput
+  hide_end_time: BooleanFilterInput
+  hide_start_time: BooleanFilterInput
   id: IDFilterInput
   intro: StringFilterInput
   link: StringFilterInput
@@ -71,6 +75,8 @@ input ActionInput {
   coordinates: String
   end: DateTime
   group: ID
+  hide_end_time: Boolean
+  hide_start_time: Boolean
   intro: String
   link: String
   location: String

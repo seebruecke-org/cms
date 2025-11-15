@@ -21,6 +21,8 @@ export interface NexusGenInputs {
     createdAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
     end?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
     group?: NexusGenInputs['GroupFiltersInput'] | null; // GroupFiltersInput
+    hide_end_time?: NexusGenInputs['BooleanFilterInput'] | null; // BooleanFilterInput
+    hide_start_time?: NexusGenInputs['BooleanFilterInput'] | null; // BooleanFilterInput
     id?: NexusGenInputs['IDFilterInput'] | null; // IDFilterInput
     intro?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     link?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
@@ -43,6 +45,8 @@ export interface NexusGenInputs {
     coordinates?: string | null; // String
     end?: NexusGenScalars['DateTime'] | null; // DateTime
     group?: string | null; // ID
+    hide_end_time?: boolean | null; // Boolean
+    hide_start_time?: boolean | null; // Boolean
     intro?: string | null; // String
     link?: string | null; // String
     location?: string | null; // String
@@ -1166,6 +1170,8 @@ export interface NexusGenObjects {
     coordinates?: string | null; // String
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     end?: NexusGenScalars['DateTime'] | null; // DateTime
+    hide_end_time?: boolean | null; // Boolean
+    hide_start_time?: boolean | null; // Boolean
     intro?: string | null; // String
     link?: string | null; // String
     locale?: string | null; // String
@@ -1622,6 +1628,8 @@ export interface NexusGenFieldTypes {
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     end: NexusGenScalars['DateTime'] | null; // DateTime
     group: NexusGenRootTypes['GroupEntityResponse'] | null; // GroupEntityResponse
+    hide_end_time: boolean | null; // Boolean
+    hide_start_time: boolean | null; // Boolean
     intro: string | null; // String
     link: string | null; // String
     locale: string | null; // String
@@ -2438,6 +2446,8 @@ export interface NexusGenFieldTypeNames {
     createdAt: 'DateTime'
     end: 'DateTime'
     group: 'GroupEntityResponse'
+    hide_end_time: 'Boolean'
+    hide_start_time: 'Boolean'
     intro: 'String'
     link: 'String'
     locale: 'String'

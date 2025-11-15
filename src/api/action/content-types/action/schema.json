@@ -5,11 +5,10 @@
     "singularName": "action",
     "pluralName": "actions",
     "displayName": "Action",
-    "name": "action"
+    "name": "action",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {
@@ -136,6 +135,24 @@
       "relation": "manyToOne",
       "target": "api::campaign.campaign",
       "inversedBy": "actions"
+    },
+    "hide_start_time": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": false
+    },
+    "hide_end_time": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }
