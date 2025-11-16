@@ -4,8 +4,10 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
+    "predevelop": "node scripts/createUploadPath.mjs",
     "develop": "strapi develop",
     "start": "strapi start",
+    "prebuild": "node scripts/createUploadPath.mjs",
     "build": "strapi build",
     "strapi": "strapi"
   },

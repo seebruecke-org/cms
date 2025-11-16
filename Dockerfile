@@ -5,8 +5,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN npm install && npm i semver && \
-  NODE_OPTIONS=--max_old_space_size=4096 npm run build && \
-  mkdir -p /usr/src/app/public/uploads
+  NODE_OPTIONS=--max_old_space_size=4096 npm run build
 
 
 FROM node:18.15.0-alpine
