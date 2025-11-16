@@ -6,17 +6,31 @@ The Seebrücke CMS is build on top of Strapi, a headless CMS.
 
 With the minimal setup you can create a new strapi instance, which uses sqlite as database. The database file will be stored in `.tmp/data.db`.
 
-The database setup is pre-configured in [`config/env/development/database.js`](/config/env/development/database.js).
+The database setup is pre-configured in [`/config/database.js`](/config/database.js).
 
-1. Install npm dependencies
+1. Create a `.env` with the following values
+
+```
+LOCAL_DEV=true
+APP_KEYS=<random string>
+JWT_SECRET=<random string>
+API_TOKEN_SALT=<random string>
+ADMIN_JWT_SECRET=<random string>
+```
+
+2. Use node version of .nvmrc
+
+`nvm use`
+
+3. Install npm dependencies
 
 `npm run install`
 
-2. Start the application
+4. Start the application
 
 `npm run develop`
 
-3. You should now be able to access the admin panel via [localhost:1337/admin](http://localhost:1337/admin).
+5. You should now be able to access the admin panel via [localhost:1337/admin](http://localhost:1337/admin).
 
 
 ## Production setup

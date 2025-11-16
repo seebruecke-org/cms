@@ -27,6 +27,7 @@
     "@strapi/plugin-i18n": "4.10.5",
     "@strapi/plugin-users-permissions": "4.10.5",
     "@strapi/strapi": "4.10.5",
+    "better-sqlite3": "^11.10.0",
     "css-loader": "^6.7.3",
     "isomorphic-fetch": "^3.0.0",
     "lodash.pick": "^4.4.0",
