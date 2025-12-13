@@ -203,6 +203,7 @@ export interface NexusGenInputs {
   }
   ComponentHelperBlocksLinkFiltersInput: { // input type
     and?: Array<NexusGenInputs['ComponentHelperBlocksLinkFiltersInput'] | null> | null; // [ComponentHelperBlocksLinkFiltersInput]
+    hard_link?: NexusGenInputs['BooleanFilterInput'] | null; // BooleanFilterInput
     label?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     locale?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     not?: NexusGenInputs['ComponentHelperBlocksLinkFiltersInput'] | null; // ComponentHelperBlocksLinkFiltersInput
@@ -210,6 +211,7 @@ export interface NexusGenInputs {
     url?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
   }
   ComponentHelperBlocksLinkInput: { // input type
+    hard_link?: boolean | null; // Boolean
     id?: string | null; // ID
     label?: string | null; // String
     locale?: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE'] | null; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE
@@ -1245,6 +1247,7 @@ export interface NexusGenObjects {
     transparency_fullfilled?: boolean | null; // Boolean
   }
   ComponentHelperBlocksLink: { // root type
+    hard_link?: boolean | null; // Boolean
     id: string; // ID!
     label: string; // String!
     locale: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE']; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE!
@@ -1744,6 +1747,7 @@ export interface NexusGenFieldTypes {
     transparency_fullfilled: boolean | null; // Boolean
   }
   ComponentHelperBlocksLink: { // field return type
+    hard_link: boolean | null; // Boolean
     id: string; // ID!
     label: string; // String!
     locale: NexusGenEnums['ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE']; // ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE!
@@ -2562,6 +2566,7 @@ export interface NexusGenFieldTypeNames {
     transparency_fullfilled: 'Boolean'
   }
   ComponentHelperBlocksLink: { // field return type name
+    hard_link: 'Boolean'
     id: 'ID'
     label: 'String'
     locale: 'ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE'

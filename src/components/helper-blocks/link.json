@@ -24,6 +24,10 @@
       ],
       "default": "context",
       "required": true
+    },
+    "hard_link": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

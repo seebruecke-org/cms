@@ -351,6 +351,7 @@ input ComponentDemandsDemandsInput {
 }
 
 type ComponentHelperBlocksLink {
+  hard_link: Boolean
   id: ID!
   label: String!
   locale: ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE!
@@ -359,6 +360,7 @@ type ComponentHelperBlocksLink {
 
 input ComponentHelperBlocksLinkFiltersInput {
   and: [ComponentHelperBlocksLinkFiltersInput]
+  hard_link: BooleanFilterInput
   label: StringFilterInput
   locale: StringFilterInput
   not: ComponentHelperBlocksLinkFiltersInput
@@ -367,6 +369,7 @@ input ComponentHelperBlocksLinkFiltersInput {
 }
 
 input ComponentHelperBlocksLinkInput {
+  hard_link: Boolean
   id: ID
   label: String
   locale: ENUM_COMPONENTHELPERBLOCKSLINK_LOCALE

@@ -6,6 +6,7 @@
   "scripts": {
     "predevelop": "node scripts/createUploadPath.mjs",
     "develop": "strapi develop",
+    "db&dev": "./start-mysql-dev.sh && npm run develop",
     "start": "strapi start",
     "prebuild": "node scripts/createUploadPath.mjs",
     "build": "strapi build",
