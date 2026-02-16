@@ -857,6 +857,7 @@ export interface NexusGenInputs {
     type?: NexusGenEnums['ENUM_NEWSENTRY_TYPE'] | null; // ENUM_NEWSENTRY_TYPE
   }
   PageFiltersInput: { // input type
+    Layout?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     algolia_id?: NexusGenInputs['StringFilterInput'] | null; // StringFilterInput
     and?: Array<NexusGenInputs['PageFiltersInput'] | null> | null; // [PageFiltersInput]
     campaign?: NexusGenInputs['CampaignFiltersInput'] | null; // CampaignFiltersInput
@@ -874,6 +875,7 @@ export interface NexusGenInputs {
     updatedAt?: NexusGenInputs['DateTimeFilterInput'] | null; // DateTimeFilterInput
   }
   PageInput: { // input type
+    Layout?: NexusGenEnums['ENUM_PAGE_LAYOUT'] | null; // ENUM_PAGE_LAYOUT
     algolia_id?: string | null; // String
     campaign?: string | null; // ID
     content?: NexusGenScalars['PageContentDynamicZoneInput'][] | null; // [PageContentDynamicZoneInput!]
@@ -1140,6 +1142,7 @@ export interface NexusGenEnums {
   ENUM_COMPONENTSHAREDBLOCKSUNTERBRECHER_TYPE: "action" | "campaign" | "internal"
   ENUM_COMPONENTTEASERSSMALLITEM_TYPE: "action" | "campaign" | "internal"
   ENUM_NEWSENTRY_TYPE: "commentary" | "news" | "pressrelease"
+  ENUM_PAGE_LAYOUT: "Landing Page" | "Normal"
   ENUM_REDIRECT_TYPE: "permanently" | "temporarily"
   PublicationState: "live" | "preview"
 }
@@ -1455,6 +1458,7 @@ export interface NexusGenObjects {
   NewsEntryEntityResponseCollection: {};
   NewsEntryRelationResponseCollection: {};
   Page: { // root type
+    Layout?: NexusGenEnums['ENUM_PAGE_LAYOUT'] | null; // ENUM_PAGE_LAYOUT
     algolia_id?: string | null; // String
     createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     locale?: string | null; // String
@@ -2144,6 +2148,7 @@ export interface NexusGenFieldTypes {
     data: NexusGenRootTypes['NewsEntryEntity'][]; // [NewsEntryEntity!]!
   }
   Page: { // field return type
+    Layout: NexusGenEnums['ENUM_PAGE_LAYOUT'] | null; // ENUM_PAGE_LAYOUT
     algolia_id: string | null; // String
     campaign: NexusGenRootTypes['CampaignEntityResponse'] | null; // CampaignEntityResponse
     content: Array<NexusGenRootTypes['PageContentDynamicZone'] | null> | null; // [PageContentDynamicZone]
@@ -2963,6 +2968,7 @@ export interface NexusGenFieldTypeNames {
     data: 'NewsEntryEntity'
   }
   Page: { // field return type name
+    Layout: 'ENUM_PAGE_LAYOUT'
     algolia_id: 'String'
     campaign: 'CampaignEntityResponse'
     content: 'PageContentDynamicZone'

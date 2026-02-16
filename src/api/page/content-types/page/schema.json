@@ -5,11 +5,10 @@
     "singularName": "page",
     "pluralName": "pages",
     "displayName": "Page",
-    "name": "page"
+    "name": "page",
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {
@@ -89,6 +88,19 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::campaign.campaign"
+    },
+    "Layout": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Normal",
+        "Landing Page"
+      ],
+      "default": "Normal"
     }
   }
 }

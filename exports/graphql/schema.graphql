@@ -1107,6 +1107,11 @@ enum ENUM_NEWSENTRY_TYPE {
   pressrelease
 }
 
+enum ENUM_PAGE_LAYOUT {
+  Landing_Page
+  Normal
+}
+
 enum ENUM_REDIRECT_TYPE {
   permanently
   temporarily
@@ -1676,6 +1681,7 @@ type NewsEntryRelationResponseCollection {
 }
 
 type Page {
+  Layout: ENUM_PAGE_LAYOUT
   algolia_id: String
   campaign: CampaignEntityResponse
   content: [PageContentDynamicZone]
@@ -1709,6 +1715,7 @@ type PageEntityResponseCollection {
 }
 
 input PageFiltersInput {
+  Layout: StringFilterInput
   algolia_id: StringFilterInput
   and: [PageFiltersInput]
   campaign: CampaignFiltersInput
@@ -1727,6 +1734,7 @@ input PageFiltersInput {
 }
 
 input PageInput {
+  Layout: ENUM_PAGE_LAYOUT
   algolia_id: String
   campaign: ID
   content: [PageContentDynamicZoneInput!]
